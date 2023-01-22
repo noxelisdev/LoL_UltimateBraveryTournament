@@ -1,0 +1,9 @@
+# IDE & Git
+.vs/
+.git/
+
+# Build
+LoL_UltimateBraveryTournament/bin/Debug
+LoL_UltimateBraveryTournament/bin/Release
+LoL_UltimateBraveryTournament/obj/Debug
+LoL_UltimateBraveryTournament/obj/Release

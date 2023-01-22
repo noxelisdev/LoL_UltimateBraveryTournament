@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "efN2YmpDJXzlgbrM5++Soj2AeIHCMxpZyv+F+Ajgz3FrQMn3j4awpNDibVBFwiJZ+dk23JHZDFpkXT9o2a/V7w==",
+  "success": true,
+  "projectFilePath": "D:\\Projets\\Visual Studio Projects\\LoL_UltimateBraveryTournament\\LoL_UltimateBraveryTournament\\LoL_UltimateBraveryTournament.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\coren\\.nuget\\packages\\microsoft.windows.sdk.net.ref\\10.0.17763.28\\microsoft.windows.sdk.net.ref.10.0.17763.28.nupkg.sha512"
+  ],
+  "logs": []
+}
