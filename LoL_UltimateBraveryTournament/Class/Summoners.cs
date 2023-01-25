@@ -77,7 +77,7 @@ namespace LoL_UltimateBraveryTournament.Class
             {
                 while (summonersList.Count < 1)
                 {
-                    int firstSelectedSummonerIndex = summonerRandomizer.Next(summonersData.Count - 1);
+                    int firstSelectedSummonerIndex = summonerRandomizer.Next(summonersData.Count);
 
                     if (summonersData[firstSelectedSummonerIndex]["id"].ToString() != "SummonerSmite")
                     {
@@ -88,7 +88,7 @@ namespace LoL_UltimateBraveryTournament.Class
 
             while (summonersList.Count < 2)
             {
-                int secondSelectedSummonerIndex = summonerRandomizer.Next(summonersData.Count - 1);
+                int secondSelectedSummonerIndex = summonerRandomizer.Next(summonersData.Count);
 
                 if (summonersData[secondSelectedSummonerIndex]["id"].ToString() != "SummonerSmite" && summonersData[secondSelectedSummonerIndex]["key"].ToString() != summonersList[0])
                 {

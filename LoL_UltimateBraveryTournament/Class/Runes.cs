@@ -118,10 +118,10 @@ namespace LoL_UltimateBraveryTournament.Class
             List<string> RunesSlot3 = GetRuneKeysFromSlot(playerRuneMainPath, 3);
             List<string> RunesSlot4 = GetRuneKeysFromSlot(playerRuneMainPath, 4);
 
-            runesImagePaths.Add(GetRuneKeyImagePath(playerRuneMainPath, RunesSlot1[new Random().Next(RunesSlot1.Count - 1)]));
-            runesImagePaths.Add(GetRuneKeyImagePath(playerRuneMainPath, RunesSlot2[new Random().Next(RunesSlot2.Count - 1)]));
-            runesImagePaths.Add(GetRuneKeyImagePath(playerRuneMainPath, RunesSlot3[new Random().Next(RunesSlot3.Count - 1)]));
-            runesImagePaths.Add(GetRuneKeyImagePath(playerRuneMainPath, RunesSlot4[new Random().Next(RunesSlot4.Count - 1)]));
+            runesImagePaths.Add(GetRuneKeyImagePath(playerRuneMainPath, RunesSlot1[new Random().Next(RunesSlot1.Count)]));
+            runesImagePaths.Add(GetRuneKeyImagePath(playerRuneMainPath, RunesSlot2[new Random().Next(RunesSlot2.Count)]));
+            runesImagePaths.Add(GetRuneKeyImagePath(playerRuneMainPath, RunesSlot3[new Random().Next(RunesSlot3.Count)]));
+            runesImagePaths.Add(GetRuneKeyImagePath(playerRuneMainPath, RunesSlot4[new Random().Next(RunesSlot4.Count)]));
 
             return runesImagePaths;
         }
@@ -143,8 +143,8 @@ namespace LoL_UltimateBraveryTournament.Class
             List<string> RunesSlot1 = GetRuneKeysFromSlot(playerRuneSecondaryPath, playerRuneFirstSelectedSlot);
             List<string> RunesSlot2 = GetRuneKeysFromSlot(playerRuneSecondaryPath, playerRuneSecondSelectedSlot);
 
-            runesImagePaths.Add(GetRuneKeyImagePath(playerRuneSecondaryPath, RunesSlot1[new Random().Next(RunesSlot1.Count - 1)]));
-            runesImagePaths.Add(GetRuneKeyImagePath(playerRuneSecondaryPath, RunesSlot2[new Random().Next(RunesSlot2.Count - 1)]));
+            runesImagePaths.Add(GetRuneKeyImagePath(playerRuneSecondaryPath, RunesSlot1[new Random().Next(RunesSlot1.Count)]));
+            runesImagePaths.Add(GetRuneKeyImagePath(playerRuneSecondaryPath, RunesSlot2[new Random().Next(RunesSlot2.Count)]));
 
             return runesImagePaths;
         }

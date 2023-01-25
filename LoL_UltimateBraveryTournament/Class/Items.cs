@@ -178,26 +178,26 @@ namespace LoL_UltimateBraveryTournament.Class
             if (lane == "support")
             {
                 List<JToken> supportItemsList = GetSupportItemsData();
-                itemsList.Add("support_" + supportItemsList[new Random().Next(supportItemsList.Count - 1)]["image"]["full"].ToString().Replace(".png", ""));
+                itemsList.Add("support_" + supportItemsList[new Random().Next(supportItemsList.Count)]["image"]["full"].ToString().Replace(".png", ""));
             }
 
             // Item jungle
             if (lane == "jungle")
             {
                 List<JToken> jungleItemsList = Items.GetJungleItemsData();
-                itemsList.Add("jungle_" + jungleItemsList[new Random().Next(jungleItemsList.Count - 1)]["image"]["full"].ToString().Replace(".png", ""));
+                itemsList.Add("jungle_" + jungleItemsList[new Random().Next(jungleItemsList.Count)]["image"]["full"].ToString().Replace(".png", ""));
             }
 
             // Bottes
-            itemsList.Add("boots_" + bootsItemsList[new Random().Next(bootsItemsList.Count - 1)]["image"]["full"].ToString().Replace(".png", ""));
+            itemsList.Add("boots_" + bootsItemsList[new Random().Next(bootsItemsList.Count)]["image"]["full"].ToString().Replace(".png", ""));
 
             // Item mythique
-            itemsList.Add("mythic_" + mythicItemsList[new Random().Next(mythicItemsList.Count - 1)]["image"]["full"].ToString().Replace(".png", ""));
+            itemsList.Add("mythic_" + mythicItemsList[new Random().Next(mythicItemsList.Count)]["image"]["full"].ToString().Replace(".png", ""));
 
             // Items légendaires
             while (selectedLegendaryItems.Count < 4)
             {
-                int selectedElementIndex = playerItemRandomizer.Next(legendaryItemsList.Count - 1);
+                int selectedElementIndex = playerItemRandomizer.Next(legendaryItemsList.Count);
 
                 if (!selectedLegendaryItems.Contains(selectedElementIndex))
                 {
@@ -217,7 +217,7 @@ namespace LoL_UltimateBraveryTournament.Class
 
             while (selectedReplacementItem == "" || currentItems.Contains(selectedReplacementItem))
             {
-                int selectedElementIndex = playerItemRandomizer.Next(legendaryItemsList.Count - 1);
+                int selectedElementIndex = playerItemRandomizer.Next(legendaryItemsList.Count);
                 selectedReplacementItem = legendaryItemsList[selectedElementIndex]["image"]["full"].ToString().Replace(".png", "");
             }
 

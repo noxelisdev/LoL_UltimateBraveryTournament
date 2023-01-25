@@ -1659,6 +1659,8 @@
             this.Controls.Add(this.Player1_Settings_Group);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(1196, 645);
+            this.MinimumSize = new System.Drawing.Size(1196, 645);
             this.Name = "TeamStuffGenerator";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Générateur de Stuff Ultimate Bravery";

@@ -1,4 +1,5 @@
 using LoL_UltimateBraveryTournament.Class;
+using LoL_UltimateBraveryTournament.Tools;
 
 namespace LoL_UltimateBraveryTournament
 {
@@ -14,6 +15,12 @@ namespace LoL_UltimateBraveryTournament
         {
             TeamStuffGenerator teamStuffGenerator = new TeamStuffGenerator();
             teamStuffGenerator.Show();
+        }
+
+        private void App_ChampionsListGenerator_Click(object sender, EventArgs e)
+        {
+            ChampionsListGenerator championsListGenerator = new ChampionsListGenerator();
+            championsListGenerator.Show();
         }
 
         private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
