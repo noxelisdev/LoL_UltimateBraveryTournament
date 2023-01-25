@@ -63,9 +63,9 @@ namespace LoL_UltimateBraveryTournament.Properties {
         /// <summary>
         ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap _31 {
+        internal static System.Drawing.Bitmap MainMenu_ButtonImage_StuffGenerator {
             get {
-                object obj = ResourceManager.GetObject("31", resourceCulture);
+                object obj = ResourceManager.GetObject("MainMenu_ButtonImage_StuffGenerator", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -29,34 +29,34 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.MainForm_ToolsContainer = new System.Windows.Forms.TableLayoutPanel();
             this.App_TeamStuffGenerator_Button = new System.Windows.Forms.Button();
-            this.tableLayoutPanel1.SuspendLayout();
+            this.MainForm_ToolsContainer.SuspendLayout();
             this.SuspendLayout();
             // 
-            // tableLayoutPanel1
+            // MainForm_ToolsContainer
             // 
-            this.tableLayoutPanel1.ColumnCount = 3;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel1.Controls.Add(this.App_TeamStuffGenerator_Button, 0, 0);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(12, 12);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 3;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(776, 426);
-            this.tableLayoutPanel1.TabIndex = 1;
+            this.MainForm_ToolsContainer.ColumnCount = 3;
+            this.MainForm_ToolsContainer.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.MainForm_ToolsContainer.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.MainForm_ToolsContainer.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.MainForm_ToolsContainer.Controls.Add(this.App_TeamStuffGenerator_Button, 1, 0);
+            this.MainForm_ToolsContainer.Location = new System.Drawing.Point(12, 12);
+            this.MainForm_ToolsContainer.Name = "MainForm_ToolsContainer";
+            this.MainForm_ToolsContainer.RowCount = 3;
+            this.MainForm_ToolsContainer.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.MainForm_ToolsContainer.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.MainForm_ToolsContainer.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.MainForm_ToolsContainer.Size = new System.Drawing.Size(776, 426);
+            this.MainForm_ToolsContainer.TabIndex = 1;
             // 
             // App_TeamStuffGenerator_Button
             // 
             this.App_TeamStuffGenerator_Button.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.App_TeamStuffGenerator_Button.Image = global::LoL_UltimateBraveryTournament.Properties.Resources._31;
-            this.App_TeamStuffGenerator_Button.Location = new System.Drawing.Point(3, 3);
+            this.App_TeamStuffGenerator_Button.Image = global::LoL_UltimateBraveryTournament.Properties.Resources.MainMenu_ButtonImage_StuffGenerator;
+            this.App_TeamStuffGenerator_Button.Location = new System.Drawing.Point(261, 3);
             this.App_TeamStuffGenerator_Button.Name = "App_TeamStuffGenerator_Button";
             this.App_TeamStuffGenerator_Button.Size = new System.Drawing.Size(252, 136);
             this.App_TeamStuffGenerator_Button.TabIndex = 0;
@@ -70,21 +70,21 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.tableLayoutPanel1);
+            this.Controls.Add(this.MainForm_ToolsContainer);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Gestion de Tournoi LoL Ultimate Bravery";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainForm_FormClosing);
-            this.tableLayoutPanel1.ResumeLayout(false);
+            this.MainForm_ToolsContainer.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private TableLayoutPanel tableLayoutPanel1;
+        private TableLayoutPanel MainForm_ToolsContainer;
         private Button App_TeamStuffGenerator_Button;
     }
 }

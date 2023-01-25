@@ -9,7 +9,8 @@ namespace LoL_UltimateBraveryTournament
 
         private void App_TeamStuffGenerator_Button_Click(object sender, EventArgs e)
         {
-            // todo
+            TeamStuffGenerator teamStuffGenerator = new TeamStuffGenerator();
+            teamStuffGenerator.Show();
         }
 
         private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
