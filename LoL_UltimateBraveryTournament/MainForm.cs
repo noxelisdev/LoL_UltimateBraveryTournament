@@ -15,7 +15,15 @@ namespace LoL_UltimateBraveryTournament
 
         private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
         {
-            Application.Exit();
+            if (MessageBox.Show("Quitter le gestionnaire de tournoi Ultimate Bravery ?" + Environment.NewLine + "Cela quittera également tous les outils actuellement ouverts.", Text, MessageBoxButtons.YesNo) == DialogResult.No)
+            {
+                e.Cancel = true;
+            }
+        }
+
+        private void MainMenu_AppExitButton_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }
