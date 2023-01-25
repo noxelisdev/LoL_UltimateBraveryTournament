@@ -4,6 +4,11 @@
     {
         public static string BaseUrl = "https://leaguestats.infinity54.fr/riot/lol/";
 
+        public static string ManifestJsonUrl()
+        {
+            return BaseUrl + "latest/manifest.json";
+        }
+
         public static string ChampionsJsonUrl()
         {
             return BaseUrl + "latest/data/fr_FR/champion.json";

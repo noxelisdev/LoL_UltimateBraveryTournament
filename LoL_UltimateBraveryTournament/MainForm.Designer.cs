@@ -31,7 +31,8 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.MainForm_ToolsContainer = new System.Windows.Forms.TableLayoutPanel();
             this.App_TeamStuffGenerator_Button = new System.Windows.Forms.Button();
-            this.MainMenu_AppExitButton = new System.Windows.Forms.Button();
+            this.MainForm_AppExitButton = new System.Windows.Forms.Button();
+            this.MainForm_Versions = new System.Windows.Forms.Label();
             this.MainForm_ToolsContainer.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -48,7 +49,7 @@
             this.MainForm_ToolsContainer.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.MainForm_ToolsContainer.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.MainForm_ToolsContainer.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.MainForm_ToolsContainer.Size = new System.Drawing.Size(776, 345);
+            this.MainForm_ToolsContainer.Size = new System.Drawing.Size(776, 397);
             this.MainForm_ToolsContainer.TabIndex = 1;
             // 
             // App_TeamStuffGenerator_Button
@@ -59,29 +60,40 @@
             this.App_TeamStuffGenerator_Button.Image = global::LoL_UltimateBraveryTournament.Properties.Resources.MainMenu_ButtonImage_StuffGenerator;
             this.App_TeamStuffGenerator_Button.Location = new System.Drawing.Point(261, 3);
             this.App_TeamStuffGenerator_Button.Name = "App_TeamStuffGenerator_Button";
-            this.App_TeamStuffGenerator_Button.Size = new System.Drawing.Size(252, 109);
+            this.App_TeamStuffGenerator_Button.Size = new System.Drawing.Size(252, 126);
             this.App_TeamStuffGenerator_Button.TabIndex = 0;
             this.App_TeamStuffGenerator_Button.Text = "Générateur de Stuff";
             this.App_TeamStuffGenerator_Button.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.App_TeamStuffGenerator_Button.UseVisualStyleBackColor = true;
             this.App_TeamStuffGenerator_Button.Click += new System.EventHandler(this.App_TeamStuffGenerator_Button_Click);
             // 
-            // MainMenu_AppExitButton
+            // MainForm_AppExitButton
             // 
-            this.MainMenu_AppExitButton.Location = new System.Drawing.Point(713, 415);
-            this.MainMenu_AppExitButton.Name = "MainMenu_AppExitButton";
-            this.MainMenu_AppExitButton.Size = new System.Drawing.Size(75, 23);
-            this.MainMenu_AppExitButton.TabIndex = 2;
-            this.MainMenu_AppExitButton.Text = "Quitter";
-            this.MainMenu_AppExitButton.UseVisualStyleBackColor = true;
-            this.MainMenu_AppExitButton.Click += new System.EventHandler(this.MainMenu_AppExitButton_Click);
+            this.MainForm_AppExitButton.Location = new System.Drawing.Point(713, 415);
+            this.MainForm_AppExitButton.Name = "MainForm_AppExitButton";
+            this.MainForm_AppExitButton.Size = new System.Drawing.Size(75, 23);
+            this.MainForm_AppExitButton.TabIndex = 2;
+            this.MainForm_AppExitButton.Text = "Quitter";
+            this.MainForm_AppExitButton.UseVisualStyleBackColor = true;
+            this.MainForm_AppExitButton.Click += new System.EventHandler(this.MainForm_AppExitButton_Click);
+            // 
+            // MainForm_Versions
+            // 
+            this.MainForm_Versions.AutoSize = true;
+            this.MainForm_Versions.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.MainForm_Versions.Location = new System.Drawing.Point(12, 419);
+            this.MainForm_Versions.Name = "MainForm_Versions";
+            this.MainForm_Versions.Size = new System.Drawing.Size(382, 15);
+            this.MainForm_Versions.TabIndex = 3;
+            this.MainForm_Versions.Text = "Version de LoL : %lolVersion% - Version du programme : %softVersion%";
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.MainMenu_AppExitButton);
+            this.Controls.Add(this.MainForm_Versions);
+            this.Controls.Add(this.MainForm_AppExitButton);
             this.Controls.Add(this.MainForm_ToolsContainer);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
@@ -91,6 +103,7 @@
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainForm_FormClosing);
             this.MainForm_ToolsContainer.ResumeLayout(false);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -98,6 +111,7 @@
 
         private TableLayoutPanel MainForm_ToolsContainer;
         private Button App_TeamStuffGenerator_Button;
-        private Button MainMenu_AppExitButton;
+        private Button MainForm_AppExitButton;
+        private Label MainForm_Versions;
     }
 }

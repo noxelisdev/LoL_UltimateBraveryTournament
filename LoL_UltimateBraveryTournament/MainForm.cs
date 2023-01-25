@@ -1,3 +1,5 @@
+using LoL_UltimateBraveryTournament.Class;
+
 namespace LoL_UltimateBraveryTournament
 {
     public partial class MainForm : Form
@@ -5,6 +7,7 @@ namespace LoL_UltimateBraveryTournament
         public MainForm()
         {
             InitializeComponent();
+            MainForm_Versions.Text = "Version de LoL : " + LoLDDragon.GetLoLLatestVersion() + " - Version de l'application : " + Application.ProductVersion;
         }
 
         private void App_TeamStuffGenerator_Button_Click(object sender, EventArgs e)
@@ -21,7 +24,7 @@ namespace LoL_UltimateBraveryTournament
             }
         }
 
-        private void MainMenu_AppExitButton_Click(object sender, EventArgs e)
+        private void MainForm_AppExitButton_Click(object sender, EventArgs e)
         {
             Close();
         }
