@@ -57,6 +57,7 @@
             this.App_TeamStuffGenerator_Button.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.App_TeamStuffGenerator_Button.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.App_TeamStuffGenerator_Button.Image = global::LoL_UltimateBraveryTournament.Properties.Resources.MainMenu_ButtonImage_StuffGenerator;
             this.App_TeamStuffGenerator_Button.Location = new System.Drawing.Point(261, 3);
             this.App_TeamStuffGenerator_Button.Name = "App_TeamStuffGenerator_Button";
