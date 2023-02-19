@@ -53,17 +53,5 @@ module.exports = {
         },
       },
     },
-  ],
-  publishers: [
-    {
-      name: '@electron-forge/publisher-github',
-      config: {
-        repository: {
-          owner: 'InFinity54',
-          name: 'LoL_UltimateBraveryTournament'
-        },
-        prerelease: true
-      }
-    }
   ]
 };
