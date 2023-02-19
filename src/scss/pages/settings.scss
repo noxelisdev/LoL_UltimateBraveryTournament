@@ -1,0 +1,58 @@
+#settings {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: none;
+  z-index: 9996;
+
+  #settings_window_background {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 700px;
+    height: 592px;
+    background-image: url('../../../img/ui/settings/settings_background.png');
+    background-position: center center;
+    background-size: 700px 592px;
+    background-repeat: no-repeat;
+    transform: translateX(-50%) translateY(-50%);
+    z-index: 9997;
+  }
+
+  #settings_window_content {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 698px;
+    height: 584px;
+    transform: translateX(-50%) translateY(-50%);
+    z-index: 9998;
+
+    #settings_title {
+      width: 679px;
+      height: 30px;
+      font-family: 'Beaufort for LoL';
+      font-weight: 700;
+      font-style: normal;
+      font-size: 19px;
+      margin-top: 20px;
+      margin-left: auto;
+      margin-right: auto;
+      color: #f0e6d2;
+    }
+
+    #settings_separator {
+      width: 679px;
+      height: 1px;
+      margin: 18px auto 8px;
+      background-color: #1e282d;
+    }
+
+    @import "settings/menu";
+    @import "settings/items";
+    @import "settings/closebutton";
+  }
+}

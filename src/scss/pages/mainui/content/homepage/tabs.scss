@@ -1,0 +1,33 @@
+#homepage_tabs {
+  margin-top: 9px;
+  margin-left: 50px;
+  margin-right: 50px;
+  display: flex;
+
+  .homepage_tab {
+    width: auto;
+    font-family: 'Beaufort for LoL';
+    font-weight: 700;
+    font-size: 13px;
+    color: #c3b58b;
+  }
+
+  .homepage_tab:not(:last-child) {
+    margin-right: 35px;
+  }
+
+  .homepage_tab:hover {
+    color: #f0e6d2;
+    cursor: pointer;
+  }
+
+  .homepage_currenttab {
+    font-family: 'Beaufort for LoL';
+    font-weight: 700;
+    font-size: 13px;
+    color: #f0e6d2;
+    border-bottom: 1px solid transparent;
+    border-image: linear-gradient(90deg, rgba(198,183,141,0) 0%, rgba(198,183,141,1) 50%, rgba(195,181,139,0) 100%);
+    border-image-slice: 1;
+  }
+}

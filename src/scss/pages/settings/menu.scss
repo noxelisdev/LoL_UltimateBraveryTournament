@@ -1,0 +1,73 @@
+#settings_menu {
+  position: absolute;
+  top: 77px;
+  left: 1px;
+  width: 169px;
+  height: 477px;
+  overflow-y: scroll;
+
+  .settings_menu_item_activeindicator {
+    width: 3px;
+    height: 32px;
+    background-color: #c89b3c;
+    transition: all 0.5s;
+  }
+
+  .settings_menu_item_name {
+    height: 32px;
+    font-family: 'Beaufort for LoL';
+    font-weight: 700;
+    font-style: normal;
+    font-size: 12px;
+    line-height: 32px;
+    transition: all 0.5s;
+  }
+
+  .settings_menu_item {
+    width: 164px;
+    height: 32px;
+    display: flex;
+    cursor: pointer;
+    transition: all 0.5s;
+
+    .settings_menu_item_activeindicator {
+      display: none;
+    }
+
+    .settings_menu_item_name {
+      width: 150px;
+      margin-left: 14px;
+      color: #c6b78d;
+    }
+  }
+
+  .settings_menu_item:hover {
+    background-color: rgba(255, 255, 255, 0.5);
+  }
+
+  .settings_menu_item.settings_menu_active {
+    .settings_menu_item_activeindicator {
+      display: inherit;
+      color: #f0e6d2;
+    }
+
+    .settings_menu_item_name {
+      width: 148px;
+      margin-left: 16px;
+      color: #ede3d0;
+    }
+  }
+}
+
+#settings_menu::-webkit-scrollbar {
+  width: 5px;
+}
+
+#settings_menu::-webkit-scrollbar-thumb {
+  background: #785a28;
+  border-radius: 20px;
+}
+
+#settings_menu::-webkit-scrollbar-track {
+  background: #010a13;
+}

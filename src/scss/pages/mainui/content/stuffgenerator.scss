@@ -1,0 +1,38 @@
+#stuffgenerator {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: calc(100vw - 224px);
+  height: 100vh;
+  overflow: hidden;
+  display: none;
+
+  #stuffgenerator_background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: calc(100vw - 224px);
+    height: 100vh;
+    background-image: url('../../../../../img/ui/tools/stuffgenerator/stuffgenerator_background.jpg');
+    background-size: 100vw 100vh;
+    background-repeat: no-repeat;
+    z-index: 1;
+  }
+
+  #stuffgenerator_content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: calc(100vw - 224px);
+    height: calc(100vh - 79px);
+    margin-top: 79px;
+    text-align: center;
+    z-index: 2;
+
+    @import "stuffgenerator/header";
+    @import "stuffgenerator/colnames";
+    @import "stuffgenerator/teamlist";
+    @import "stuffgenerator/champselector";
+    @import "stuffgenerator/actions";
+  }
+}

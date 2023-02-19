@@ -1,0 +1,131 @@
+#stuffgenerator_teamlist {
+  position: absolute;
+  top: 65px;
+  left: 25px;
+  width: 1005px;
+  height: 500px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  overflow-x: hidden;
+  overflow-y: auto;
+
+  .stuffgenerator_player_champpict {
+    display: inline-block;
+    width: 80px;
+    height: 80px;
+    background-image: url('../../../../../../img/ui/tools/stuffgenerator/no_champ.png');
+    background-size: 80px 80px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    border: 2px solid #c3b58b;
+    border-radius: 50px;
+  }
+
+  .stuffgenerator_player_laneicon {
+    position: relative;
+    top: 1px;
+    left: -115px;
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    background-color: #010a13;
+    background-size: 38px 38px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    border: 1px solid #c3b58b;
+    border-radius: 50px;
+  }
+
+  .stuffgenerator_player_rune, .stuffgenerator_player_item, .stuffgenerator_player_summoner, .stuffgenerator_player_spell {
+    display: inline-block;
+    width: 35px;
+    height: 35px;
+    background-color: #070a10;
+    background-position: center center;
+    background-size: 35px 35px;
+    background-repeat: no-repeat;
+    border: 1px solid #c3b58b;
+    margin-right: -5px;
+    vertical-align: 23px;
+  }
+
+  .stuffgenerator_player_spellletter {
+    position: fixed;
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    font-family: 'Beaufort for LoL';
+    font-weight: 700;
+    font-size: 15px;
+    text-align: center;
+    color: #c3b58b;
+    background-color: #010a13;
+    border: 1px solid #c3b58b;
+    border-radius: 50px;
+  }
+
+  #stuffgenerator_player_top, #stuffgenerator_player_jungle, #stuffgenerator_player_middle, #stuffgenerator_player_adc, #stuffgenerator_player_support {
+    :nth-child(3), :nth-child(7), :nth-child(9), :nth-child(12), :nth-child(19), :nth-child(21) {
+      margin-left: 20px;
+    }
+  }
+
+  #stuffgenerator_player_top {
+    .stuffgenerator_player_laneicon {
+      background-image: url("../../../../../../img/ui/tools/stuffgenerator/lanes/top.png");
+    }
+
+    .stuffgenerator_player_spellletter {
+      top: 200px;
+      left: 977px;
+    }
+  }
+
+  #stuffgenerator_player_jungle {
+    .stuffgenerator_player_laneicon {
+      background-image: url("../../../../../../img/ui/tools/stuffgenerator/lanes/jungle.png");
+    }
+
+    .stuffgenerator_player_spellletter {
+      top: 299px;
+      left: 977px;
+    }
+  }
+
+  #stuffgenerator_player_middle {
+    .stuffgenerator_player_laneicon {
+      background-image: url("../../../../../../img/ui/tools/stuffgenerator/lanes/mid.png");
+    }
+
+    .stuffgenerator_player_spellletter {
+      top: 393px;
+      left: 977px;
+    }
+  }
+
+  #stuffgenerator_player_adc {
+    .stuffgenerator_player_laneicon {
+      background-image: url("../../../../../../img/ui/tools/stuffgenerator/lanes/bottom.png");
+    }
+
+    .stuffgenerator_player_spellletter {
+      top: 491px;
+      left: 977px;
+    }
+  }
+
+  #stuffgenerator_player_support  {
+    .stuffgenerator_player_laneicon {
+      background-image: url("../../../../../../img/ui/tools/stuffgenerator/lanes/support.png");
+    }
+
+    .stuffgenerator_player_spellletter {
+      top: 588px;
+      left: 977px;
+    }
+  }
+}

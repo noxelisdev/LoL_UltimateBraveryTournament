@@ -1,0 +1,48 @@
+#patchnotes {
+  width: calc(100% - 36px - 36px);;
+  margin-top: 24px;
+  margin-left: 36px;
+  margin-right: 36px;
+
+  #patchnotes_title {
+    font-family: 'Beaufort for LoL';
+    font-weight: 700;
+    font-size: 26px;
+    color: #f0e6d2;
+  }
+
+  #patchnotes_postdata {
+    margin-top: -5px;
+    font-family: 'Spiegel';
+    font-size: 13px;
+    color: #a09684;
+  }
+
+  #patchnotes_content {
+    font-family: 'Spiegel';
+    font-size: 13px;
+    color: #f0e6d2;
+    padding-top: 10px;
+
+    .patchnotes_quotestart, .patchnotes_quoteend {
+      display: inline-block;
+      width: 18px;
+      height: 14px;
+      vertical-align: middle;
+    }
+
+    .patchnotes_quotestart {
+      background-image: url('../../../../../../img/ui/homepage/patchnotes/patchnotes_quotestart.png');
+      background-position: center center;
+      background-size: 100% 100%;
+      background-repeat: no-repeat;
+    }
+
+    .patchnotes_quoteend {
+      background-image: url('../../../../../../img/ui/homepage/patchnotes/patchnotes_quoteend.png');
+      background-position: center center;
+      background-size: 100% 100%;
+      background-repeat: no-repeat;
+    }
+  }
+}

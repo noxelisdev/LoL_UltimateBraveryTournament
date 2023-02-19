@@ -1,0 +1,46 @@
+{
+  "name": "fr.infinity54.lol_ultimatebraverytournament",
+  "productName": "LoL_UltimateBraveryTournament",
+  "version": "2.0.0",
+  "description": "App used to manage more easily and quickly any Ultimate Bravery Tournament for League of Legends.",
+  "license": "CC-BY-SA-4.0",
+  "main": ".webpack/main",
+  "scripts": {
+    "start": "electron-forge start",
+    "package": "electron-forge package",
+    "make": "electron-forge make",
+    "publish": "electron-forge publish"
+  },
+  "author": {
+    "name": "InFinity_54",
+    "email": "contact@infinity54.fr"
+  },
+  "devDependencies": {
+    "@electron-forge/cli": "^6.0.4",
+    "@electron-forge/maker-deb": "^6.0.4",
+    "@electron-forge/maker-rpm": "^6.0.4",
+    "@electron-forge/maker-squirrel": "^6.0.4",
+    "@electron-forge/maker-zip": "^6.0.4",
+    "@electron-forge/plugin-webpack": "^6.0.4",
+    "@vercel/webpack-asset-relocator-loader": "1.7.3",
+    "css-loader": "^6.0.0",
+    "electron": "22.0.0",
+    "file-loader": "^6.2.0",
+    "node-loader": "^2.0.0",
+    "raw-loader": "^4.0.2",
+    "resolve-url-loader": "^5.0.0",
+    "sass": "^1.57.1",
+    "sass-loader": "^13.2.0",
+    "style-loader": "^3.0.0",
+    "twig-html-loader": "^0.1.9"
+  },
+  "dependencies": {
+    "@popperjs/core": "^2.11.6",
+    "bootstrap": "^5.2.3",
+    "electron-squirrel-startup": "^1.0.0",
+    "jquery": "^3.6.3",
+    "node-fetch": "^3.3.0",
+    "tippy.js": "^6.3.7",
+    "update-electron-app": "^2.0.1"
+  }
+}
