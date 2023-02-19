@@ -4,7 +4,7 @@ const path = require('path');
 const https = require('https');
 const fs = require("fs");
 
-const isInProdMode = false;
+const isInProdMode = true;
 const settingsFilePath = path.join(app.getPath("userData"), "settings.json");
 
 // Handle creating/removing shortcuts on Windows when installing/uninstalling.
