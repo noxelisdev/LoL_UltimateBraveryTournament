@@ -10,9 +10,6 @@ if (require('electron-squirrel-startup')) {
   app.quit();
 }
 
-// Auto-update handle
-require('update-electron-app')()
-
 const createWindow = () => {
   // Create the browser window.
   const mainWindow = new BrowserWindow({

@@ -1,7 +1,7 @@
 {
   "name": "fr.infinity54.lol_ultimatebraverytournament",
   "productName": "LoL_UltimateBraveryTournament",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "App used to manage more easily and quickly any Ultimate Bravery Tournament for League of Legends.",
   "license": "CC-BY-SA-4.0",
   "main": ".webpack/main",
@@ -14,10 +14,6 @@
   "author": {
     "name": "InFinity_54",
     "email": "contact@infinity54.fr"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/InFinity54/LoL_UltimateBraveryTournament"
   },
   "devDependencies": {
     "@electron-forge/cli": "^6.0.4",
@@ -44,7 +40,6 @@
     "electron-squirrel-startup": "^1.0.0",
     "jquery": "^3.6.3",
     "node-fetch": "^3.3.0",
-    "tippy.js": "^6.3.7",
-    "update-electron-app": "^2.0.1"
+    "tippy.js": "^6.3.7"
   }
 }
