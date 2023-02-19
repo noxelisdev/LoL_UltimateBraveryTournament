@@ -1,4 +1,5 @@
 import sndStartupFinished from '../../../snd/startup_loadingfinished.ogg';
+import sndPatcherFinished from '../../../snd/sfx-patcher-notif-complete.ogg';
 
 import sndPlayButtonHover from '../../../snd/mainui/lobby_button/sfx-nav-button-play-hover.ogg';
 import sndPlayButtonClick from '../../../snd/mainui/lobby_button/sfx-nav-button-play-click.ogg';
@@ -30,4 +31,4 @@ export { sndStartupFinished, sndPlayButtonHover, sndPlayButtonClick, sndStatusBu
   sndToolSelectorExitButtonClick, sndToolSelectorExitButtonHover, sndToolSelectorToolAreaClick,
   sndToolCommonReturnButtonClick, sndToolCommonReturnButtonHover, sndToolCommonExitButtonClick,
   sndToolCommonExitButtonHover, sndToolCommonStartToolButtonClick, sndToolCommonStartToolButtonHover,
-  sndSettingsCloseButtonClick, sndSettingsCheckboxClick };
+  sndSettingsCloseButtonClick, sndSettingsCheckboxClick, sndPatcherFinished };

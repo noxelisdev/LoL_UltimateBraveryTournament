@@ -1,8 +1,10 @@
 const { app, BrowserWindow, ipcMain, Menu } = require('electron');
+import { autoUpdater } from "electron-updater";
 const path = require('path');
 const https = require('https');
 const fs = require("fs");
 
+const isInProdMode = false;
 const settingsFilePath = path.join(app.getPath("userData"), "settings.json");
 
 // Handle creating/removing shortcuts on Windows when installing/uninstalling.
@@ -32,7 +34,10 @@ const createWindow = () => {
   });
 
   mainWindow.loadURL(MAIN_WINDOW_WEBPACK_ENTRY);
-  mainWindow.webContents.openDevTools();
+
+  if (!isInProdMode) {
+    mainWindow.webContents.openDevTools();
+  }
 
   mainWindow.webContents.on('did-finish-load', function() {
     mainWindow.show();
@@ -45,12 +50,52 @@ const createWindow = () => {
     }
   });
 
+  if (isInProdMode) {
+    autoUpdater.setFeedURL({
+      provider: "github",
+      repo: "LoL_UltimateBraveryTournament",
+      owner: "InFinity54",
+      private: false,
+      releaseType: "release"
+    });
+    autoUpdater.forceDevUpdateConfig = true;
+
+    // Updater's main events
+    autoUpdater
+      .on('update-not-available', m => {
+        mainWindow.webContents.send('update-not-available', m);
+      })
+      .on('update-available', m => {
+        mainWindow.webContents.send('update-available', m);
+      })
+      .on('download-progress', m => {
+        mainWindow.webContents.send('update-download-progress', m);
+      })
+      .on('update-downloaded', m => {
+        mainWindow.webContents.send('update-downloaded', m);
+
+        setTimeout(() => {
+          autoUpdater.quitAndInstall();
+        }, 3000);
+      });
+  } else {
+    mainWindow.webContents.send('update-not-available', null);
+  }
+
   ipcMain.handle('windowReduce', (event) => {
     mainWindow.minimize();
   });
 
   ipcMain.handle('windowClose', (event) => {
     app.exit();
+  });
+
+  ipcMain.handle('readyForUpdate', (event) => {
+    if (isInProdMode) {
+      autoUpdater.checkForUpdates();
+    } else {
+      mainWindow.webContents.send('update-not-available', null);
+    }
   });
 
   ipcMain.handle('saveSettings', (event, args) => {

@@ -1,15 +1,15 @@
 {
   "name": "fr.infinity54.lol_ultimatebraverytournament",
   "productName": "Gestionnaire de tournoi Ultimate Bravery",
-  "version": "2.0.1",
+  "version": "2.0.0",
   "description": "App used to manage more easily and quickly any Ultimate Bravery Tournament for League of Legends.",
   "license": "CC-BY-SA-4.0",
   "main": ".webpack/main",
   "scripts": {
     "start": "electron-forge start",
     "package": "electron-forge package",
-    "make": "electron-forge make",
-    "publish": "electron-forge publish"
+    "build": "electron-builder build",
+    "make": "yarn package && yarn build"
   },
   "author": {
     "name": "InFinity_54",
@@ -25,6 +25,7 @@
     "@vercel/webpack-asset-relocator-loader": "1.7.3",
     "css-loader": "^6.0.0",
     "electron": "23.1.0",
+    "electron-builder": "^23.6.0",
     "file-loader": "^6.2.0",
     "node-loader": "^2.0.0",
     "raw-loader": "^4.0.2",
@@ -38,8 +39,70 @@
     "@popperjs/core": "^2.11.6",
     "bootstrap": "^5.2.3",
     "electron-squirrel-startup": "^1.0.0",
+    "electron-updater": "^5.3.0",
     "jquery": "^3.6.3",
     "node-fetch": "^3.3.0",
     "tippy.js": "^6.3.7"
+  },
+  "build": {
+    "appId": "fr.infinity54.lol_ultimatebraverytournament",
+    "productName": "Gestionnaire de tournoi Ultimate Bravery",
+    "files": [
+      "./.webpack/**/*"
+    ],
+    "win": {
+      "target": [
+        "nsis"
+      ],
+      "icon": "./icon.ico",
+      "requestedExecutionLevel": "asInvoker",
+      "publish": {
+        "provider": "generic",
+        "url": "http://localhost"
+      }
+    },
+    "nsis": {
+      "artifactName": "LoL_UltimateBraveryTournament_Setup_${version}.${ext}",
+      "installerIcon": "./icon.ico",
+      "uninstallerIcon": "./icon.ico",
+      "uninstallDisplayName": "Gestionnaire de tournoi Ultimate Bravery",
+      "deleteAppDataOnUninstall": true,
+      "installerLanguages": [
+        "fr_FR"
+      ],
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "shortcutName": "Gestionnaire de tournoi Ultimate Bravery",
+      "oneClick": true,
+      "perMachine": false
+    },
+    "linux": {
+      "artifactName": "LoL_UltimateBraveryTournament_${version}.${ext}",
+      "target": [
+        "AppImage"
+      ],
+      "icon": "./icon.png",
+      "publish": {
+        "provider": "generic",
+        "url": "http://localhost"
+      }
+    },
+    "mac": {
+      "target": [
+        "dmg"
+      ],
+      "icon": "./icon.icns",
+      "darkModeSupport": false,
+      "publish": {
+        "provider": "generic",
+        "url": "http://localhost"
+      }
+    },
+    "dmg": {
+      "backgroundColor": "#161616",
+      "icon": "./icon.icns",
+      "title": "LoL_UltimateBraveryTournament"
+    },
+    "asar": null
   }
 }

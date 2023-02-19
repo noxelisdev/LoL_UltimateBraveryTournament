@@ -88,5 +88,8 @@ typings/
 # Electron-Forge
 out/
 
+# Electron-Builder
+dist/
+
 # WebStorm
 .idea/
