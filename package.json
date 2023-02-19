@@ -15,6 +15,10 @@
     "name": "InFinity_54",
     "email": "contact@infinity54.fr"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/InFinity54/LoL_UltimateBraveryTournament"
+  },
   "devDependencies": {
     "@electron-forge/cli": "^6.0.4",
     "@electron-forge/maker-deb": "^6.0.4",
