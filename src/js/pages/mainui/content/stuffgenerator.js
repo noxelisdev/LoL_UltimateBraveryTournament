@@ -12,7 +12,7 @@ let currentChampSelection = null;
 let generationInProgress = false;
 
 jQuery(".stuffgenerator_player_champpict").on("click", (event) => {
-  currentChampSelection = jQuery(event.target).parent().attr('id');
+  currentChampSelection = jQuery(event.target).attr('id');
   champSelectorContainer.show();
 });
 
@@ -37,7 +37,7 @@ exitButton.on("click", () => {
 
 function enableChampSelectorClickEvent() {
   jQuery("#stuffgenerator_champselector_content div").click((event) => {
-    const currentChampSelectionElement = jQuery("#" + currentChampSelection + "_champ");
+    const currentChampSelectionElement = jQuery("#" + currentChampSelection);
     currentChampSelectionElement.css("background-image", jQuery(event.target).css("background-image"));
     currentChampSelectionElement.attr("data-tippy-content", jQuery(event.target).attr("data-tippy-content"));
     currentChampSelectionElement.attr("data-value", jQuery(event.target).attr("data-value"));

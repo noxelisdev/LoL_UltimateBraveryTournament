@@ -1,0 +1,30 @@
+#stuffgenerator_colnames {
+  tr, td {
+    height: 20px;
+
+    #stuffgenerator_colname_runes1, #stuffgenerator_colname_runes2, #stuffgenerator_colname_runes3, #stuffgenerator_colname_stuff, #stuffgenerator_colname_summoners, #stuffgenerator_colname_spell {
+      display: inline-block;
+      width: 100%;
+      height: 20px;
+      background-repeat: no-repeat;
+      background-size: 20px 20px;
+      background-position: center center;
+    }
+
+    #stuffgenerator_colname_runes1, #stuffgenerator_colname_runes2, #stuffgenerator_colname_runes3 {
+      background-image: url('../../../../../../../img/ui/tools/stuffgenerator/colnames/RunesIcon.png');
+    }
+
+    #stuffgenerator_colname_stuff {
+      background-image: url('../../../../../../../img/ui/tools/stuffgenerator/colnames/gold.png');
+    }
+
+    #stuffgenerator_colname_spell {
+      background-image: url('../../../../../../../img/ui/tools/stuffgenerator/colnames/champion.png');
+    }
+
+    #stuffgenerator_colname_summoners {
+      background-image: url('../../../../../../../img/ui/tools/stuffgenerator/colnames/spells.png');
+    }
+  }
+}

@@ -8,159 +8,224 @@
             <div id="stuffgenerator_header_toolname">STUFF ALÉATOIRE</div>
         </div>
 
-        <div id="stuffgenerator_colname_runes1" data-tippy-content="Runes de la branche principale"></div>
-        <div id="stuffgenerator_colname_runes2" data-tippy-content="Runes de la branche secondaire"></div>
-        <div id="stuffgenerator_colname_runes3" data-tippy-content="Runes pour les statistiques"></div>
-        <div id="stuffgenerator_colname_stuff" data-tippy-content="Stuff"></div>
-        <div id="stuffgenerator_colname_summoners" data-tippy-content="Sorts d'invocateurs"></div>
-        <div id="stuffgenerator_colname_spell" data-tippy-content="Pouvoir principal du champion"></div>
+        <table id="stuffgenerator_table">
+            <tr id="stuffgenerator_colnames">
+                <td></td>
+                <td>
+                    <div id="stuffgenerator_colname_runes1" data-tippy-content="Runes de la branche principale"></div>
+                </td>
+                <td>
+                    <div id="stuffgenerator_colname_runes2" data-tippy-content="Runes de la branche secondaire"></div>
+                </td>
+                <td>
+                    <div id="stuffgenerator_colname_runes3" data-tippy-content="Runes pour les statistiques"></div>
+                </td>
+                <td>
+                    <div id="stuffgenerator_colname_stuff" data-tippy-content="Stuff"></div>
+                </td>
+                <td>
+                    <div id="stuffgenerator_colname_summoners" data-tippy-content="Sorts d'invocateurs"></div>
+                </td>
+                <td>
+                    <div id="stuffgenerator_colname_spell" data-tippy-content="Pouvoir principal du champion"></div>
+                </td>
+            </tr>
 
-        <div id="stuffgenerator_teamlist">
-            <div id="stuffgenerator_player_top" class="stuffgenerator_playerarea">
-                <div id="stuffgenerator_player_top_champ" class="stuffgenerator_player_champpict" data-tippy-content="Indéterminé"></div>
-                <div class="stuffgenerator_player_laneicon" data-tippy-content="Top"></div>
+            <tr id="stuffgenerator_player_top" class="stuffgenerator_playerarea">
+                <td>
+                    <div id="stuffgenerator_player_top_champ" class="stuffgenerator_player_champpict" data-tippy-content="Indéterminé"></div>
+                    <div class="stuffgenerator_player_laneicon" data-tippy-content="Top"></div>
+                </td>
+                <td>
+                    <div id="stuffgenerator_player_top_rune1" class="stuffgenerator_player_rune" data-tippy-content="Indéterminé"></div>
+                    <div id="stuffgenerator_player_top_rune2" class="stuffgenerator_player_rune" data-tippy-content="Indéterminé"></div>
+                    <div id="stuffgenerator_player_top_rune3" class="stuffgenerator_player_rune" data-tippy-content="Indéterminé"></div>
+                    <div id="stuffgenerator_player_top_rune4" class="stuffgenerator_player_rune" data-tippy-content="Indéterminé"></div>
+                </td>
+                <td>
+                    <div id="stuffgenerator_player_top_rune5" class="stuffgenerator_player_rune" data-tippy-content="Indéterminé"></div>
+                    <div id="stuffgenerator_player_top_rune6" class="stuffgenerator_player_rune" data-tippy-content="Indéterminé"></div>
+                </td>
+                <td>
+                    <div id="stuffgenerator_player_top_rune7" class="stuffgenerator_player_rune" data-tippy-content="Indéterminé"></div>
+                    <div id="stuffgenerator_player_top_rune8" class="stuffgenerator_player_rune" data-tippy-content="Indéterminé"></div>
+                    <div id="stuffgenerator_player_top_rune9" class="stuffgenerator_player_rune" data-tippy-content="Indéterminé"></div>
+                </td>
+                <td>
+                    <div id="stuffgenerator_player_top_item1" class="stuffgenerator_player_item" data-tippy-content="Indéterminé"></div>
+                    <div id="stuffgenerator_player_top_item2" class="stuffgenerator_player_item" data-tippy-content="Indéterminé"></div>
+                    <div id="stuffgenerator_player_top_item3" class="stuffgenerator_player_item" data-tippy-content="Indéterminé"></div>
+                    <div id="stuffgenerator_player_top_item4" class="stuffgenerator_player_item" data-tippy-content="Indéterminé"></div>
+                    <div id="stuffgenerator_player_top_item5" class="stuffgenerator_player_item" data-tippy-content="Indéterminé"></div>
+                    <div id="stuffgenerator_player_top_item6" class="stuffgenerator_player_item" data-tippy-content="Indéterminé"></div>
+                    <div id="stuffgenerator_player_top_item7" class="stuffgenerator_player_item" data-tippy-content="Indéterminé"></div>
+                </td>
+                <td>
+                    <div id="stuffgenerator_player_top_summoner1" class="stuffgenerator_player_summoner" data-tippy-content="Indéterminé"></div>
+                    <div id="stuffgenerator_player_top_summoner2" class="stuffgenerator_player_summoner" data-tippy-content="Indéterminé"></div>
+                </td>
+                <td>
+                    <div id="stuffgenerator_player_top_mainspell" class="stuffgenerator_player_spell" data-tippy-content="Indéterminé"></div>
+                    <div id="stuffgenerator_player_top_mainspell_letter" class="stuffgenerator_player_spellletter">?</div>
+                </td>
+            </tr>
 
-                <div id="stuffgenerator_player_top_rune1" class="stuffgenerator_player_rune" data-tippy-content="Indéterminé"></div>
-                <div id="stuffgenerator_player_top_rune2" class="stuffgenerator_player_rune" data-tippy-content="Indéterminé"></div>
-                <div id="stuffgenerator_player_top_rune3" class="stuffgenerator_player_rune" data-tippy-content="Indéterminé"></div>
-                <div id="stuffgenerator_player_top_rune4" class="stuffgenerator_player_rune" data-tippy-content="Indéterminé"></div>
-                <div id="stuffgenerator_player_top_rune5" class="stuffgenerator_player_rune" data-tippy-content="Indéterminé"></div>
-                <div id="stuffgenerator_player_top_rune6" class="stuffgenerator_player_rune" data-tippy-content="Indéterminé"></div>
-                <div id="stuffgenerator_player_top_rune7" class="stuffgenerator_player_rune" data-tippy-content="Indéterminé"></div>
-                <div id="stuffgenerator_player_top_rune8" class="stuffgenerator_player_rune" data-tippy-content="Indéterminé"></div>
-                <div id="stuffgenerator_player_top_rune9" class="stuffgenerator_player_rune" data-tippy-content="Indéterminé"></div>
+            <tr id="stuffgenerator_player_jungle" class="stuffgenerator_playerarea">
+                <td>
+                    <div id="stuffgenerator_player_jungle_champ" class="stuffgenerator_player_champpict" data-tippy-content="Indéterminé"></div>
+                    <div class="stuffgenerator_player_laneicon" data-tippy-content="Jungle"></div>
+                </td>
+                <td>
+                    <div id="stuffgenerator_player_jungle_rune1" class="stuffgenerator_player_rune" data-tippy-content="Indéterminé"></div>
+                    <div id="stuffgenerator_player_jungle_rune2" class="stuffgenerator_player_rune" data-tippy-content="Indéterminé"></div>
+                    <div id="stuffgenerator_player_jungle_rune3" class="stuffgenerator_player_rune" data-tippy-content="Indéterminé"></div>
+                    <div id="stuffgenerator_player_jungle_rune4" class="stuffgenerator_player_rune" data-tippy-content="Indéterminé"></div>
+                </td>
+                <td>
+                    <div id="stuffgenerator_player_jungle_rune5" class="stuffgenerator_player_rune" data-tippy-content="Indéterminé"></div>
+                    <div id="stuffgenerator_player_jungle_rune6" class="stuffgenerator_player_rune" data-tippy-content="Indéterminé"></div>
+                </td>
+                <td>
+                    <div id="stuffgenerator_player_jungle_rune7" class="stuffgenerator_player_rune" data-tippy-content="Indéterminé"></div>
+                    <div id="stuffgenerator_player_jungle_rune8" class="stuffgenerator_player_rune" data-tippy-content="Indéterminé"></div>
+                    <div id="stuffgenerator_player_jungle_rune9" class="stuffgenerator_player_rune" data-tippy-content="Indéterminé"></div>
+                </td>
+                <td>
+                    <div id="stuffgenerator_player_jungle_item1" class="stuffgenerator_player_item" data-tippy-content="Indéterminé"></div>
+                    <div id="stuffgenerator_player_jungle_item2" class="stuffgenerator_player_item" data-tippy-content="Indéterminé"></div>
+                    <div id="stuffgenerator_player_jungle_item3" class="stuffgenerator_player_item" data-tippy-content="Indéterminé"></div>
+                    <div id="stuffgenerator_player_jungle_item4" class="stuffgenerator_player_item" data-tippy-content="Indéterminé"></div>
+                    <div id="stuffgenerator_player_jungle_item5" class="stuffgenerator_player_item" data-tippy-content="Indéterminé"></div>
+                    <div id="stuffgenerator_player_jungle_item6" class="stuffgenerator_player_item" data-tippy-content="Indéterminé"></div>
+                    <div id="stuffgenerator_player_jungle_item7" class="stuffgenerator_player_item" data-tippy-content="Indéterminé"></div>
+                </td>
+                <td>
+                    <div id="stuffgenerator_player_jungle_summoner1" class="stuffgenerator_player_summoner" data-tippy-content="Indéterminé"></div>
+                    <div id="stuffgenerator_player_jungle_summoner2" class="stuffgenerator_player_summoner" data-tippy-content="Indéterminé"></div>
+                </td>
+                <td>
+                    <div id="stuffgenerator_player_jungle_mainspell" class="stuffgenerator_player_spell" data-tippy-content="Indéterminé"></div>
+                    <div id="stuffgenerator_player_jungle_mainspell_letter" class="stuffgenerator_player_spellletter">?</div>
+                </td>
+            </tr>
 
-                <div id="stuffgenerator_player_top_item1" class="stuffgenerator_player_item" data-tippy-content="Indéterminé"></div>
-                <div id="stuffgenerator_player_top_item2" class="stuffgenerator_player_item" data-tippy-content="Indéterminé"></div>
-                <div id="stuffgenerator_player_top_item3" class="stuffgenerator_player_item" data-tippy-content="Indéterminé"></div>
-                <div id="stuffgenerator_player_top_item4" class="stuffgenerator_player_item" data-tippy-content="Indéterminé"></div>
-                <div id="stuffgenerator_player_top_item5" class="stuffgenerator_player_item" data-tippy-content="Indéterminé"></div>
-                <div id="stuffgenerator_player_top_item6" class="stuffgenerator_player_item" data-tippy-content="Indéterminé"></div>
-                <div id="stuffgenerator_player_top_item7" class="stuffgenerator_player_item" data-tippy-content="Indéterminé"></div>
+            <tr id="stuffgenerator_player_middle" class="stuffgenerator_playerarea">
+                <td>
+                    <div id="stuffgenerator_player_middle_champ" class="stuffgenerator_player_champpict" data-tippy-content="Indéterminé"></div>
+                    <div class="stuffgenerator_player_laneicon" data-tippy-content="Mid"></div>
+                </td>
+                <td>
+                    <div id="stuffgenerator_player_middle_rune1" class="stuffgenerator_player_rune" data-tippy-content="Indéterminé"></div>
+                    <div id="stuffgenerator_player_middle_rune2" class="stuffgenerator_player_rune" data-tippy-content="Indéterminé"></div>
+                    <div id="stuffgenerator_player_middle_rune3" class="stuffgenerator_player_rune" data-tippy-content="Indéterminé"></div>
+                    <div id="stuffgenerator_player_middle_rune4" class="stuffgenerator_player_rune" data-tippy-content="Indéterminé"></div>
+                </td>
+                <td>
+                    <div id="stuffgenerator_player_middle_rune5" class="stuffgenerator_player_rune" data-tippy-content="Indéterminé"></div>
+                    <div id="stuffgenerator_player_middle_rune6" class="stuffgenerator_player_rune" data-tippy-content="Indéterminé"></div>
+                </td>
+                <td>
+                    <div id="stuffgenerator_player_middle_rune7" class="stuffgenerator_player_rune" data-tippy-content="Indéterminé"></div>
+                    <div id="stuffgenerator_player_middle_rune8" class="stuffgenerator_player_rune" data-tippy-content="Indéterminé"></div>
+                    <div id="stuffgenerator_player_middle_rune9" class="stuffgenerator_player_rune" data-tippy-content="Indéterminé"></div>
+                </td>
+                <td>
+                    <div id="stuffgenerator_player_middle_item1" class="stuffgenerator_player_item" data-tippy-content="Indéterminé"></div>
+                    <div id="stuffgenerator_player_middle_item2" class="stuffgenerator_player_item" data-tippy-content="Indéterminé"></div>
+                    <div id="stuffgenerator_player_middle_item3" class="stuffgenerator_player_item" data-tippy-content="Indéterminé"></div>
+                    <div id="stuffgenerator_player_middle_item4" class="stuffgenerator_player_item" data-tippy-content="Indéterminé"></div>
+                    <div id="stuffgenerator_player_middle_item5" class="stuffgenerator_player_item" data-tippy-content="Indéterminé"></div>
+                    <div id="stuffgenerator_player_middle_item6" class="stuffgenerator_player_item" data-tippy-content="Indéterminé"></div>
+                    <div id="stuffgenerator_player_middle_item7" class="stuffgenerator_player_item" data-tippy-content="Indéterminé"></div>
+                </td>
+                <td>
+                    <div id="stuffgenerator_player_middle_summoner1" class="stuffgenerator_player_summoner" data-tippy-content="Indéterminé"></div>
+                    <div id="stuffgenerator_player_middle_summoner2" class="stuffgenerator_player_summoner" data-tippy-content="Indéterminé"></div>
+                </td>
+                <td>
+                    <div id="stuffgenerator_player_middle_mainspell" class="stuffgenerator_player_spell" data-tippy-content="Indéterminé"></div>
+                    <div id="stuffgenerator_player_middle_mainspell_letter" class="stuffgenerator_player_spellletter">?</div>
+                </td>
+            </tr>
 
-                <div id="stuffgenerator_player_top_summoner1" class="stuffgenerator_player_summoner" data-tippy-content="Indéterminé"></div>
-                <div id="stuffgenerator_player_top_summoner2" class="stuffgenerator_player_summoner" data-tippy-content="Indéterminé"></div>
+            <tr id="stuffgenerator_player_adc" class="stuffgenerator_playerarea">
+                <td>
+                    <div id="stuffgenerator_player_adc_champ" class="stuffgenerator_player_champpict" data-tippy-content="Indéterminé"></div>
+                    <div class="stuffgenerator_player_laneicon" data-tippy-content="ADC"></div>
+                </td>
+                <td>
+                    <div id="stuffgenerator_player_adc_rune1" class="stuffgenerator_player_rune" data-tippy-content="Indéterminé"></div>
+                    <div id="stuffgenerator_player_adc_rune2" class="stuffgenerator_player_rune" data-tippy-content="Indéterminé"></div>
+                    <div id="stuffgenerator_player_adc_rune3" class="stuffgenerator_player_rune" data-tippy-content="Indéterminé"></div>
+                    <div id="stuffgenerator_player_adc_rune4" class="stuffgenerator_player_rune" data-tippy-content="Indéterminé"></div>
+                </td>
+                <td>
+                    <div id="stuffgenerator_player_adc_rune5" class="stuffgenerator_player_rune" data-tippy-content="Indéterminé"></div>
+                    <div id="stuffgenerator_player_adc_rune6" class="stuffgenerator_player_rune" data-tippy-content="Indéterminé"></div>
+                </td>
+                <td>
+                    <div id="stuffgenerator_player_adc_rune7" class="stuffgenerator_player_rune" data-tippy-content="Indéterminé"></div>
+                    <div id="stuffgenerator_player_adc_rune8" class="stuffgenerator_player_rune" data-tippy-content="Indéterminé"></div>
+                    <div id="stuffgenerator_player_adc_rune9" class="stuffgenerator_player_rune" data-tippy-content="Indéterminé"></div>
+                </td>
+                <td>
+                    <div id="stuffgenerator_player_adc_item1" class="stuffgenerator_player_item" data-tippy-content="Indéterminé"></div>
+                    <div id="stuffgenerator_player_adc_item2" class="stuffgenerator_player_item" data-tippy-content="Indéterminé"></div>
+                    <div id="stuffgenerator_player_adc_item3" class="stuffgenerator_player_item" data-tippy-content="Indéterminé"></div>
+                    <div id="stuffgenerator_player_adc_item4" class="stuffgenerator_player_item" data-tippy-content="Indéterminé"></div>
+                    <div id="stuffgenerator_player_adc_item5" class="stuffgenerator_player_item" data-tippy-content="Indéterminé"></div>
+                    <div id="stuffgenerator_player_adc_item6" class="stuffgenerator_player_item" data-tippy-content="Indéterminé"></div>
+                    <div id="stuffgenerator_player_adc_item7" class="stuffgenerator_player_item" data-tippy-content="Indéterminé"></div>
+                </td>
+                <td>
+                    <div id="stuffgenerator_player_adc_summoner1" class="stuffgenerator_player_summoner" data-tippy-content="Indéterminé"></div>
+                    <div id="stuffgenerator_player_adc_summoner2" class="stuffgenerator_player_summoner" data-tippy-content="Indéterminé"></div>
+                </td>
+                <td>
+                    <div id="stuffgenerator_player_adc_mainspell" class="stuffgenerator_player_spell" data-tippy-content="Indéterminé"></div>
+                    <div id="stuffgenerator_player_adc_mainspell_letter" class="stuffgenerator_player_spellletter">?</div>
+                </td>
+            </tr>
 
-                <div id="stuffgenerator_player_top_mainspell" class="stuffgenerator_player_spell" data-tippy-content="Indéterminé"></div>
-                <div id="stuffgenerator_player_top_mainspell_letter" class="stuffgenerator_player_spellletter">?</div>
-            </div>
-
-            <div id="stuffgenerator_player_jungle" class="stuffgenerator_playerarea">
-                <div id="stuffgenerator_player_jungle_champ" class="stuffgenerator_player_champpict" data-tippy-content="Indéterminé"></div>
-                <div class="stuffgenerator_player_laneicon" data-tippy-content="Jungle"></div>
-
-                <div id="stuffgenerator_player_jungle_rune1" class="stuffgenerator_player_rune" data-tippy-content="Indéterminé"></div>
-                <div id="stuffgenerator_player_jungle_rune2" class="stuffgenerator_player_rune" data-tippy-content="Indéterminé"></div>
-                <div id="stuffgenerator_player_jungle_rune3" class="stuffgenerator_player_rune" data-tippy-content="Indéterminé"></div>
-                <div id="stuffgenerator_player_jungle_rune4" class="stuffgenerator_player_rune" data-tippy-content="Indéterminé"></div>
-                <div id="stuffgenerator_player_jungle_rune5" class="stuffgenerator_player_rune" data-tippy-content="Indéterminé"></div>
-                <div id="stuffgenerator_player_jungle_rune6" class="stuffgenerator_player_rune" data-tippy-content="Indéterminé"></div>
-                <div id="stuffgenerator_player_jungle_rune7" class="stuffgenerator_player_rune" data-tippy-content="Indéterminé"></div>
-                <div id="stuffgenerator_player_jungle_rune8" class="stuffgenerator_player_rune" data-tippy-content="Indéterminé"></div>
-                <div id="stuffgenerator_player_jungle_rune9" class="stuffgenerator_player_rune" data-tippy-content="Indéterminé"></div>
-
-                <div id="stuffgenerator_player_jungle_item1" class="stuffgenerator_player_item" data-tippy-content="Indéterminé"></div>
-                <div id="stuffgenerator_player_jungle_item2" class="stuffgenerator_player_item" data-tippy-content="Indéterminé"></div>
-                <div id="stuffgenerator_player_jungle_item3" class="stuffgenerator_player_item" data-tippy-content="Indéterminé"></div>
-                <div id="stuffgenerator_player_jungle_item4" class="stuffgenerator_player_item" data-tippy-content="Indéterminé"></div>
-                <div id="stuffgenerator_player_jungle_item5" class="stuffgenerator_player_item" data-tippy-content="Indéterminé"></div>
-                <div id="stuffgenerator_player_jungle_item6" class="stuffgenerator_player_item" data-tippy-content="Indéterminé"></div>
-                <div id="stuffgenerator_player_jungle_item7" class="stuffgenerator_player_item" data-tippy-content="Indéterminé"></div>
-
-                <div id="stuffgenerator_player_jungle_summoner1" class="stuffgenerator_player_summoner" data-tippy-content="Indéterminé"></div>
-                <div id="stuffgenerator_player_jungle_summoner2" class="stuffgenerator_player_summoner" data-tippy-content="Indéterminé"></div>
-
-                <div id="stuffgenerator_player_jungle_mainspell" class="stuffgenerator_player_spell" data-tippy-content="Indéterminé"></div>
-                <div id="stuffgenerator_player_jungle_mainspell_letter" class="stuffgenerator_player_spellletter">?</div>
-            </div>
-
-            <div id="stuffgenerator_player_middle" class="stuffgenerator_playerarea">
-                <div id="stuffgenerator_player_middle_champ" class="stuffgenerator_player_champpict" data-tippy-content="Indéterminé"></div>
-                <div class="stuffgenerator_player_laneicon" data-tippy-content="Mid"></div>
-
-                <div id="stuffgenerator_player_middle_rune1" class="stuffgenerator_player_rune" data-tippy-content="Indéterminé"></div>
-                <div id="stuffgenerator_player_middle_rune2" class="stuffgenerator_player_rune" data-tippy-content="Indéterminé"></div>
-                <div id="stuffgenerator_player_middle_rune3" class="stuffgenerator_player_rune" data-tippy-content="Indéterminé"></div>
-                <div id="stuffgenerator_player_middle_rune4" class="stuffgenerator_player_rune" data-tippy-content="Indéterminé"></div>
-                <div id="stuffgenerator_player_middle_rune5" class="stuffgenerator_player_rune" data-tippy-content="Indéterminé"></div>
-                <div id="stuffgenerator_player_middle_rune6" class="stuffgenerator_player_rune" data-tippy-content="Indéterminé"></div>
-                <div id="stuffgenerator_player_middle_rune7" class="stuffgenerator_player_rune" data-tippy-content="Indéterminé"></div>
-                <div id="stuffgenerator_player_middle_rune8" class="stuffgenerator_player_rune" data-tippy-content="Indéterminé"></div>
-                <div id="stuffgenerator_player_middle_rune9" class="stuffgenerator_player_rune" data-tippy-content="Indéterminé"></div>
-
-                <div id="stuffgenerator_player_middle_item1" class="stuffgenerator_player_item" data-tippy-content="Indéterminé"></div>
-                <div id="stuffgenerator_player_middle_item2" class="stuffgenerator_player_item" data-tippy-content="Indéterminé"></div>
-                <div id="stuffgenerator_player_middle_item3" class="stuffgenerator_player_item" data-tippy-content="Indéterminé"></div>
-                <div id="stuffgenerator_player_middle_item4" class="stuffgenerator_player_item" data-tippy-content="Indéterminé"></div>
-                <div id="stuffgenerator_player_middle_item5" class="stuffgenerator_player_item" data-tippy-content="Indéterminé"></div>
-                <div id="stuffgenerator_player_middle_item6" class="stuffgenerator_player_item" data-tippy-content="Indéterminé"></div>
-                <div id="stuffgenerator_player_middle_item7" class="stuffgenerator_player_item" data-tippy-content="Indéterminé"></div>
-
-                <div id="stuffgenerator_player_middle_summoner1" class="stuffgenerator_player_summoner" data-tippy-content="Indéterminé"></div>
-                <div id="stuffgenerator_player_middle_summoner2" class="stuffgenerator_player_summoner" data-tippy-content="Indéterminé"></div>
-
-                <div id="stuffgenerator_player_middle_mainspell" class="stuffgenerator_player_spell" data-tippy-content="Indéterminé"></div>
-                <div id="stuffgenerator_player_middle_mainspell_letter" class="stuffgenerator_player_spellletter">?</div>
-            </div>
-
-            <div id="stuffgenerator_player_adc" class="stuffgenerator_playerarea">
-                <div id="stuffgenerator_player_adc_champ" class="stuffgenerator_player_champpict" data-tippy-content="Indéterminé"></div>
-                <div class="stuffgenerator_player_laneicon" data-tippy-content="ADC"></div>
-
-                <div id="stuffgenerator_player_adc_rune1" class="stuffgenerator_player_rune" data-tippy-content="Indéterminé"></div>
-                <div id="stuffgenerator_player_adc_rune2" class="stuffgenerator_player_rune" data-tippy-content="Indéterminé"></div>
-                <div id="stuffgenerator_player_adc_rune3" class="stuffgenerator_player_rune" data-tippy-content="Indéterminé"></div>
-                <div id="stuffgenerator_player_adc_rune4" class="stuffgenerator_player_rune" data-tippy-content="Indéterminé"></div>
-                <div id="stuffgenerator_player_adc_rune5" class="stuffgenerator_player_rune" data-tippy-content="Indéterminé"></div>
-                <div id="stuffgenerator_player_adc_rune6" class="stuffgenerator_player_rune" data-tippy-content="Indéterminé"></div>
-                <div id="stuffgenerator_player_adc_rune7" class="stuffgenerator_player_rune" data-tippy-content="Indéterminé"></div>
-                <div id="stuffgenerator_player_adc_rune8" class="stuffgenerator_player_rune" data-tippy-content="Indéterminé"></div>
-                <div id="stuffgenerator_player_adc_rune9" class="stuffgenerator_player_rune" data-tippy-content="Indéterminé"></div>
-
-                <div id="stuffgenerator_player_adc_item1" class="stuffgenerator_player_item" data-tippy-content="Indéterminé"></div>
-                <div id="stuffgenerator_player_adc_item2" class="stuffgenerator_player_item" data-tippy-content="Indéterminé"></div>
-                <div id="stuffgenerator_player_adc_item3" class="stuffgenerator_player_item" data-tippy-content="Indéterminé"></div>
-                <div id="stuffgenerator_player_adc_item4" class="stuffgenerator_player_item" data-tippy-content="Indéterminé"></div>
-                <div id="stuffgenerator_player_adc_item5" class="stuffgenerator_player_item" data-tippy-content="Indéterminé"></div>
-                <div id="stuffgenerator_player_adc_item6" class="stuffgenerator_player_item" data-tippy-content="Indéterminé"></div>
-                <div id="stuffgenerator_player_adc_item7" class="stuffgenerator_player_item" data-tippy-content="Indéterminé"></div>
-
-                <div id="stuffgenerator_player_adc_summoner1" class="stuffgenerator_player_summoner" data-tippy-content="Indéterminé"></div>
-                <div id="stuffgenerator_player_adc_summoner2" class="stuffgenerator_player_summoner" data-tippy-content="Indéterminé"></div>
-
-                <div id="stuffgenerator_player_adc_mainspell" class="stuffgenerator_player_spell" data-tippy-content="Indéterminé"></div>
-                <div id="stuffgenerator_player_adc_mainspell_letter" class="stuffgenerator_player_spellletter">?</div>
-            </div>
-
-            <div id="stuffgenerator_player_support" class="stuffgenerator_playerarea">
-                <div id="stuffgenerator_player_support_champ" class="stuffgenerator_player_champpict" data-tippy-content="Indéterminé"></div>
-                <div class="stuffgenerator_player_laneicon" data-tippy-content="Support"></div>
-
-                <div id="stuffgenerator_player_support_rune1" class="stuffgenerator_player_rune" data-tippy-content="Indéterminé"></div>
-                <div id="stuffgenerator_player_support_rune2" class="stuffgenerator_player_rune" data-tippy-content="Indéterminé"></div>
-                <div id="stuffgenerator_player_support_rune3" class="stuffgenerator_player_rune" data-tippy-content="Indéterminé"></div>
-                <div id="stuffgenerator_player_support_rune4" class="stuffgenerator_player_rune" data-tippy-content="Indéterminé"></div>
-                <div id="stuffgenerator_player_support_rune5" class="stuffgenerator_player_rune" data-tippy-content="Indéterminé"></div>
-                <div id="stuffgenerator_player_support_rune6" class="stuffgenerator_player_rune" data-tippy-content="Indéterminé"></div>
-                <div id="stuffgenerator_player_support_rune7" class="stuffgenerator_player_rune" data-tippy-content="Indéterminé"></div>
-                <div id="stuffgenerator_player_support_rune8" class="stuffgenerator_player_rune" data-tippy-content="Indéterminé"></div>
-                <div id="stuffgenerator_player_support_rune9" class="stuffgenerator_player_rune" data-tippy-content="Indéterminé"></div>
-
-                <div id="stuffgenerator_player_support_item1" class="stuffgenerator_player_item" data-tippy-content="Indéterminé"></div>
-                <div id="stuffgenerator_player_support_item2" class="stuffgenerator_player_item" data-tippy-content="Indéterminé"></div>
-                <div id="stuffgenerator_player_support_item3" class="stuffgenerator_player_item" data-tippy-content="Indéterminé"></div>
-                <div id="stuffgenerator_player_support_item4" class="stuffgenerator_player_item" data-tippy-content="Indéterminé"></div>
-                <div id="stuffgenerator_player_support_item5" class="stuffgenerator_player_item" data-tippy-content="Indéterminé"></div>
-                <div id="stuffgenerator_player_support_item6" class="stuffgenerator_player_item" data-tippy-content="Indéterminé"></div>
-                <div id="stuffgenerator_player_support_item7" class="stuffgenerator_player_item" data-tippy-content="Indéterminé"></div>
-
-                <div id="stuffgenerator_player_support_summoner1" class="stuffgenerator_player_summoner" data-tippy-content="Indéterminé"></div>
-                <div id="stuffgenerator_player_support_summoner2" class="stuffgenerator_player_summoner" data-tippy-content="Indéterminé"></div>
-
-                <div id="stuffgenerator_player_support_mainspell" class="stuffgenerator_player_spell" data-tippy-content="Indéterminé"></div>
-                <div id="stuffgenerator_player_support_mainspell_letter" class="stuffgenerator_player_spellletter">?</div>
-            </div>
-        </div>
+            <tr id="stuffgenerator_player_support" class="stuffgenerator_playerarea">
+                <td>
+                    <div id="stuffgenerator_player_support_champ" class="stuffgenerator_player_champpict" data-tippy-content="Indéterminé"></div>
+                    <div class="stuffgenerator_player_laneicon" data-tippy-content="Support"></div>
+                </td>
+                <td>
+                    <div id="stuffgenerator_player_support_rune1" class="stuffgenerator_player_rune" data-tippy-content="Indéterminé"></div>
+                    <div id="stuffgenerator_player_support_rune2" class="stuffgenerator_player_rune" data-tippy-content="Indéterminé"></div>
+                    <div id="stuffgenerator_player_support_rune3" class="stuffgenerator_player_rune" data-tippy-content="Indéterminé"></div>
+                    <div id="stuffgenerator_player_support_rune4" class="stuffgenerator_player_rune" data-tippy-content="Indéterminé"></div>
+                </td>
+                <td>
+                    <div id="stuffgenerator_player_support_rune5" class="stuffgenerator_player_rune" data-tippy-content="Indéterminé"></div>
+                    <div id="stuffgenerator_player_support_rune6" class="stuffgenerator_player_rune" data-tippy-content="Indéterminé"></div>
+                </td>
+                <td>
+                    <div id="stuffgenerator_player_support_rune7" class="stuffgenerator_player_rune" data-tippy-content="Indéterminé"></div>
+                    <div id="stuffgenerator_player_support_rune8" class="stuffgenerator_player_rune" data-tippy-content="Indéterminé"></div>
+                    <div id="stuffgenerator_player_support_rune9" class="stuffgenerator_player_rune" data-tippy-content="Indéterminé"></div>
+                </td>
+                <td>
+                    <div id="stuffgenerator_player_support_item1" class="stuffgenerator_player_item" data-tippy-content="Indéterminé"></div>
+                    <div id="stuffgenerator_player_support_item2" class="stuffgenerator_player_item" data-tippy-content="Indéterminé"></div>
+                    <div id="stuffgenerator_player_support_item3" class="stuffgenerator_player_item" data-tippy-content="Indéterminé"></div>
+                    <div id="stuffgenerator_player_support_item4" class="stuffgenerator_player_item" data-tippy-content="Indéterminé"></div>
+                    <div id="stuffgenerator_player_support_item5" class="stuffgenerator_player_item" data-tippy-content="Indéterminé"></div>
+                    <div id="stuffgenerator_player_support_item6" class="stuffgenerator_player_item" data-tippy-content="Indéterminé"></div>
+                    <div id="stuffgenerator_player_support_item7" class="stuffgenerator_player_item" data-tippy-content="Indéterminé"></div>
+                </td>
+                <td>
+                    <div id="stuffgenerator_player_support_summoner1" class="stuffgenerator_player_summoner" data-tippy-content="Indéterminé"></div>
+                    <div id="stuffgenerator_player_support_summoner2" class="stuffgenerator_player_summoner" data-tippy-content="Indéterminé"></div>
+                </td>
+                <td>
+                    <div id="stuffgenerator_player_support_mainspell" class="stuffgenerator_player_spell" data-tippy-content="Indéterminé"></div>
+                    <div id="stuffgenerator_player_support_mainspell_letter" class="stuffgenerator_player_spellletter">?</div>
+                </td>
+            </tr>
+        </table>
 
         <div id="stuffgenerator_champselectorcontainer">
             <div id="stuffgenerator_champselector">
