@@ -62,13 +62,13 @@ function enableStartToolButton() {
 }
 
 startToolButtonContainer.on("mouseenter", async () => {
-  if (startToolButtonContainer.hasClass("solostuffgenerator_player_starttoolbuttondisabled") === false) {
+  if (startToolButtonContainer.hasClass("solostuffgenerator_starttoolbuttondisabled") === false) {
     playSound(sndToolCommonStartToolButtonHover);
   }
 });
 
 startToolButtonContainer.on("click", async () => {
-  if (startToolButtonContainer.hasClass("solostuffgenerator_player_starttoolbuttondisabled") === false) {
+  if (startToolButtonContainer.hasClass("solostuffgenerator_starttoolbuttondisabled") === false) {
     const playerSelectedChampId = playerChamp.attr("data-value");
     const playerSelectedChampLane = jQuery("#solostuffgenerator_player_lane").attr("data-value");
 
