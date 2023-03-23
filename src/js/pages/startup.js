@@ -1,6 +1,7 @@
 import tippy from "tippy.js";
 import { initMainUi } from "./mainui";
 import { enableChampSelectorClickEvent } from "./mainui/content/stuffgenerator";
+import { enableSoloChampSelectorClickEvent } from "./mainui/content/solostuffgenerator";
 
 const startupProgress = jQuery("#startup_progress");
 const startupInitializationStepsNumber = 6;
@@ -17,6 +18,7 @@ let appInitializationProgressChangeHandler = setInterval(() => {
     sortChampionHighlightSkins();
     sortChampionSelectorList();
     enableChampSelectorClickEvent();
+    enableSoloChampSelectorClickEvent();
     tippy('[data-tippy-content]', { theme: 'lol', arrow: true });
 
     setTimeout(() => {
@@ -147,12 +149,13 @@ async function initChampionsData() {
           mime: "image/png"
         })
           .then((image) => {
-            jQuery("<div>")
+            const champDiv = jQuery("<div>")
               .css("background-image", "url('" + image + "')")
               .attr("data-value", currentChampionValue.id)
-              .attr("data-tippy-content", currentChampionValue.name)
-              .appendTo(jQuery("#stuffgenerator_champselector_content"));
+              .attr("data-tippy-content", currentChampionValue.name);
 
+            champDiv.appendTo(jQuery("#stuffgenerator_champselector_content"));
+            champDiv.appendTo(jQuery("#solostuffgenerator_champselector_content"));
             appInitializationProgress += (100 / startupInitializationStepsNumber) / championsListKeys.length;
           })
           .catch((error) => {

@@ -9,6 +9,9 @@ import { returnToMainUi } from "../../mainui";
 const champListGeneratorToolArea = jQuery("#toolselector_champlistgenerator");
 const champListGeneratorToolStaticIcon = jQuery("#toolselector_champlistgenerator_staticicon");
 const champListGeneratorToolAnimatedIcon = jQuery("#toolselector_champlistgenerator_animatedicon");
+const soloStuffGeneratorToolArea = jQuery("#toolselector_solostuffgenerator");
+const soloStuffGeneratorToolStaticIcon = jQuery("#toolselector_solostuffgenerator_staticicon");
+const soloStuffGeneratorToolAnimatedIcon = jQuery("#toolselector_solostuffgenerator_animatedicon");
 const stuffGeneratorToolArea = jQuery("#toolselector_stuffgenerator");
 const stuffGeneratorToolStaticIcon = jQuery("#toolselector_stuffgenerator_staticicon");
 const stuffGeneratorToolAnimatedIcon = jQuery("#toolselector_stuffgenerator_animatedicon");
@@ -41,6 +44,20 @@ champListGeneratorToolArea.on('mouseleave', () => {
 champListGeneratorToolArea.on("click", () => {
   playSound(sndToolSelectorToolAreaClick);
   champListGeneratorToolAreaClickAnimation();
+});
+
+soloStuffGeneratorToolArea.on('mouseenter', () => {
+  playSound(sndMenuItemClick);
+  stuffGeneratorToolStaticIcon.css("background-image", jQuery("#toolselector_solostuffgenerator_staticicon_hover").css("background-image"));
+});
+
+soloStuffGeneratorToolArea.on('mouseleave', () => {
+  soloStuffGeneratorToolStaticIcon.css("background-image", jQuery("#toolselector_solostuffgenerator_staticicon_default").css("background-image"));
+});
+
+soloStuffGeneratorToolArea.on("click", () => {
+  playSound(sndToolSelectorToolAreaClick);
+  soloStuffGeneratorToolAreaClickAnimation();
 });
 
 stuffGeneratorToolArea.on('mouseenter', () => {
@@ -80,6 +97,10 @@ confirmButton.on("click", () => {
       toolSelectorPage.fadeOut(500);
       jQuery("#champlistgenerator").fadeIn(500);
       break;
+    case "solostuffgenerator":
+      toolSelectorPage.fadeOut(500);
+      jQuery("#solostuffgenerator").fadeIn(500);
+      break;
     case "stuffgenerator":
       toolSelectorPage.fadeOut(500);
       jQuery("#stuffgenerator").fadeIn(500);
@@ -89,6 +110,7 @@ confirmButton.on("click", () => {
 
 function champListGeneratorToolAreaClickAnimation() {
   stuffGeneratorToolAnimatedIcon.hide();
+  soloStuffGeneratorToolAnimatedIcon.hide();
   champListGeneratorToolAnimatedIcon.show();
 
   champListGeneratorToolAnimatedIcon.attr("src", movToolSelectorChampListGeneratorButtonActiveIntro);
@@ -105,8 +127,28 @@ function champListGeneratorToolAreaClickAnimation() {
   champListGeneratorToolArea.addClass("toolselector_currentselectedtool");
 }
 
+function soloStuffGeneratorToolAreaClickAnimation() {
+  champListGeneratorToolAnimatedIcon.hide();
+  stuffGeneratorToolAnimatedIcon.hide();
+  soloStuffGeneratorToolAnimatedIcon.show();
+
+  soloStuffGeneratorToolAnimatedIcon.attr("src", movToolSelectorStuffGeneratorButtonActiveIntro);
+  soloStuffGeneratorToolAnimatedIcon[0].loop = false;
+  soloStuffGeneratorToolAnimatedIcon[0].play();
+
+  soloStuffGeneratorToolAnimatedIcon.on("ended", () => {
+    soloStuffGeneratorToolAnimatedIcon.attr("src", movToolSelectorStuffGeneratorButtonActiveLoop);
+    soloStuffGeneratorToolAnimatedIcon[0].loop = true;
+    soloStuffGeneratorToolAnimatedIcon[0].play();
+  });
+
+  jQuery(".toolselector_currentselectedtool").removeClass("toolselector_currentselectedtool");
+  soloStuffGeneratorToolArea.addClass("toolselector_currentselectedtool");
+}
+
 function stuffGeneratorToolAreaClickAnimation() {
   champListGeneratorToolAnimatedIcon.hide();
+  soloStuffGeneratorToolAnimatedIcon.hide();
   stuffGeneratorToolAnimatedIcon.show();
 
   stuffGeneratorToolAnimatedIcon.attr("src", movToolSelectorStuffGeneratorButtonActiveIntro);

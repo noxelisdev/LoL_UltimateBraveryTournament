@@ -1,0 +1,122 @@
+#solostuffgenerator_actionscontainer {
+  position: absolute;
+  left: calc(50% - 158px);
+  bottom: 11px;
+  width: 316px;
+  height: 48px;
+
+  #solostuffgenerator_exitbutton, #solostuffgenerator_exitbutton_disabled {
+    position: absolute;
+    top: 5px;
+    left: 18px;
+    width: 32px;
+    height: 32px;
+    background-repeat: no-repeat;
+    background-size: 32px 32px;
+    z-index: 10;
+  }
+
+  #solostuffgenerator_exitbutton {
+    background-image: url('../../../../../../img/ui/tools/common/actions/exit/close_button.png');
+  }
+
+  #solostuffgenerator_exitbutton_disabled {
+    background-image: url('../../../../../../img/ui/tools/common/actions/exit/close_button.png');
+  }
+
+  #solostuffgenerator_exitbutton:hover {
+    background-image: url('../../../../../../img/ui/tools/common/actions/exit/close_button_over.png');
+  }
+
+  #solostuffgenerator_exitbutton:active {
+    background-image: url('../../../../../../img/ui/tools/common/actions/exit/close_button_down.png');
+  }
+
+  #solostuffgenerator_leftdecoration, #solostuffgenerator_rightdecoration {
+    position: absolute;
+    width: 122px;
+    height: 28px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: 122px 28px;
+    z-index: 1;
+  }
+
+  #solostuffgenerator_leftdecoration {
+    top: -3px;
+    left: -44px;
+    background-image: url('../../../../../../img/ui/tools/common/actions/postgame-button-decoration.png');
+  }
+
+  #solostuffgenerator_rightdecoration {
+    top: -3px;
+    right: -46px;
+    background-image: url('../../../../../../img/ui/tools/common/actions/postgame-button-decoration.png');
+    transform: scaleX(-1);
+  }
+
+  #solostuffgenerator_starttoolbuttoncontainer {
+    position: absolute;
+    top: -3px;
+    left: 65px;
+    width: 188px;
+    height: 47px;
+    z-index: 9;
+
+    #solostuffgenerator_starttoolbutton {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 188px;
+      height: 47px;
+      background-image: url('../../../../../../img/ui/tools/common/actions/starttool/button-find-match.png');
+      background-repeat: no-repeat;
+      background-size: 188px 47px;
+    }
+
+    #solostuffgenerator_starttoolbuttontext {
+      position: absolute;
+      top: 2px;
+      left: 18px;
+      width: 152px;
+      height: 46px;
+      font-family: "Beaufort for LoL";
+      font-weight: 700;
+      font-size: 14px;
+      text-align: center;
+      color: #a3c7c7;
+      line-height: 42px;
+    }
+  }
+
+  #solostuffgenerator_starttoolbuttoncontainer:hover {
+    #solostuffgenerator_starttoolbutton {
+      background-image: url('../../../../../../img/ui/tools/common/actions/starttool/button-find-match-over.png');
+    }
+
+    #solostuffgenerator_starttoolbuttontext {
+      color: #f0e6d2;
+    }
+  }
+
+  #solostuffgenerator_starttoolbuttoncontainer:active {
+    #solostuffgenerator_starttoolbutton {
+      background-image: url('../../../../../../img/ui/tools/common/actions/starttool/button-find-match-down.png');
+    }
+
+    #solostuffgenerator_starttoolbuttontext {
+      color: #035478;
+    }
+  }
+
+  #solostuffgenerator_starttoolbuttoncontainer.solostuffgenerator_starttoolbuttondisabled,
+  #solostuffgenerator_starttoolbuttoncontainer.solostuffgenerator_starttoolbuttondisabled:hover {
+    #solostuffgenerator_starttoolbutton {
+      background-image: url('../../../../../../img/ui/tools/common/actions/starttool/button-find-match-disabled.png');
+    }
+
+    #solostuffgenerator_starttoolbuttontext {
+      color: #5d6060;
+    }
+  }
+}

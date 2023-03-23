@@ -1,0 +1,66 @@
+#solostuffgenerator_table {
+  width: 850px;
+  height: 75px;
+  margin-top: 50px;
+  margin-left: auto;
+  margin-right: auto;
+
+  #solostuffgenerator_colname_runes1, #solostuffgenerator_colname_runes2, #solostuffgenerator_colname_runes3, #solostuffgenerator_colname_stuff, #solostuffgenerator_colname_summoners, #solostuffgenerator_colname_spell {
+    display: inline-block;
+    width: 100%;
+    height: 20px;
+    background-repeat: no-repeat;
+    background-size: 20px 20px;
+    background-position: center center;
+  }
+
+  #solostuffgenerator_colname_runes1, #solostuffgenerator_colname_runes2, #solostuffgenerator_colname_runes3 {
+    background-image: url('../../../../../../img/ui/tools/stuffgenerator/colnames/RunesIcon.png');
+  }
+
+  #solostuffgenerator_colname_stuff {
+    background-image: url('../../../../../../img/ui/tools/stuffgenerator/colnames/gold.png');
+  }
+
+  #solostuffgenerator_colname_spell {
+    background-image: url('../../../../../../img/ui/tools/stuffgenerator/colnames/champion.png');
+  }
+
+  #solostuffgenerator_colname_summoners {
+    background-image: url('../../../../../../img/ui/tools/stuffgenerator/colnames/spells.png');
+  }
+
+  .solostuffgenerator_player_rune, .solostuffgenerator_player_item, .solostuffgenerator_player_summoner, .solostuffgenerator_player_spell {
+    display: inline-block;
+    width: 35px;
+    height: 35px;
+    background-color: #070a10;
+    background-position: center center;
+    background-size: 35px 35px;
+    background-repeat: no-repeat;
+    border: 1px solid #c3b58b;
+    margin: 0;
+  }
+
+  .solostuffgenerator_player_spell {
+    margin-top: 2px;
+    margin-right: -15px;
+  }
+
+  .solostuffgenerator_player_spellletter {
+    position: relative;
+    top: 5px;
+    left: 0px;
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    font-family: 'Beaufort for LoL';
+    font-weight: 700;
+    font-size: 15px;
+    text-align: center;
+    color: #c3b58b;
+    background-color: #010a13;
+    border: 1px solid #c3b58b;
+    border-radius: 50px;
+  }
+}

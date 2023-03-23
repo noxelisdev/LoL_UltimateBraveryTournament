@@ -1,0 +1,39 @@
+#solostuffgenerator {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: calc(100vw - 224px);
+  height: 100vh;
+  overflow: hidden;
+  display: none;
+
+  #solostuffgenerator_background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: calc(100vw - 224px);
+    height: 100vh;
+    background-image: url('../../../../../img/ui/tools/stuffgenerator/stuffgenerator_background.jpg');
+    background-size: 100vw 100vh;
+    background-repeat: no-repeat;
+    z-index: 1;
+  }
+
+  #solostuffgenerator_content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: calc(100vw - 224px);
+    height: calc(100vh - 79px);
+    margin-top: 79px;
+    text-align: center;
+    z-index: 2;
+
+    @import "solostuffgenerator/header";
+    @import "solostuffgenerator/select";
+    @import "solostuffgenerator/player";
+    @import "solostuffgenerator/stuff";
+    @import "solostuffgenerator/champselector";
+    @import "solostuffgenerator/actions";
+  }
+}
