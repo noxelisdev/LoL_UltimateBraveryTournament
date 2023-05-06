@@ -6,48 +6,26 @@
         </div>
 
         <div id="patchnotes">
-            <div id="patchnotes_title">NOTES DE PATCH 2.1.0</div>
-            <div id="patchnotes_postdata">INFINITY_54 - <strong>23/03/2023</strong></div>
+            <div id="patchnotes_title">NOTES DE PATCH 2.2.0</div>
+            <div id="patchnotes_postdata">INFINITY_54 - <strong>06/05/2023</strong></div>
             <div id="patchnotes_content">
-                <p><i class="patchnotes_quotestart"></i> Un mois pile après la sortie de la première version, première mise à jour de l'application pour y ajouter un nouvel outil ! <i class="patchnotes_quoteend"></i></p>
-                <ul>
-                    <li>Création d'un nouvel outil : le générateur de stuff aléatoire solo (même principe que le générateur de stuff aléatoire pour une équipe, mais pour un seul joueur)</li>
-                    <li>Ajout des listes déroulantes de sélection (utilisée pour la sélection du poste dans le générateur de stuff aléatoire solo)</li>
-                </ul>
-                <br />
-                <p><i class="patchnotes_quotestart"></i> Les notes de ce patch sont assez courtes, mais en même temps, pas grand chose à dire de plus. Du coup, pour le moment, je conserve les notes de patch de la version 2.0.0, qui sont disponibles ci-dessous ! <i class="patchnotes_quoteend"></i></p>
-                <p class="patchnotes_sectiontitle">MISES À JOUR DE MI-PATCH (2.0.1)</p>
-                <p>
-                    16/03/2023 : Mise à jour corrective pour l'application
-                    <ul>
-                        <li>Résolution d'une faille de sécurité détectée dans les outils de développement <span style="font-size: 9px;"><em>(ils ne sont pas inclus dans la version de production de toute façon)</em></span></li>
-                        <li>Ajout de la date de sortie du patch 2.0.0, oubliée lors de la sortie.</li>
-                        <li>Amélioration de l'affichage des notes de patch de l'application.</li>
-                        <li>Prise en charge du dépassement de la fenêtre pour les notes de patch.</li>
-                        <li>Correction de la disposition de l'interface du générateur de stuff aléatoire.</li>
-                    </ul>
-                </p>
+                <p><i class="patchnotes_quotestart"></i> 2 mois après la dernière mise à jour du programme, nouvelle mise à jour, cette fois-ci en vue du prochain tournoi Ultimate Bravery (qui est en cours, si ce message est visible 🥳). Le but de cette mise à jour est surtout de rendre le programme plus pratique à utiliser. <i class="patchnotes_quoteend"></i></p>
                 <div class="patchnotes_separator"></div>
-                <p class="patchnotes_sectiontitle">DÉTAIL DU PATCH ORIGINAL (2.0.0)</p>
-                <p><i class="patchnotes_quotestart"></i> Ouaaaaaaaaaaaaaaaaaaaaah mais que c'est beau ici ! On dirait que le programme a subi un petit lifting. 😁<br />J'ai profité du fait de refaire la quasi-totalité du code pour modifier le fonctionnement du programme, surtout grâce à la nouvelle apparence graphique. Cassiopeia reçoit aussi une petite aide supplémentaire, en raison de son impossibilité à acheter des bottes dans la boutique, ce qui n'était pas encore géré. <i class="patchnotes_quoteend"></i></p>
+                <p class="patchnotes_sectiontitle">MODIFICATION DU FONCTIONNEMENT DU SYSTÈME DE MISE À JOUR</p>
+                <p>
+                    <i class="patchnotes_quotestart"></i> Quand j'ai créé ce programme, le système de mise à jour a été programmé pour s'exécuter au moment où vous arrivez dans la reproduction du client. Le but, c'était de pouvoir utiliser le bruitage et l'animation que vous voyez en haut à gauche du client, à côté du logo du jeu, quand une mise à jour du jeu est disponible. <small>Attention, la suite est un peu plus technique (mais ça reste compréhensible).</small>
+                    <br />
+                    Le problème qui se posait, c'est que le programme a besoin, pour fonctionner, de traiter toutes les données du jeu (notamment les champions) avant que le programme ne soit réellement utilisable. Sinon, sans ça, certaines parties du programme (notamment les fenêtres de sélection d'un champion sur les outils de génération de stuffs) sont partiellement disponibles et, du coup, certains champions ne sont disponibles qu'après plusieurs minutes d'initialisation.
+                    <br />
+                    Pour régler ce problème, le système de mise à jour a été déplacé, et s'exécute maintenant dès le démarrage du programme, avant l'initialisation des données. Ce qui permet au programme d'être plus rapidement opérationnel, puisque qu'il n'est plus nécessaire de passer 2 fois par l'initialisation complète du programme. <i class="patchnotes_quoteend"></i>
+                </p>
+                <p class="patchnotes_sectiontitle">AUTRES MODIFICATIONS</p>
+                <p><i class="patchnotes_quotestart"></i> Le fait d'avoir modifié le comportement du système de mise à jour implique que certains fichiers, notamment liées aux sons et aux animations, ne sont plus utilisés. Du coup, ils ont été supprimés pour permettre d'alléger encore un peu le programme. <i class="patchnotes_quoteend"></i></p>
                 <ul>
-                    <li>Refonte graphique complète de l'application <span style="font-size: 9px;"><em>(mais ça, j'imagine que vous aviez deviné ! coucou client de LoL 🙂)</em></span></li>
-                    <li>Ajout d'une section dédiée aux paramètres de l'application, notamment pour activer/désactiver les sons de l'application</li>
-                    <li>Ajout d'un système de mise à jour automatique</li>
-                    <li>Ajout d'un statut de service (comme sur LoL, le petit point d'exclamation bleu/jaune/rouge, mais promis, il sera généralement absent !)</li>
-                    <li>Ajout d'une bulle affichant le nom du champion au survol dans le générateur de stuff et dans le générateur de liste</li>
-                    <li>Ajout d'une bulle affichant le nom des colonnes au survol de leurs icônes dans le générateur de stuff</li>
-                    <li>Ajout d'une bulle affichant le nom d'un item au survol dans le générateur de stuff</li>
-                    <li>Ajout d'une bulle affichant le nom du pouvoir principal d'un champion dans le générateur de stuff</li>
-                    <li>Ajout d'une bulle affichant le nom d'une rune au survol dans le générateur de stuff</li>
-                    <li>Prise en charge de Cassiopeia pour la génération du stuff, qui ne peut pas acheter de bottes in-game (les bottes sont remplacées par un item légendaire supplémentaire, et la rune "Chaussures magiques" peut toujours être sélectionnée par le générateur pour que le jeu choisisse lui-même une rune de remplacement)</li>
-                    <li>Amélioration des performances globales de l'application et des outils</li>
-                    <li>La possibilité de remplacer manuellement un objet légendaire d'un stuff généré a été étendue à tous les autres items (le type de l'objet reste pris en compte : des bottes seront remplacées par des bottes, un item jungle par un autre item jungle, et ainsi de suite)</li>
-                    <li>Correction des problèmes de ralentissement pendant l'exécution des différents outils</li>
-                    <li>Correction de problèmes lors de la récupération des spells d'un champion enregistré avec un identifiant différent de son nom dans les fichiers de Riot (exemples : Aurelion Sol/AurelionSol, Maître Yi/MasterYi ou encore Wukong/MonkeyKing).</li>
+                    <li>Suppression du bruitage signalant la fin de la mise à jour</li>
+                    <li>Suppression des vidéos correspondantes à l'animation de la barre de progression de la mise à jour du client <small>(qui était utilisée sur le bouton "Outils" en haut à gauche de la fenêtre)</small></li>
+                    <li>Remplacement du terme "Installation" par "Préparation" dans le système de mise à jour, puisque l'installation n'intervient en réalité qu'à la fermeture du programme</li>
                 </ul>
-                <br />
-                <p><i class="patchnotes_quotestart"></i> Malgré la refonte graphique du programme, le fonctionnement des outils ne change pas réellement, même s'il y a quand même quelques différences à cause des modifications apportées à l'interface. <i class="patchnotes_quoteend"></i></p>
             </div>
         </div>
     </div>

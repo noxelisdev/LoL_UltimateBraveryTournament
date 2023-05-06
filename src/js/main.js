@@ -29,11 +29,9 @@ const createWindow = () => {
     center: true,
     show: false,
     webPreferences: {
-      preload: MAIN_WINDOW_PRELOAD_WEBPACK_ENTRY,
-      devTools: true
+      preload: MAIN_WINDOW_PRELOAD_WEBPACK_ENTRY
     }
   });
-  mainWindow.webContents.openDevTools();
 
   mainWindow.loadURL(MAIN_WINDOW_WEBPACK_ENTRY);
 
