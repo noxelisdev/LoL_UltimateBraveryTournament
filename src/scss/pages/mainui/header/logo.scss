@@ -28,23 +28,6 @@
       z-index: 1;
     }
 
-    #league_header_lobbybuttonvideo_updateprogressoverlay_container {
-      position: absolute;
-      top: 13px;
-      left: 15px;
-      width: 122px;
-      height: 32px;
-      z-index: 2;
-      -webkit-mask-box-image: url("../../../../../img/ui/mainui/header/lobby_button_progress_mask.png");
-      overflow: hidden;
-
-      #league_header_lobbybuttonvideo_updateprogressoverlay {
-        width: 0;
-        height: 32px;
-        object-fit: none;
-      }
-    }
-
     #league_header_lobbybuttonvideo_updateprogressborderoverlay {
       position: absolute;
       top: -1px;

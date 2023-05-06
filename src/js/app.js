@@ -1,4 +1,8 @@
 import { getAppVersion, getLeagueCurrentVersion, initChampionsData, initRunesData, initItemsData, initSummonersData } from "./pages/startup";
+import {playSound} from "./common/audio";
+import { movLeagueLobbyButtonHoverLoop } from "./common/movies";
+const startupText = jQuery("#startup_progresstext");
+const startupProgress = jQuery("#startup_progress");
 
 window.leagueOfLegends = {
   champions: null,
@@ -81,12 +85,7 @@ window.appSettings = {
 window.appApi.appMainFormIsReady((event) => {
   // Timeout pour permettre à la fenêtre de charger avant de démarrer le chargement de l'app
   setTimeout(() => {
-    getAppVersion();
-    getLeagueCurrentVersion();
-    initChampionsData();
-    initRunesData();
-    initItemsData();
-    initSummonersData();
+    window.appApi.readyForUpdate();
   }, 1000);
 });
 
@@ -100,4 +99,27 @@ window.appApi.updateSettings((event, args) => {
   if (!window.appSettings.soundEnabled) {
     jQuery("#settings_audio_enablesound_input").removeAttr("checked");
   }
+});
+
+window.updaterAPI.noUpdateAvailable((event) => {
+  startupText.text("CHARGEMENT...");
+
+  getAppVersion();
+  getLeagueCurrentVersion();
+  initChampionsData();
+  initRunesData();
+  initItemsData();
+  initSummonersData();
+});
+
+window.updaterAPI.updateAvailable((event, args) => {
+  startupText.text("TÉLÉCHARGEMENT DE LA MISE À JOUR...");
+});
+
+window.updaterAPI.updateDownloading((event, args) => {
+  startupProgress.css("width", args.percent + "%");
+});
+
+window.updaterAPI.updateDownloaded((event) => {
+  startupText.text("PRÉPARATION DE LA MISE À JOUR...");
 });

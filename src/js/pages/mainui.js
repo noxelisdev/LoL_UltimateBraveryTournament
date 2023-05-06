@@ -1,11 +1,9 @@
 import { playSound } from "../common/audio";
-import { sndStartupFinished, sndPatcherFinished } from "../common/sounds";
+import { sndStartupFinished } from "../common/sounds";
 import { sndPlayButtonHover, sndPlayButtonClick } from "../common/sounds";
 import { sndMenuItemClick } from "../common/sounds";
-import { movLeagueLogoIntro, movLeagueLogoLoop } from "../common/movies";
-import { movLeagueLobbyButtonRelease, movLeagueLobbyButtonIntro, movLeagueLobbyButtonProgressBorderLoop } from "../common/movies";
-import { movLeagueLobbyButtonProgressMainLoop } from "../common/movies";
-import { movLeagueLobbyButtonHoverLoop } from "../common/movies";
+import { movLeagueLogoIntro, movLeagueLogoLoop, movLeagueLobbyButtonIntro } from "../common/movies";
+import { movLeagueLobbyButtonRelease, movLeagueLobbyButtonHoverLoop } from "../common/movies";
 import { initHomepage } from "./mainui/content/homepage";
 import { initToolSelector } from "./mainui/content/toolselector";
 
@@ -15,9 +13,7 @@ const windowClose = jQuery("#windowbutton_exit");
 const leagueLogoPlayer = jQuery("#league_header_logo");
 const leagueLobbyButton = jQuery("#league_header_lobbybutton");
 const leagueLobbyButtonPlayer = jQuery("#league_header_lobbybuttonvideo");
-const leagueLobbyButtonPlayerProgressOverlay = jQuery("#league_header_lobbybuttonvideo_updateprogressoverlay");
 const leagueLobbyButtonPlayerBorderProgressOverlay = jQuery("#league_header_lobbybuttonvideo_updateprogressborderoverlay");
-const leagueLobbyButtonText = jQuery("#league_header_lobbybuttontext");
 const toolSelectorPage = jQuery("#toolselector");
 const champListGenerator = jQuery("#champlistgenerator");
 const stuffGenerator = jQuery("#stuffgenerator");
@@ -33,52 +29,11 @@ function initMainUi() {
   leagueLobbyButtonPlayer.attr("src", movLeagueLobbyButtonIntro);
   leagueLobbyButtonPlayer[0].play();
 
-  leagueLobbyButtonPlayerProgressOverlay.attr("src", movLeagueLobbyButtonProgressMainLoop);
-  leagueLobbyButtonPlayerProgressOverlay[0].loop  = true;
-  leagueLobbyButtonPlayerProgressOverlay[0].play();
-
-  leagueLobbyButtonPlayerBorderProgressOverlay.attr("src", movLeagueLobbyButtonProgressBorderLoop);
-  leagueLobbyButtonPlayerBorderProgressOverlay[0].loop  = true;
-  leagueLobbyButtonPlayerBorderProgressOverlay[0].play();
-
   changeMenuArrowPosition();
   initHomepage();
   initToolSelector();
-
-  window.appApi.readyForUpdate();
+  enableLobbyButtonMouseReact();
 }
-
-window.updaterAPI.noUpdateAvailable((event) => {
-  playSound(sndPatcherFinished);
-  leagueLobbyButtonPlayerProgressOverlay.fadeOut(500);
-  leagueLobbyButtonPlayerBorderProgressOverlay.fadeOut(500);
-  leagueLobbyButtonText.text("OUTILS");
-  leagueLobbyButtonText.css("font-size", "14px");
-
-  setTimeout(() => {
-    leagueLobbyButtonPlayerBorderProgressOverlay.css("top", "0px");
-    leagueLobbyButtonPlayerBorderProgressOverlay.css("left", "0px");
-    leagueLobbyButtonPlayerBorderProgressOverlay.css("width", "146px");
-    leagueLobbyButtonPlayerBorderProgressOverlay.attr("src", movLeagueLobbyButtonHoverLoop);
-    leagueLobbyButtonPlayerBorderProgressOverlay[0].loop = true;
-    leagueLobbyButtonPlayerBorderProgressOverlay[0].play();
-    enableLobbyButtonMouseReact();
-  }, 500);
-});
-
-window.updaterAPI.updateAvailable((event, args) => {
-  leagueLobbyButtonText.text("TÉLÉCHARGEMENT");
-  leagueLobbyButtonText.css("font-size", "11.5px");
-});
-
-window.updaterAPI.updateDownloading((event, args) => {
-  jQuery("#league_header_lobbybuttonvideo_updateprogressoverlay").css("width", (122 * (args.percent / 100)) + "px");
-});
-
-window.updaterAPI.updateDownloaded((event) => {
-  leagueLobbyButtonText.text("INSTALLATION");
-  leagueLobbyButtonText.css("font-size", "14px");
-});
 
 document.getElementById("league_header_logo").addEventListener('ended', () => {
   leagueLogoPlayer.attr("src", movLeagueLogoLoop);
