@@ -50,6 +50,4 @@ Il est également possible de configurer l'IDE [_WebStorm_](https://www.jetbrain
 
 ## Compilation et publication
 
-La commande `yarn make` permet de compiler l'application, et la commande `yarn publish` permet d'envoyer le résultat de la compilation directement sur GitHub, dans une nouvelle release.
-
-La release sera enregistrée en tant que brouillon, permettant d'y remplir les différents éléments (titre, tag, changelog, etc...) avant sa publication.
+La commande `yarn make` permet de compiler l'application. Le résultat de cette compilation devra être envoyée manuellement sur GitHub et le FTP du serveur de téléchargement.
