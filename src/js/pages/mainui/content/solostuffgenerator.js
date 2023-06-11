@@ -420,7 +420,7 @@ async function determineMainSpell(lane, selectedChampId) {
 
   switch (selectedChampSpellNumber) {
     default:
-      selectedChampSpellLetter = "Q";
+      selectedChampSpellLetter = "A";
       break;
     case 1:
       selectedChampSpellLetter = "Z";
