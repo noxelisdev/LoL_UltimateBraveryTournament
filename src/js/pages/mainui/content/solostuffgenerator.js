@@ -413,6 +413,7 @@ async function generateSummoners(lane) {
 }
 
 async function determineMainSpell(lane, selectedChampId) {
+  selectedChampId = selectedChampId.replace("FiddleSticks", "Fiddlesticks");
   const championData = window.leagueOfLegends.champions[selectedChampId];
   const selectedChampSpellNumber = Math.floor(Math.random() * 3); // R excluded from possible spells
   let selectedChampSpellLetter;
