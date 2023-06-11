@@ -58,6 +58,8 @@
       transform: translate(-50%, -50%);
       z-index: 999;
 
+      @import "../../../../ui/scrollbar";
+
       div {
         flex: 0 0 80px;
         width: 80px;

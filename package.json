@@ -1,7 +1,7 @@
 {
   "name": "fr.infinity54.lol_ultimatebraverytournament",
   "productName": "Gestionnaire de tournoi Ultimate Bravery",
-  "version": "2.2.0",
+  "version": "2.2.1",
   "description": "App used to manage more easily and quickly any Ultimate Bravery Tournament for League of Legends.",
   "license": "CC-BY-SA-4.0",
   "main": ".webpack/main",

@@ -4,6 +4,8 @@ import { enableChampSelectorClickEvent } from "./mainui/content/stuffgenerator";
 import { enableSoloChampSelectorClickEvent } from "./mainui/content/solostuffgenerator";
 
 const startupProgress = jQuery("#startup_progress");
+const stuffGeneratorChampSelectorList = jQuery("#stuffgenerator_champselector_content");
+const soloStuffGeneratorChampSelectorList = jQuery("#solostuffgenerator_champselector_content");
 const startupInitializationStepsNumber = 6;
 let appInitializationProgress = 0;
 let appInitializationProgressChangeHandler = setInterval(() => {
@@ -143,19 +145,24 @@ async function initChampionsData() {
           }
         }
 
-        // Champion selector list
+        // Champion selector lists
         await window.ddragonApi.getImageB64FromUrl({
           url: "https://leaguestats.infinity54.fr/riot/lol/img/champion/tiles/" + currentChampionValue.id + "_0.jpg",
           mime: "image/png"
         })
           .then((image) => {
-            const champDiv = jQuery("<div>")
+            const stuffChampDiv = jQuery("<div>")
               .css("background-image", "url('" + image + "')")
               .attr("data-value", currentChampionValue.id)
               .attr("data-tippy-content", currentChampionValue.name);
+            stuffGeneratorChampSelectorList.append(stuffChampDiv);
 
-            champDiv.appendTo(jQuery("#stuffgenerator_champselector_content"));
-            champDiv.appendTo(jQuery("#solostuffgenerator_champselector_content"));
+            const soloStuffChampDiv = jQuery("<div>")
+              .css("background-image", "url('" + image + "')")
+              .attr("data-value", currentChampionValue.id)
+              .attr("data-tippy-content", currentChampionValue.name);
+            soloStuffGeneratorChampSelectorList.append(soloStuffChampDiv);
+
             appInitializationProgress += (100 / startupInitializationStepsNumber) / championsListKeys.length;
           })
           .catch((error) => {
