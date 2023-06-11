@@ -38,7 +38,6 @@ const createWindow = () => {
   if (!isInProdMode) {
     mainWindow.webContents.openDevTools();
   }
-  mainWindow.webContents.openDevTools();
 
   mainWindow.webContents.on('did-finish-load', function() {
     mainWindow.show();
