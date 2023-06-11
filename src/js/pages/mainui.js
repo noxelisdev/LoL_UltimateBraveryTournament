@@ -17,6 +17,7 @@ const leagueLobbyButtonPlayerBorderProgressOverlay = jQuery("#league_header_lobb
 const toolSelectorPage = jQuery("#toolselector");
 const champListGenerator = jQuery("#champlistgenerator");
 const stuffGenerator = jQuery("#stuffgenerator");
+const soloStuffGenerator = jQuery("#solostuffgenerator");
 
 function initMainUi() {
   jQuery("#titlebar").remove();
@@ -106,6 +107,10 @@ function returnToMainUi() {
 
   if (stuffGenerator.is(":visible")) {
     stuffGenerator.fadeOut(500);
+  }
+
+  if (soloStuffGenerator.is(":visible")) {
+    soloStuffGenerator.fadeOut(500);
   }
 
   jQuery("#homepage").fadeIn(500);
