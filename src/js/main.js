@@ -159,12 +159,6 @@ app.on('ready', () => {
         submenu: [
           { role: 'about' },
           { type: 'separator' },
-          { role: 'services' },
-          { type: 'separator' },
-          { role: 'hide' },
-          { role: 'hideOthers' },
-          { role: 'unhide' },
-          { type: 'separator' },
           { role: 'quit' }
         ]
       }
