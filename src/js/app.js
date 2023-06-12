@@ -1,6 +1,13 @@
-import { getAppVersion, getLeagueCurrentVersion, initChampionsData, initRunesData, initItemsData, initSummonersData } from "./pages/startup";
-import {playSound} from "./common/audio";
-import { movLeagueLobbyButtonHoverLoop } from "./common/movies";
+import {
+  getAppVersion,
+  getLeagueCurrentVersion,
+  initChampionsData,
+  initRunesData,
+  initItemsData,
+  initSummonersData,
+  enableAppInitialization
+} from "./pages/startup";
+
 const startupText = jQuery("#startup_progresstext");
 const startupProgress = jQuery("#startup_progress");
 
@@ -103,6 +110,8 @@ window.appApi.updateSettings((event, args) => {
 
 window.updaterAPI.noUpdateAvailable((event) => {
   startupText.text("CHARGEMENT...");
+
+  enableAppInitialization();
 
   getAppVersion();
   getLeagueCurrentVersion();

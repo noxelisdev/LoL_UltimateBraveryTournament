@@ -8,26 +8,30 @@ const stuffGeneratorChampSelectorList = jQuery("#stuffgenerator_champselector_co
 const soloStuffGeneratorChampSelectorList = jQuery("#solostuffgenerator_champselector_content");
 const startupInitializationStepsNumber = 6;
 let appInitializationProgress = 0;
-let appInitializationProgressChangeHandler = setInterval(() => {
-  startupProgress.css("width", appInitializationProgress + "%");
+let appInitializationProgressChangeHandler;
 
-  if (appInitializationProgress > 100) {
-    appInitializationProgress = 100;
-  }
+function enableAppInitialization() {
+    appInitializationProgressChangeHandler = setInterval(() => {
+        startupProgress.css("width", appInitializationProgress + "%");
 
-  if (Math.round(appInitializationProgress) === 100) {
-    clearInterval(appInitializationProgressChangeHandler);
-    sortChampionHighlightSkins();
-    sortChampionSelectorList();
-    enableChampSelectorClickEvent();
-    enableSoloChampSelectorClickEvent();
-    tippy('[data-tippy-content]', { theme: 'lol', arrow: true });
+        if (appInitializationProgress > 100) {
+            appInitializationProgress = 100;
+        }
 
-    setTimeout(() => {
-      initMainUi();
-    }, 500);
-  }
-}, 200);
+        if (Math.round(appInitializationProgress) === 100) {
+            clearInterval(appInitializationProgressChangeHandler);
+            sortChampionHighlightSkins();
+            sortChampionSelectorList();
+            enableChampSelectorClickEvent();
+            enableSoloChampSelectorClickEvent();
+            tippy('[data-tippy-content]', { theme: 'lol', arrow: true });
+
+            setTimeout(() => {
+                initMainUi();
+            }, 500);
+        }
+    }, 200);
+}
 
 function sortChampionHighlightSkins() {
   const skinsList = jQuery('#championhighlight_skins');
@@ -285,4 +289,4 @@ function initSummonersData() {
     });
 }
 
-export { getAppVersion, getLeagueCurrentVersion, initChampionsData, initRunesData, initItemsData, initSummonersData }
+export { getAppVersion, getLeagueCurrentVersion, initChampionsData, initRunesData, initItemsData, initSummonersData, enableAppInitialization }
