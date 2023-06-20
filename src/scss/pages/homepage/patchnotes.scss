@@ -1,0 +1,90 @@
+#patchnotes {
+  width: 100%;
+  margin-top: 24px;
+  padding-left: 36px;
+
+  #patchnotes_title {
+    margin-right: 36px;
+    font-family: 'Beaufort for LoL';
+    font-weight: 700;
+    font-size: 26px;
+    color: #f0e6d2;
+  }
+
+  #patchnotes_postdata {
+    margin-top: -5px;
+    margin-right: 36px;
+    font-family: 'Spiegel';
+    font-size: 13px;
+    color: #a09684;
+  }
+
+  #patchnotes_content {
+    font-family: 'Spiegel';
+    font-size: 13px;
+    color: #f0e6d2;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-right: 36px;
+    max-height: 533px;
+    overflow-x: hidden;
+    overflow-y: scroll;
+
+    &::-webkit-scrollbar {
+      width: 6px;
+    }
+
+    &::-webkit-scrollbar-track {
+      background: transparent;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background: #785a28;
+      border-radius: 20px;
+    }
+
+    &::-webkit-scrollbar-thumb:hover {
+      background: #c8aa6e;
+    }
+
+    &::-webkit-scrollbar-thumb:active {
+      background: #463714;
+    }
+
+    .patchnotes_quotestart, .patchnotes_quoteend {
+      display: inline-block;
+      width: 18px;
+      height: 14px;
+      vertical-align: middle;
+    }
+
+    .patchnotes_quotestart {
+      background-image: url('../../../../img/pages/homepage/patchnotes/patchnotes_quotestart.png');
+      background-position: center center;
+      background-size: 100% 100%;
+      background-repeat: no-repeat;
+    }
+
+    .patchnotes_quoteend {
+      background-image: url('../../../../img/pages/homepage/patchnotes/patchnotes_quoteend.png');
+      background-position: center center;
+      background-size: 100% 100%;
+      background-repeat: no-repeat;
+    }
+
+    .patchnotes_separator {
+      width: 100%;
+      height: 2px;
+      background-color: rgb(36, 44, 54);
+      margin-top: 8px;
+      margin-bottom: 8px;
+    }
+
+    .patchnotes_sectiontitle {
+      font-family: 'Beaufort for LoL';
+      font-weight: 700;
+      font-size: 14px;
+      color: rgb(208, 168, 92);
+    }
+  }
+}

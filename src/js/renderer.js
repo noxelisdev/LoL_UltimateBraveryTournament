@@ -3,11 +3,10 @@ import '../scss/app.scss';
 
 // JS
 import "./app";
-import "./pages/mainui";
-import "./pages/mainui/content/homepage";
-import "./pages/mainui/content/toolselector";
-import "./pages/mainui/content/champlistgenerator";
-import "./pages/mainui/content/solostuffgenerator";
-import "./pages/mainui/content/stuffgenerator";
-import "./pages/settings";
-import "./pages/status";
+import "./popups/settings";
+import "./popups/status";
+import "./pages/homepage";
+import "./pages/toolselector";
+import "./tools/champlistgenerator";
+import "./tools/solostuffgenerator";
+import "./tools/stuffgenerator";

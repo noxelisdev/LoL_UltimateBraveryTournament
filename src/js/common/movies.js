@@ -1,19 +1,21 @@
-import movLeagueLogoIntro from '../../../mov/mainui/league_logo/league-logo-intro.webm';
-import movLeagueLogoLoop from '../../../mov/mainui/league_logo/league-logo-loop-idle.webm';
+import movLeagueLogoIntro from '../../../mov/league_logo/league-logo-intro.webm';
+import movLeagueLogoLoop from '../../../mov/league_logo/league-logo-loop-idle.webm';
 
-import movLeagueLobbyButtonHoverLoop from '../../../mov/mainui/lobby_button/lobby-button-hover-loop.webm';
-import movLeagueLobbyButtonIntro from '../../../mov/mainui/lobby_button/lobby-button-intro.webm';
-import movLeagueLobbyButtonRelease from '../../../mov/mainui/lobby_button/lobby-button-release.webm';
+import movLeagueLobbyButtonHoverLoop from '../../../mov/lobby_button/lobby-button-hover-loop.webm';
+import movLeagueLobbyButtonIntro from '../../../mov/lobby_button/lobby-button-intro.webm';
+import movLeagueLobbyButtonRelease from '../../../mov/lobby_button/lobby-button-release.webm';
 
-import movHomepageBackground from '../../../mov/homepage/background_ambient.webm';
+import movHomepageBackground from '../../../mov/homepage_background.webm';
 
-import movToolSelectorBackground from '../../../mov/toolselector/background_loop.webm';
-import movToolSelectorChampListGeneratorButtonActiveLoop from '../../../mov/toolselector/buttons/champlistselector/tutorial-active-video.webm';
-import movToolSelectorChampListGeneratorButtonActiveIntro from '../../../mov/toolselector/buttons/champlistselector/tutorial-intro-video.webm';
-import movToolSelectorStuffGeneratorButtonActiveLoop from '../../../mov/toolselector/buttons/stuffgenerator/battletraining-active-video.webm';
-import movToolSelectorStuffGeneratorButtonActiveIntro from '../../../mov/toolselector/buttons/stuffgenerator/battletraining-intro-video.webm';
+import movToolSelectorBackground from '../../../mov/toolselector/toolselector_background.webm';
+import movToolSelectorChampListGeneratorButtonActiveLoop from '../../../mov/toolselector/buttons/champlistselector/champlistselector_loop.webm';
+import movToolSelectorChampListGeneratorButtonActiveIntro from '../../../mov/toolselector/buttons/champlistselector/champlistselector_intro.webm';
+import movToolSelectorStuffGeneratorButtonActiveLoop from '../../../mov/toolselector/buttons/stuffgenerator/stuffgenerator_loop.webm';
+import movToolSelectorStuffGeneratorButtonActiveIntro from '../../../mov/toolselector/buttons/stuffgenerator/stuffgenerator_intro.webm';
 
-export { movLeagueLogoIntro, movLeagueLogoLoop, movLeagueLobbyButtonRelease, movLeagueLobbyButtonIntro,
-  movLeagueLobbyButtonHoverLoop, movHomepageBackground, movToolSelectorBackground,
-  movToolSelectorChampListGeneratorButtonActiveLoop, movToolSelectorChampListGeneratorButtonActiveIntro,
-  movToolSelectorStuffGeneratorButtonActiveLoop, movToolSelectorStuffGeneratorButtonActiveIntro };
+export {
+    movLeagueLogoIntro, movLeagueLogoLoop, movLeagueLobbyButtonHoverLoop, movLeagueLobbyButtonIntro,
+    movLeagueLobbyButtonRelease, movHomepageBackground, movToolSelectorBackground,
+    movToolSelectorChampListGeneratorButtonActiveIntro, movToolSelectorChampListGeneratorButtonActiveLoop,
+    movToolSelectorStuffGeneratorButtonActiveIntro, movToolSelectorStuffGeneratorButtonActiveLoop
+};

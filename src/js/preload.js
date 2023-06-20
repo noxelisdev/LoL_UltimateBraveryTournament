@@ -24,9 +24,3 @@ contextBridge.exposeInMainWorld('appApi', {
   updateSettings: (response) => ipcRenderer.on('updateSettings', (response)),
   saveSettings: (args) => ipcRenderer.invoke('saveSettings', args)
 });
-
-// Data Dragon API
-contextBridge.exposeInMainWorld('ddragonApi', {
-  getJsonFromUrl: (args) => ipcRenderer.invoke('getJsonFromUrl', args),
-  getImageB64FromUrl: (args) => ipcRenderer.invoke('getImageB64FromUrl', args)
-});

@@ -14,7 +14,7 @@ module.exports = {
           config: './webpack.renderer.config.js',
           entryPoints: [
             {
-              html: './src/templates/index.html.twig',
+              html: './src/templates/app.html.twig',
               js: './src/js/renderer.js',
               name: 'main_window',
               preload: {

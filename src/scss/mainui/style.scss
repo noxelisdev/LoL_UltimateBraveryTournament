@@ -1,0 +1,76 @@
+#mainui {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 10;
+
+  #mainheader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 79px;
+    border-top: 2px solid #785a28;
+    border-bottom: 1px solid #424444;
+    z-index: 100;
+    app-region: drag;
+
+    #mainheader_content {
+      width: calc(100% - 224px);
+      height: 100%;
+      display: flex;
+
+      @import 'header/logo';
+      @import 'header/status';
+      @import 'header/menu';
+    }
+
+    #mainheader_sidebarcontent {
+      position: fixed;
+      top: 0;
+      left: calc(100vw - 224px);
+      width: 224px;
+      height: 79px;
+
+      @import 'header/sidebar';
+    }
+
+    @import 'header/windowbuttons';
+  }
+
+  #contentarea {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: calc(100vw - 224px);
+    height: 100vh;
+  }
+
+  #sidebararea {
+    position: fixed;
+    top: 0;
+    left: calc(100vw - 224px);
+    width: 224px;
+    height: 100vh;
+    background-color: #010a13;
+
+    @import "sidebar";
+
+    #appversion {
+      position: absolute;
+      top: 686px;
+      left: 0;
+      width: 100%;
+      height: 34px;
+      border-top: 1px solid #1e282d;
+      background-color: #010a13;
+      font-family: 'Beaufort for LoL';
+      font-size: 13px;
+      text-align: center;
+      line-height: 34px;
+      color: #3c3c41;
+    }
+  }
+}

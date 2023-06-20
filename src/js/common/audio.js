@@ -1,7 +1,11 @@
 function playSound(soundFile) {
   if (window.appSettings.soundEnabled) {
     const audioElement = new Audio(soundFile);
-    audioElement.play();
+    const audioPlaying = audioElement.play();
+
+    if (audioPlaying !== undefined) {
+      audioPlaying.then(_ => {}).catch(error => {});
+    }
 
     audioElement.addEventListener('ended', function() {
       this.remove();

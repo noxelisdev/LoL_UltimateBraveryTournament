@@ -1,10 +1,9 @@
 const { app, BrowserWindow, ipcMain, Menu } = require('electron');
 import { autoUpdater } from "electron-updater";
 const path = require('path');
-const https = require('https');
 const fs = require("fs");
 
-const isInProdMode = true;
+const isInProdMode = false;
 const settingsFilePath = path.join(app.getPath("userData"), "settings.json");
 
 // Handle creating/removing shortcuts on Windows when installing/uninstalling.
@@ -100,43 +99,6 @@ const createWindow = () => {
 
   ipcMain.handle('saveSettings', (event, args) => {
     fs.writeFileSync(settingsFilePath, args, { encoding: "utf-8" });
-  });
-
-  ipcMain.handle('getJsonFromUrl', (event, args) => {
-    return new Promise((resolve, reject) => {
-      https.get(args, (res) => {
-        let data = "";
-
-        res.on('data', function (chunk) {
-          data += chunk;
-        });
-
-        res.on('end', function () {
-          resolve(JSON.parse(data));
-        });
-      }).on('error', (err) => {
-        reject(err);
-      });
-    });
-  });
-
-  ipcMain.handle('getImageB64FromUrl', (event, args) => {
-    return new Promise((resolve, reject) => {
-      https.get(args.url, (res) => {
-        res.setEncoding('base64');
-        let body = "data:" + args.mime + ";base64,";
-
-        res.on('data', function (chunk) {
-          body += chunk;
-        });
-
-        res.on('end', function () {
-          resolve(body);
-        });
-      }).on('error', (err) => {
-        reject(err);
-      });
-    });
   });
 
   ipcMain.handle('getAppVersion', (event) => {

@@ -18,23 +18,3 @@ body {
     cursor: grabbing;
   }
 }
-
-#app_imageplaceholder {
-  display: none;
-
-  #toolselector_champlistgenerator_staticicon_default {
-    background-image: url('../../img/ui/toolselector/buttons/champlistgenerator/tutorial-default.png');
-  }
-
-  #toolselector_champlistgenerator_staticicon_hover {
-    background-image: url('../../img/ui/toolselector/buttons/champlistgenerator/tutorial-hover.png');
-  }
-
-  #toolselector_stuffgenerator_staticicon_default {
-    background-image: url('../../img/ui/toolselector/buttons/stuffgenerator/battletraining-default.png');
-  }
-
-  #toolselector_stuffgenerator_staticicon_hover {
-    background-image: url('../../img/ui/toolselector/buttons/stuffgenerator/battletraining-hover.png');
-  }
-}
