@@ -6,7 +6,8 @@ Application contenant plusieurs outils permettant de gérer plus facilement et p
 
 Actuellement, l'application contient les outils suivants :
 * Générateur d'une liste de champions aléatoires
-* Générateur d'un stuff complet
+* Générateur d'un stuff complet pour un joueur seul
+* Générateur d'un stuff complet pour une équipe complète
 
 ### Générateur d'une liste de champions aléatoires
 
@@ -17,16 +18,19 @@ Le générateur de liste de champions aléatoires permet de créer une liste de 
 
 ### Générateur d'un stuff complet
 
-Le générateur de stuff complet permet de générer, pour chaque personnage d'une équipe, une liste d'objets à acheter (dans l'ordre d'achat), les sorts d'invocateurs à jouer, ainsi que le spell du champion que vous devrez maxer en premier.
+Le générateur de stuff complet permet de générer une liste d'objets à acheter (dans l'ordre d'achat), les sorts d'invocateurs à jouer, ainsi que le spell du champion que vous devrez maxer en premier.
+
+Il existe deux versions de cet outil : une permettant de générer le stuff complet d'un seul joueur (en spécifiant le champion et le poste joué), et une autre permettant de générer le stuff complet de toute une équipe (top, jungle, mid, ADC et support).
 
 * La liste des objets ne pourra pas contenir deux fois le même objet pour un même joueur.
-* La liste des objets ne prend **pas** en compte les objets incompatibles. Il est cependant possible de regénérer un objet spécifique en cliquant dessus.
+* La liste des objets ne prend **PAS** en compte les objets incompatibles. Il est cependant possible de regénérer un objet en cliquant dessus.
 * La génération prend en compte le poste du joueur (voir plus bas).
 * Pour chaque joueur, l'outil génère des bottes, un objet mythique et 4 objets légendaires (dans cet ordre).
 
-Lors de la génération, vous devrez spécifier les différents champions de l'équipe, ainsi que leur poste.
-* Pour un joueur jouant support, l'outil lui attribuera l'un des objets de support, avant de lui générer le reste des objets.
-* Pour un joueur jouant jungle, l'outil lui attribuera l'un des objets de départ pour le poste de jungle, et lui attribuera automatiquement le sort d'invocateur Châtiment.
+Lors de la génération, le champion et le poste attribué au joueur (ou à chaque joueur dans le cas de la génération pour l'équipe) seront pris en compte de la façon suivante :
+* Pour un joueur jouant support, l'outil lui attribuera l'un des objets de support, avant de lui générer le reste des objets. Le nombre d'objets total ne dépassera pas 6 objets (objet support et bottes compris).
+* Pour un joueur jouant jungle, l'outil lui attribuera l'un des starters de jungle, avant de lui générer le reste des objets. Le nombre d'objets total sera de 7 objets (starter jungle et bottes compris), le starter disparaissant de l'inventaire pendant la partie.
+* Pour un joueur jouant jungle, l'outil lui attribuera automatiquement le sort d'invocateur Châtiment. Le nombre total de sorts d'invocateurs ne dépassera pas 2 sorts (Châtiment compris).
 
 ## Installation du projet
 
