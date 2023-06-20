@@ -7,6 +7,7 @@ import { movLeagueLogoLoop, movLeagueLobbyButtonIntro, movLeagueLobbyButtonHover
 import { movLeagueLobbyButtonRelease } from "./common/movies";
 import { initHomepage } from "./pages/homepage";
 import { initToolSelector } from "./pages/toolselector";
+import { resetChampListGenerator } from "./tools/champlistgenerator";
 
 const startupText = jQuery("#startup_progresstext");
 const startupProgress = jQuery("#startup_progress");
@@ -233,6 +234,7 @@ function returnToHomepage() {
 
   if (champListGenerator.is(":visible")) {
     champListGenerator.fadeOut(500);
+    resetChampListGenerator();
   }
 
   if (stuffGenerator.is(":visible")) {

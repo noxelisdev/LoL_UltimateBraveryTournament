@@ -30,6 +30,7 @@ returnButton.on("click", () => {
   playSound(sndToolCommonReturnButtonClick);
   jQuery("#champlistgenerator").fadeOut(500);
   jQuery("#toolselector").fadeIn(500);
+  resetChampListGenerator();
 });
 
 exitButton.on("mouseenter", () => {
@@ -89,4 +90,10 @@ startToolButtonContainer.on("click", async () => {
   }
 })
 
-export { initChampListGenerator }
+function resetChampListGenerator() {
+  setTimeout(() => {
+    jQuery("#champlistgenerator_generatedchamplist").empty();
+  }, 500);
+};
+
+export { initChampListGenerator, resetChampListGenerator }
