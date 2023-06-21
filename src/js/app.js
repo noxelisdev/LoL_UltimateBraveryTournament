@@ -9,6 +9,7 @@ import { initHomepage } from "./pages/homepage";
 import { initToolSelector } from "./pages/toolselector";
 import { resetChampListGenerator } from "./tools/champlistgenerator";
 import { resetSoloStuffGenerator } from "./tools/solostuffgenerator";
+import { resetStuffGenerator } from "./tools/stuffgenerator";
 
 const startupText = jQuery("#startup_progresstext");
 const startupProgress = jQuery("#startup_progress");
@@ -245,6 +246,7 @@ function returnToHomepage() {
 
   if (soloStuffGenerator.is(":visible")) {
     soloStuffGenerator.fadeOut(500);
+    resetStuffGenerator();
   }
 
   jQuery("#homepage").fadeIn(500);
