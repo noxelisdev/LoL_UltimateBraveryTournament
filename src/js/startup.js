@@ -59,7 +59,7 @@ function getAppVersion() {
     window.appApi.getAppVersion()
         .then((data) => {
             const appVersion = jQuery("#appversion");
-            appVersion.text(appVersion.text().replace("Version X.X.X", "Version " + data.substring(0, data.length - 5)));
+            appVersion.text(appVersion.text().replace("Version X.X.X", "Version " + data));
             appInitializationProgress += (100 / startupInitializationStepsNumber);
         })
         .catch((error) => {

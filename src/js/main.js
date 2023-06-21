@@ -3,7 +3,7 @@ import { autoUpdater } from "electron-updater";
 const path = require('path');
 const fs = require("fs");
 
-const isInProdMode = false;
+const isInProdMode = true;
 const settingsFilePath = path.join(app.getPath("userData"), "settings.json");
 
 // Handle creating/removing shortcuts on Windows when installing/uninstalling.
@@ -31,8 +31,6 @@ const createWindow = () => {
       preload: MAIN_WINDOW_PRELOAD_WEBPACK_ENTRY
     }
   });
-
-  mainWindow.loadURL(MAIN_WINDOW_WEBPACK_ENTRY);
 
   if (!isInProdMode) {
     mainWindow.webContents.openDevTools();
