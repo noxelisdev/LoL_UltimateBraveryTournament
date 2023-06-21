@@ -12,7 +12,7 @@ const startToolButtonContainer = jQuery("#champlistgenerator_starttoolbuttoncont
 
 function initChampListGenerator() {
   toolOptions_ChampionsNumber.attr("max", Object.keys(window.leagueData.champions).length);
-  toolOptions_ChampionsNumber.attr("value", 20);
+  toolOptions_ChampionsNumber.attr("value", 30);
   toolOptions_ChampionsNumber.trigger("input");
 }
 
