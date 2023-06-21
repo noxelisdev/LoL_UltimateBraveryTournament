@@ -13,6 +13,7 @@ let generationInProgress = false;
 
 playerChamp.on("click", (event) => {
   champSelectorContainer.show();
+  jQuery("#solostuffgenerator_champselector_search").focus();
 });
 
 returnButton.on("mouseenter", () => {
@@ -42,9 +43,26 @@ function enableSoloChampSelectorClickEvent() {
     playerChamp.attr("data-tippy-content", jQuery(event.target).attr("data-tippy-content"));
     playerChamp[0]._tippy.setContent(jQuery(event.target).attr("data-tippy-content"));
     champSelectorContainer.hide();
+    jQuery("#solostuffgenerator_champselector_search").val("").trigger("input");
     enableStartToolButton();
   });
 }
+
+jQuery("#solostuffgenerator_champselector_search").on("input", () => {
+  if (jQuery("#solostuffgenerator_champselector_search").val() !== "") {
+    jQuery("#solostuffgenerator_champselector_content div").each((index, item) => {
+      if (jQuery(item).attr("data-tippy-content").toLowerCase().indexOf(jQuery("#solostuffgenerator_champselector_search").val().toLowerCase()) !== -1) {
+        jQuery(item).show();
+      } else {
+        jQuery(item).hide();
+      }
+    })
+  } else {
+    jQuery("#solostuffgenerator_champselector_content div").each((index, item) => {
+      jQuery(item).show();
+    })
+  }
+});
 
 function enableStartToolButton() {
   if (

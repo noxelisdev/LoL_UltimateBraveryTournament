@@ -42,17 +42,35 @@
       background-color: #1e2328;
     }
 
+    #stuffgenerator_champselector_search {
+      position: absolute;
+      top: 72px;
+      left: 8px;
+      width: 725px;
+      padding: 7px 6px;
+      border: 1px solid;
+      border-image-slice: 1;
+      border-image-source: linear-gradient(180deg, #785a28, #785a28);
+      margin-top: 7px;
+      background: linear-gradient(180deg, #000306 0%, #000306 100%);
+      color: #acaaa6;
+      font-size: 12px;
+      font-family: 'Spiegel', serif;
+      font-weight: 600;
+      font-style: normal;
+      outline: none;
+    }
+
     #stuffgenerator_champselector_content {
       position: absolute;
-      top: 309px;
+      top: 328px;
       left: 370px;
       width: 725px;
-      height: 462px;
+      height: 425px;
       display: flex;
       gap: 10px;
       flex-wrap: wrap;
-      align-items: center;
-      justify-content: center;
+      align-content: start;
       overflow-x: hidden;
       overflow-y: auto;
       transform: translate(-50%, -50%);

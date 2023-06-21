@@ -14,6 +14,7 @@ let generationInProgress = false;
 jQuery(".stuffgenerator_player_champpict").on("click", (event) => {
   currentChampSelection = jQuery(event.target).attr('id');
   champSelectorContainer.show();
+  jQuery("#stuffgenerator_champselector_search").focus();
 });
 
 returnButton.on("mouseenter", () => {
@@ -45,9 +46,26 @@ function enableChampSelectorClickEvent() {
     currentChampSelectionElement[0]._tippy.setContent(jQuery(event.target).attr("data-tippy-content"));
     currentChampSelection = null;
     champSelectorContainer.hide();
+    jQuery("#stuffgenerator_champselector_search").val("").trigger("input");
     enableStartToolButton();
   });
 }
+
+jQuery("#stuffgenerator_champselector_search").on("input", () => {
+  if (jQuery("#stuffgenerator_champselector_search").val() !== "") {
+    jQuery("#stuffgenerator_champselector_content div").each((index, item) => {
+      if (jQuery(item).attr("data-tippy-content").toLowerCase().indexOf(jQuery("#stuffgenerator_champselector_search").val().toLowerCase()) !== -1) {
+        jQuery(item).show();
+      } else {
+        jQuery(item).hide();
+      }
+    })
+  } else {
+    jQuery("#stuffgenerator_champselector_content div").each((index, item) => {
+      jQuery(item).show();
+    })
+  }
+});
 
 function enableStartToolButton() {
   if (
