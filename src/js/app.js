@@ -8,6 +8,7 @@ import { movLeagueLobbyButtonRelease } from "./common/movies";
 import { initHomepage } from "./pages/homepage";
 import { initToolSelector } from "./pages/toolselector";
 import { resetChampListGenerator } from "./tools/champlistgenerator";
+import { resetSoloStuffGenerator } from "./tools/solostuffgenerator";
 
 const startupText = jQuery("#startup_progresstext");
 const startupProgress = jQuery("#startup_progress");
@@ -239,6 +240,7 @@ function returnToHomepage() {
 
   if (stuffGenerator.is(":visible")) {
     stuffGenerator.fadeOut(500);
+    resetSoloStuffGenerator();
   }
 
   if (soloStuffGenerator.is(":visible")) {

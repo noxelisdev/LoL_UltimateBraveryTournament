@@ -23,6 +23,7 @@ returnButton.on("click", () => {
   playSound(sndToolCommonReturnButtonClick);
   jQuery("#solostuffgenerator").fadeOut(500);
   jQuery("#toolselector").fadeIn(500);
+  resetSoloStuffGenerator();
 });
 
 exitButton.on("mouseenter", () => {
@@ -32,6 +33,7 @@ exitButton.on("mouseenter", () => {
 exitButton.on("click", () => {
   playSound(sndToolCommonExitButtonClick);
   returnToHomepage();
+  resetSoloStuffGenerator();
 });
 
 function enableSoloChampSelectorClickEvent() {
@@ -375,4 +377,96 @@ jQuery("#solostuffgenerator_playerlanecontainer .form_select_option").click((eve
   enableStartToolButton();
 });
 
-export { enableSoloChampSelectorClickEvent }
+function resetSoloStuffGenerator() {
+  setTimeout(() => {
+    // Champion
+    playerChamp.removeAttr("style");
+    playerChamp[0]._tippy.setContent("Indéterminé");
+    playerChamp.attr("data-tippy-content", "Indéterminé");
+
+    // Lane
+    jQuery("#solostuffgenerator_player_lane").removeClass("top");
+    jQuery("#solostuffgenerator_player_lane").removeClass("jungle");
+    jQuery("#solostuffgenerator_player_lane").removeClass("middle");
+    jQuery("#solostuffgenerator_player_lane").removeClass("adc");
+    jQuery("#solostuffgenerator_player_lane").removeClass("support");
+    jQuery("#solostuffgenerator_player_lane")[0]._tippy.setContent("Indéterminé");
+    jQuery("#solostuffgenerator_player_lane").attr("data-tippy-content", "Indéterminé");
+    jQuery("#solostuffgenerator_playerlane").attr("data-value", "unknown");
+    jQuery("#solostuffgenerator_playerlane").html("Inconnu");
+    jQuery("#form_select_optionsContainer .form_select_option").removeClass("selected");
+
+    // Runes
+    jQuery("#solostuffgenerator_player_rune1").removeAttr("style");
+    jQuery("#solostuffgenerator_player_rune2").removeAttr("style");
+    jQuery("#solostuffgenerator_player_rune3").removeAttr("style");
+    jQuery("#solostuffgenerator_player_rune4").removeAttr("style");
+    jQuery("#solostuffgenerator_player_rune5").removeAttr("style");
+    jQuery("#solostuffgenerator_player_rune6").removeAttr("style");
+    jQuery("#solostuffgenerator_player_rune7").removeAttr("style");
+    jQuery("#solostuffgenerator_player_rune8").removeAttr("style");
+    jQuery("#solostuffgenerator_player_rune9").removeAttr("style");
+    jQuery("#solostuffgenerator_player_rune1")[0]._tippy.setContent("Indéterminé");
+    jQuery("#solostuffgenerator_player_rune2")[0]._tippy.setContent("Indéterminé");
+    jQuery("#solostuffgenerator_player_rune3")[0]._tippy.setContent("Indéterminé");
+    jQuery("#solostuffgenerator_player_rune4")[0]._tippy.setContent("Indéterminé");
+    jQuery("#solostuffgenerator_player_rune5")[0]._tippy.setContent("Indéterminé");
+    jQuery("#solostuffgenerator_player_rune6")[0]._tippy.setContent("Indéterminé");
+    jQuery("#solostuffgenerator_player_rune7")[0]._tippy.setContent("Indéterminé");
+    jQuery("#solostuffgenerator_player_rune8")[0]._tippy.setContent("Indéterminé");
+    jQuery("#solostuffgenerator_player_rune9")[0]._tippy.setContent("Indéterminé");
+    jQuery("#solostuffgenerator_player_rune1").attr("data-tippy-content", "Indéterminé");
+    jQuery("#solostuffgenerator_player_rune2").attr("data-tippy-content", "Indéterminé");
+    jQuery("#solostuffgenerator_player_rune3").attr("data-tippy-content", "Indéterminé");
+    jQuery("#solostuffgenerator_player_rune4").attr("data-tippy-content", "Indéterminé");
+    jQuery("#solostuffgenerator_player_rune5").attr("data-tippy-content", "Indéterminé");
+    jQuery("#solostuffgenerator_player_rune6").attr("data-tippy-content", "Indéterminé");
+    jQuery("#solostuffgenerator_player_rune7").attr("data-tippy-content", "Indéterminé");
+    jQuery("#solostuffgenerator_player_rune8").attr("data-tippy-content", "Indéterminé");
+    jQuery("#solostuffgenerator_player_rune9").attr("data-tippy-content", "Indéterminé");
+
+    // Items
+    jQuery("#solostuffgenerator_player_item1").removeAttr("style");
+    jQuery("#solostuffgenerator_player_item2").removeAttr("style");
+    jQuery("#solostuffgenerator_player_item3").removeAttr("style");
+    jQuery("#solostuffgenerator_player_item4").removeAttr("style");
+    jQuery("#solostuffgenerator_player_item5").removeAttr("style");
+    jQuery("#solostuffgenerator_player_item6").removeAttr("style");
+    jQuery("#solostuffgenerator_player_item7").removeAttr("style");
+    jQuery("#solostuffgenerator_player_item1")[0]._tippy.setContent("Indéterminé");
+    jQuery("#solostuffgenerator_player_item2")[0]._tippy.setContent("Indéterminé");
+    jQuery("#solostuffgenerator_player_item3")[0]._tippy.setContent("Indéterminé");
+    jQuery("#solostuffgenerator_player_item4")[0]._tippy.setContent("Indéterminé");
+    jQuery("#solostuffgenerator_player_item5")[0]._tippy.setContent("Indéterminé");
+    jQuery("#solostuffgenerator_player_item6")[0]._tippy.setContent("Indéterminé");
+    jQuery("#solostuffgenerator_player_item7")[0]._tippy.setContent("Indéterminé");
+    jQuery("#solostuffgenerator_player_item1").attr("data-tippy-content", "Indéterminé");
+    jQuery("#solostuffgenerator_player_item2").attr("data-tippy-content", "Indéterminé");
+    jQuery("#solostuffgenerator_player_item3").attr("data-tippy-content", "Indéterminé");
+    jQuery("#solostuffgenerator_player_item4").attr("data-tippy-content", "Indéterminé");
+    jQuery("#solostuffgenerator_player_item5").attr("data-tippy-content", "Indéterminé");
+    jQuery("#solostuffgenerator_player_item6").attr("data-tippy-content", "Indéterminé");
+    jQuery("#solostuffgenerator_player_item7").attr("data-tippy-content", "Indéterminé");
+
+    // Summoners
+    jQuery("#solostuffgenerator_player_summoner1").removeAttr("style");
+    jQuery("#solostuffgenerator_player_summoner2").removeAttr("style");
+    jQuery("#solostuffgenerator_player_summoner1")[0]._tippy.setContent("Indéterminé");
+    jQuery("#solostuffgenerator_player_summoner2")[0]._tippy.setContent("Indéterminé");
+    jQuery("#solostuffgenerator_player_summoner1").attr("data-tippy-content", "Indéterminé");
+    jQuery("#solostuffgenerator_player_summoner2").attr("data-tippy-content", "Indéterminé");
+
+    // Main spell
+    jQuery("#solostuffgenerator_player_mainspell").removeAttr("style");
+    jQuery("#solostuffgenerator_player_mainspell")[0]._tippy.setContent("Indéterminé");
+    jQuery("#solostuffgenerator_player_mainspell").attr("data-tippy-content", "Indéterminé");
+    jQuery("#solostuffgenerator_player_mainspell_letter").html("?");
+
+    // Global
+    jQuery("#solostuffgenerator_starttoolbuttontext").html("GÉNÉRER LE STUFF");
+    jQuery("#solostuffgenerator_starttoolbuttoncontainer").addClass("solostuffgenerator_starttoolbuttondisabled");
+    enableStartToolButton();
+  }, 500);
+}
+
+export { enableSoloChampSelectorClickEvent, resetSoloStuffGenerator }
