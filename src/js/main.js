@@ -6,11 +6,6 @@ const fs = require("fs");
 const isInProdMode = true;
 const settingsFilePath = path.join(app.getPath("userData"), "settings.json");
 
-// Handle creating/removing shortcuts on Windows when installing/uninstalling.
-if (require('electron-squirrel-startup')) {
-  app.quit();
-}
-
 const createWindow = () => {
   // Create the browser window.
   const mainWindow = new BrowserWindow({
