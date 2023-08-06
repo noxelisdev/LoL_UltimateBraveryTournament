@@ -1,9 +1,9 @@
-const { app, BrowserWindow, ipcMain, Menu } = require('electron');
+const { app, BrowserWindow, ipcMain, Menu, session } = require('electron');
 import { autoUpdater } from "electron-updater";
 const path = require('path');
 const fs = require("fs");
 
-const isInProdMode = false;
+const isInProdMode = true;
 const settingsFilePath = path.join(app.getPath("userData"), "settings.json");
 
 // Handle creating/removing shortcuts on Windows when installing/uninstalling.
@@ -39,7 +39,7 @@ const createWindow = () => {
   }
 
   mainWindow.webContents.on('did-finish-load', function() {
-    //mainWindow.show();
+    mainWindow.show();
     mainWindow.webContents.send('appMainFormIsReady');
 
     if (fs.existsSync(settingsFilePath)) {
@@ -128,6 +128,15 @@ app.on('ready', () => {
 
     Menu.setApplicationMenu(Menu.buildFromTemplate(menuTemplate));
   }
+
+  session.defaultSession.webRequest.onHeadersReceived((details, callback) => {
+    callback({
+      responseHeaders: {
+        ...details.responseHeaders,
+        'Content-Security-Policy': ["default-src 'self' data: 'unsafe-inline' 'unsafe-eval' https://leaguestats.infinity54.fr"]
+      }
+    })
+  });
 
   createWindow();
 });

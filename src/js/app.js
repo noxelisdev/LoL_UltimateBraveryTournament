@@ -97,26 +97,6 @@ window.leagueData = {
   summoners: {}
 }
 
-window.leagueImages = {
-  champions: {
-    centered: {},
-    tiles: {}
-  },
-  runes: {
-    main: {},
-    stats: {}
-  },
-  items: {
-    boots: {},
-    jungle: {},
-    support: {},
-    mythic: {},
-    legendary: {}
-  },
-  summoners: {},
-  spells: {}
-}
-
 window.appApi.appMainFormIsReady((event) => {
   // Timeout pour permettre à la fenêtre de charger avant de démarrer le chargement de l'app
   setTimeout(() => {

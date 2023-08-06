@@ -116,19 +116,19 @@ async function generatePlayerRunes() {
   const playerSelectedMainRune4 = playerSelectedMainRune.slots[3].runes[Math.floor(Math.random() * playerSelectedMainRune.slots[3].runes.length)];
 
   const rune1 = jQuery("#solostuffgenerator_player_rune1");
-  rune1.css("background-image", `url('${window.leagueImages.runes.main[playerSelectedMainRune1.icon.split("/").pop()]}')`).attr("data-tippy-content", playerSelectedMainRune1.name);
+  rune1.css("background-image", `url('https://leaguestats.infinity54.fr/riot/lol/img/${playerSelectedMainRune1.icon}')`).attr("data-tippy-content", playerSelectedMainRune1.name);
   rune1[0]._tippy.setContent(playerSelectedMainRune1.name);
 
   const rune2 = jQuery("#solostuffgenerator_player_rune2");
-  rune2.css("background-image", `url('${window.leagueImages.runes.main[playerSelectedMainRune2.icon.split("/").pop()]}')`).attr("data-tippy-content", playerSelectedMainRune2.name);
+  rune2.css("background-image", `url('https://leaguestats.infinity54.fr/riot/lol/img/${playerSelectedMainRune2.icon}')`).attr("data-tippy-content", playerSelectedMainRune2.name);
   rune2[0]._tippy.setContent(playerSelectedMainRune2.name);
 
   const rune3 = jQuery("#solostuffgenerator_player_rune3");
-  rune3.css("background-image", `url('${window.leagueImages.runes.main[playerSelectedMainRune3.icon.split("/").pop()]}')`).attr("data-tippy-content", playerSelectedMainRune3.name);
+  rune3.css("background-image", `url('https://leaguestats.infinity54.fr/riot/lol/img/${playerSelectedMainRune3.icon}')`).attr("data-tippy-content", playerSelectedMainRune3.name);
   rune3[0]._tippy.setContent(playerSelectedMainRune3.name);
 
   const rune4 = jQuery("#solostuffgenerator_player_rune4");
-  rune4.css("background-image", `url('${window.leagueImages.runes.main[playerSelectedMainRune4.icon.split("/").pop()]}')`).attr("data-tippy-content", playerSelectedMainRune4.name);
+  rune4.css("background-image", `url('https://leaguestats.infinity54.fr/riot/lol/img/${playerSelectedMainRune4.icon}')`).attr("data-tippy-content", playerSelectedMainRune4.name);
   rune4[0]._tippy.setContent(playerSelectedMainRune4.name);
 
   // Secondary runes
@@ -151,11 +151,11 @@ async function generatePlayerRunes() {
   const playerSelectedSecondaryRune2 = playerSelectedSecondaryRune.slots[playerSelectedSecondaryRuneSecondSlotNumber].runes[Math.floor(Math.random() * playerSelectedSecondaryRune.slots[playerSelectedSecondaryRuneSecondSlotNumber].runes.length)];
 
   const rune5 = jQuery("#solostuffgenerator_player_rune5");
-  rune5.css("background-image", `url('${window.leagueImages.runes.main[playerSelectedSecondaryRune1.icon.split("/").pop()]}')`).attr("data-tippy-content", playerSelectedSecondaryRune1.name);
+  rune5.css("background-image", `url('https://leaguestats.infinity54.fr/riot/lol/img/${playerSelectedSecondaryRune1.icon}')`).attr("data-tippy-content", playerSelectedSecondaryRune1.name);
   rune5[0]._tippy.setContent(playerSelectedSecondaryRune1.name);
 
   const rune6 = jQuery("#solostuffgenerator_player_rune6");
-  rune6.css("background-image", `url('${window.leagueImages.runes.main[playerSelectedSecondaryRune2.icon.split("/").pop()]}')`).attr("data-tippy-content", playerSelectedSecondaryRune2.name);
+  rune6.css("background-image", `url('https://leaguestats.infinity54.fr/riot/lol/img/${playerSelectedSecondaryRune2.icon}')`).attr("data-tippy-content", playerSelectedSecondaryRune2.name);
   rune6[0]._tippy.setContent(playerSelectedSecondaryRune2.name);
 }
 
@@ -165,15 +165,15 @@ async function generatePlayerStatsRunes() {
   const playerSelectedStatsRune3 = window.leagueData.runes.stats[2].runes[Math.floor(Math.random() * window.leagueData.runes.stats[2].runes.length)];
 
   const rune7 = jQuery("#solostuffgenerator_player_rune7");
-  rune7.css("background-image", `url('${window.leagueImages.runes.stats[playerSelectedStatsRune1.icon.split("/").pop()]}')`).attr("data-tippy-content", playerSelectedStatsRune1.name);
+  rune7.css("background-image", `url('https://leaguestats.infinity54.fr/riot/lol/img/${playerSelectedStatsRune1.icon}')`).attr("data-tippy-content", playerSelectedStatsRune1.name);
   rune7[0]._tippy.setContent(playerSelectedStatsRune1.name);
 
   const rune8 = jQuery("#solostuffgenerator_player_rune8");
-  rune8.css("background-image", `url('${window.leagueImages.runes.stats[playerSelectedStatsRune2.icon.split("/").pop()]}')`).attr("data-tippy-content", playerSelectedStatsRune2.name);
+  rune8.css("background-image", `url('https://leaguestats.infinity54.fr/riot/lol/img/${playerSelectedStatsRune2.icon}')`).attr("data-tippy-content", playerSelectedStatsRune2.name);
   rune8[0]._tippy.setContent(playerSelectedStatsRune2.name);
 
   const rune9 = jQuery("#solostuffgenerator_player_rune9");
-  rune9.css("background-image", `url('${window.leagueImages.runes.stats[playerSelectedStatsRune3.icon.split("/").pop()]}')`).attr("data-tippy-content", playerSelectedStatsRune3.name);
+  rune9.css("background-image", `url('https://leaguestats.infinity54.fr/riot/lol/img/${playerSelectedStatsRune3.icon}')`).attr("data-tippy-content", playerSelectedStatsRune3.name);
   rune9[0]._tippy.setContent(playerSelectedStatsRune3.name);
 }
 
@@ -222,9 +222,9 @@ async function generatePlayerItems(lane, selectedChampId) {
 
   for (let i = 0; i < selectedItems.length; i++) {
     const selectedItemData = selectedItems[i];
-
     const item = jQuery("#solostuffgenerator_player_item" + (i + 1));
-    item.css("background-image", `url('${window.leagueImages.items[selectedItemData.image.full]}')`);
+
+    item.css("background-image", `url('https://leaguestats.infinity54.fr/riot/lol/latest/img/item/${selectedItemData.image.full}')`);
     item.attr("data-tippy-content", selectedItemData.name);
     item.attr("data-type", selectedItemsTypes[i]);
     item[0]._tippy.setContent(selectedItemData.name);
@@ -287,7 +287,7 @@ jQuery(".solostuffgenerator_player_item").click(async (event) => {
       }
     }
 
-    clickedItem.css("background-image", `url('${window.leagueImages.items[replacementItem.image.full]}')`).attr("data-tippy-content", replacementItem.name).attr("data-type", clickedItemType);
+    clickedItem.css("background-image", `url('https://leaguestats.infinity54.fr/riot/lol/latest/img/item/${replacementItem.image.full}')`).attr("data-tippy-content", replacementItem.name).attr("data-type", clickedItemType);
     clickedItem[0]._tippy.setContent(replacementItem.name);
   }
 })
@@ -319,9 +319,9 @@ async function generateSummoners(lane) {
 
   for (let i = 0; i < selectedSummoners.length; i++) {
     const selectedSummonerData = selectedSummoners[i];
-
     const summoner = jQuery("#solostuffgenerator_player_summoner" + (i + 1));
-    summoner.css("background-image", `url('${window.leagueImages.summoners[selectedSummonerData.image.full]}')`).attr("data-tippy-content", selectedSummonerData.name);
+
+    summoner.css("background-image", `url('https://leaguestats.infinity54.fr/riot/lol/latest/img/spell/${selectedSummonerData.image.full}')`).attr("data-tippy-content", selectedSummonerData.name);
     summoner[0]._tippy.setContent(selectedSummonerData.name);
   }
 }
@@ -348,7 +348,7 @@ async function determineMainSpell(lane, selectedChampId) {
   }
 
   const spell = jQuery("#solostuffgenerator_player_mainspell");
-  spell.css("background-image", `url('${window.leagueImages.spells[selectedChampSpell.image.full]}')`).attr("data-tippy-content", selectedChampSpell.name);
+  spell.css("background-image", `url('https://leaguestats.infinity54.fr/riot/lol/latest/img/spell/${selectedChampSpell.image.full}')`).attr("data-tippy-content", selectedChampSpell.name);
   spell[0]._tippy.setContent(selectedChampSpell.name);
 
   jQuery("#solostuffgenerator_player_mainspell_letter").text(selectedChampSpellLetter);
