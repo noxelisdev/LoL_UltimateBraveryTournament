@@ -178,7 +178,7 @@ async function generatePlayerStatsRunes() {
 }
 
 async function generatePlayerItems(lane, selectedChampId) {
-  let numberOfLegendaryCount = 4;
+  let numberOfLegendaryCount = 5;
   let selectedItems = [];
   let selectedItemsTypes = [];
 
@@ -202,10 +202,6 @@ async function generatePlayerItems(lane, selectedChampId) {
   } else {
     numberOfLegendaryCount++;
   }
-
-  // Mythic
-  selectedItems.push(window.leagueData.items.mythic[Math.floor(Math.random() * window.leagueData.items.mythic.length)]);
-  selectedItemsTypes.push("mythic");
 
   // Legendary items
   let legendarySelectedItems = [];
@@ -258,13 +254,6 @@ jQuery(".solostuffgenerator_player_item").click(async (event) => {
     if (clickedItemType === "boots") {
       while (replacementItem.name === clickedItemName) {
         replacementItem = window.leagueData.items.boots[Math.floor(Math.random() * window.leagueData.items.boots.length)];
-      }
-    }
-
-    // Mythic item
-    if (clickedItemType === "mythic") {
-      while (replacementItem.name === clickedItemName) {
-        replacementItem = window.leagueData.items.mythic[Math.floor(Math.random() * window.leagueData.items.mythic.length)];
       }
     }
 
