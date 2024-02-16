@@ -61,14 +61,14 @@ window.leagueData = {
             icon: "perk-images/StatMods/StatModsAdaptiveForceIcon.png"
           },
           {
-            key: "Armor",
-            name: "Armure",
-            icon: "perk-images/StatMods/StatModsArmorIcon.png"
+            key: "MovementSpeed",
+            name: "Vitesse de déplacement",
+            icon: "perk-images/StatMods/StatModsMovementSpeedIcon.png"
           },
           {
-            key: "MagicRes",
-            name: "Résistance magique",
-            icon: "perk-images/StatMods/StatModsMagicResIcon.png"
+            key: "HealthPlus",
+            name: "PV croissants",
+            icon: "perk-images/StatMods/StatModsHealthPlusIcon.png"
           }
         ]
       },
@@ -80,14 +80,14 @@ window.leagueData = {
             icon: "perk-images/StatMods/StatModsHealthScalingIcon.png"
           },
           {
-            key: "Armor",
-            name: "Armure",
-            icon: "perk-images/StatMods/StatModsArmorIcon.png"
+            key: "Tenacity",
+            name: "Ténacité et résistance aux ralentissements",
+            icon: "perk-images/StatMods/StatModsTenacityIcon.png"
           },
           {
-            key: "MagicRes",
-            name: "Résistance magique",
-            icon: "perk-images/StatMods/StatModsMagicResIcon.png"
+            key: "HealthPlus",
+            name: "PV croissants",
+            icon: "perk-images/StatMods/StatModsHealthPlusIcon.png"
           }
         ]
       }
