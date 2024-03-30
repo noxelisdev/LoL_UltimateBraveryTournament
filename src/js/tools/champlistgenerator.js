@@ -78,7 +78,7 @@ startToolButtonContainer.on("click", async () => {
         jQuery("<div>", {
           id: "champlistgenerator_generatedchamp_" + window.leagueData.champions[newSelectedChampion].id.toLowerCase()
         })
-            .css("background-image", `url('https://leaguestats.infinity54.fr/riot/lol/img/champion/tiles/${window.leagueData.champions[newSelectedChampion].id}_0.jpg')`)
+            .css("background-image", `url('https://ddragon.infinity54.fr/lol/img/champion/tiles/${window.leagueData.champions[newSelectedChampion].id}_0.jpg')`)
             .appendTo("#champlistgenerator_generatedchamplist")
             .attr("data-tippy-content", newSelectedChampion);
 
