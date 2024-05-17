@@ -1,6 +1,6 @@
 # Gestionnaire de Tournoi _League of Legends_ : _Ultimate Bravery_
 
-Application contenant plusieurs outils permettant de gérer plus facilement et plus efficacement les tournois customs _Ultimate Bravery_ sur _League of Legends_.
+Application contenant plusieurs outils permettant de gérer plus facilement et plus efficacement les tournois customs _Ultimate Bravery_ sur _League of Legends_. L'idée de l'_Ultimate Bravery_ est tirée [du site du même nom](https://www.ultimate-bravery.net).
 
 ## Liste des outils
 
