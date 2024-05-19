@@ -268,25 +268,25 @@ jQuery(".stuffgenerator_player_item").click(async (event) => {
   const clickedItemType = clickedItem.attr("data-type");
 
   if (clickedItemName !== "" && clickedItemType !== "") {
-    let replacementItem = { name: clickedItemName };
+    let replacementItem;
 
     // Jungle item
     if (clickedItemType === "jungle") {
-      while (replacementItem.name === clickedItemName) {
+      while (replacementItem === undefined || replacementItem.name === clickedItemName) {
         replacementItem = window.leagueData.items.jungle[Math.floor(Math.random() * window.leagueData.items.jungle.length)];
       }
     }
 
     // Support item
     if (clickedItemType === "support") {
-      while (replacementItem.name === clickedItemName) {
+      while (replacementItem === undefined || replacementItem.name === clickedItemName) {
         replacementItem = window.leagueData.items.support[Math.floor(Math.random() * window.leagueData.items.support.length)];
       }
     }
 
     // Boots
     if (clickedItemType === "boots") {
-      while (replacementItem.name === clickedItemName) {
+      while (replacementItem === undefined || replacementItem.name === clickedItemName) {
         replacementItem = window.leagueData.items.boots[Math.floor(Math.random() * window.leagueData.items.boots.length)];
       }
     }
@@ -305,11 +305,12 @@ jQuery(".stuffgenerator_player_item").click(async (event) => {
         }
       }
 
-      while (selectedLegendaryItems.indexOf(replacementItem.name) !== -1) {
+      while (replacementItem === undefined || selectedLegendaryItems.indexOf(replacementItem.name) !== -1) {
         replacementItem = window.leagueData.items.legendary[Math.floor(Math.random() * window.leagueData.items.legendary.length)];
       }
     }
 
+    console.log(clickedItem, replacementItem);
     clickedItem.css("background-image", `url('https://ddragon.infinity54.fr/lol/latest/img/item/${replacementItem.image.full}')`).attr("data-tippy-content", replacementItem.name).attr("data-type", clickedItemType);
     clickedItem[0]._tippy.setContent(replacementItem.name);
   }
