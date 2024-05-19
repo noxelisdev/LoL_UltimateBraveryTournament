@@ -42,6 +42,7 @@ function enableChampSelectorClickEvent() {
   jQuery("#stuffgenerator_champselector_content div").click((event) => {
     const currentChampSelectionElement = jQuery("#" + currentChampSelection);
     currentChampSelectionElement.css("background-image", jQuery(event.target).css("background-image"));
+    currentChampSelectionElement.attr("data-value", jQuery(event.target).attr("data-value"));
     currentChampSelectionElement.attr("data-tippy-content", jQuery(event.target).attr("data-tippy-content"));
     currentChampSelectionElement[0]._tippy.setContent(jQuery(event.target).attr("data-tippy-content"));
     currentChampSelection = null;
@@ -94,11 +95,11 @@ startToolButtonContainer.on("mouseenter", async () => {
 
 startToolButtonContainer.on("click", async () => {
   if (startToolButtonContainer.hasClass("stuffgenerator_starttoolbuttondisabled") === false) {
-    const topPlayerSelectedChampId = jQuery("#stuffgenerator_player_top_champ").attr("data-tippy-content");
-    const junglePlayerSelectedChampId = jQuery("#stuffgenerator_player_jungle_champ").attr("data-tippy-content");
-    const middlePlayerSelectedChampId = jQuery("#stuffgenerator_player_middle_champ").attr("data-tippy-content");
-    const adcPlayerSelectedChampId = jQuery("#stuffgenerator_player_adc_champ").attr("data-tippy-content");
-    const supportPlayerSelectedChampId = jQuery("#stuffgenerator_player_support_champ").attr("data-tippy-content");
+    const topPlayerSelectedChampId = jQuery("#stuffgenerator_player_top_champ").attr("data-value");
+    const junglePlayerSelectedChampId = jQuery("#stuffgenerator_player_jungle_champ").attr("data-value");
+    const middlePlayerSelectedChampId = jQuery("#stuffgenerator_player_middle_champ").attr("data-value");
+    const adcPlayerSelectedChampId = jQuery("#stuffgenerator_player_adc_champ").attr("data-value");
+    const supportPlayerSelectedChampId = jQuery("#stuffgenerator_player_support_champ").attr("data-value");
 
     generationInProgress = true;
     startToolButtonContainer.addClass("stuffgenerator_starttoolbuttondisabled");
