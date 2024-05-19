@@ -127,6 +127,7 @@ async function retrieveLeagueChampionsData() {
                         window.leagueData.champions["FiddleSticks"].name = "FiddleSticks";
                         break;
                     default:
+                        window.leagueData.champions[championId] = data.data[championId];
                         break;
                 }
             },
