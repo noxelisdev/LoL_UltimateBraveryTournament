@@ -39,7 +39,9 @@ exitButton.on("click", () => {
 
 function enableSoloChampSelectorClickEvent() {
   jQuery("#solostuffgenerator_champselector_content div").click((event) => {
+    console.log(event.target);
     playerChamp.css("background-image", jQuery(event.target).css("background-image"));
+    playerChamp.attr("data-value", jQuery(event.target).attr("data-value"));
     playerChamp.attr("data-tippy-content", jQuery(event.target).attr("data-tippy-content"));
     playerChamp[0]._tippy.setContent(jQuery(event.target).attr("data-tippy-content"));
     champSelectorContainer.hide();
@@ -88,7 +90,7 @@ startToolButtonContainer.on("mouseenter", async () => {
 
 startToolButtonContainer.on("click", async () => {
   if (startToolButtonContainer.hasClass("solostuffgenerator_starttoolbuttondisabled") === false) {
-    const playerSelectedChampId = playerChamp.attr("data-tippy-content");
+    const playerSelectedChampId = playerChamp.attr("data-value");
     const playerSelectedChampLane = jQuery("#solostuffgenerator_player_lane").attr("data-tippy-content").toLowerCase();
 
     generationInProgress = true;
