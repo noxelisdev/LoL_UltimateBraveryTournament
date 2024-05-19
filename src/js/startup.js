@@ -176,7 +176,6 @@ function retrieveLeagueItemsData() {
             let supportItems = [];
             let jungleItems = [];
             let bootsItems = [];
-            let mythicItems = [];
             let legendaryItems = [];
 
             for (const item in data.data) {
@@ -208,14 +207,6 @@ function retrieveLeagueItemsData() {
                         supportItems.push(itemData);
                     }
 
-                    // Mythic items
-                    if (
-                      itemData.tags.indexOf("Boots") === -1 && itemData.tags.indexOf("Jungle") === -1 &&
-                      itemData.description.indexOf("Propriété passive mythique") > -1 && !itemData.requiredAlly
-                    ) {
-                        mythicItems.push(itemData);
-                    }
-
                     // Legendary items
                     if (
                       itemData.tags.indexOf("Boots") === -1 && itemData.tags.indexOf("Jungle") === -1
@@ -231,7 +222,6 @@ function retrieveLeagueItemsData() {
             window.leagueData.items.boots = bootsItems;
             window.leagueData.items.jungle = jungleItems;
             window.leagueData.items.support = supportItems;
-            window.leagueData.items.mythic = mythicItems;
             window.leagueData.items.legendary = legendaryItems;
             appInitializationProgress += (100 / startupInitializationStepsNumber);
             leagueItemsDataReady = true;
