@@ -3,7 +3,7 @@ const { app, BrowserWindow, ipcMain, Menu, session } = require('electron');
 const path = require('path');
 const fs = require("fs");
 
-const isInProdMode = true;
+const isInProdMode = false;
 const settingsFilePath = path.join(app.getPath("userData"), "settings.json");
 
 const createWindow = () => {
