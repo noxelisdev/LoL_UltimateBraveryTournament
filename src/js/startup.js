@@ -69,7 +69,7 @@ function getAppVersion() {
 
 function getLeagueVersion() {
     jQuery.ajax({
-        url: "https://ddragon.infinity54.fr/lol/latest/manifest.json",
+        url: "https://lol.ddragon.infinity54.fr/latest/manifest.json",
         type: "GET",
         crossDomain: true,
         dataType: "json",
@@ -86,7 +86,7 @@ function getLeagueVersion() {
 async function prepareLeagueDataRetrieving() {
     // Champions IDs retrieving
     jQuery.ajax({
-        url: "https://ddragon.infinity54.fr/lol/latest/data/fr_FR/champion.json",
+        url: "https://lol.ddragon.infinity54.fr/latest/data/fr_FR/champion.json",
         type: "GET",
         crossDomain: true,
         dataType: "json",
@@ -113,7 +113,7 @@ async function prepareLeagueDataRetrieving() {
 async function retrieveLeagueChampionsData() {
     championsIds.forEach((championId) => {
         jQuery.ajax({
-            url: `https://ddragon.infinity54.fr/lol/latest/data/fr_FR/champion/${championId}.json`,
+            url: `https://lol.ddragon.infinity54.fr/latest/data/fr_FR/champion/${championId}.json`,
             type: "GET",
             async: false,
             crossDomain: true,
@@ -151,7 +151,7 @@ async function retrieveLeagueChampionsData() {
 
 function retrieveLeagueRunesData() {
     jQuery.ajax({
-        url: "https://ddragon.infinity54.fr/lol/latest/data/fr_FR/runesReforged.json",
+        url: "https://lol.ddragon.infinity54.fr/latest/data/fr_FR/runesReforged.json",
         type: "GET",
         crossDomain: true,
         dataType: "json",
@@ -168,7 +168,7 @@ function retrieveLeagueRunesData() {
 
 function retrieveLeagueItemsData() {
     jQuery.ajax({
-        url: "https://ddragon.infinity54.fr/lol/latest/data/fr_FR/item.json",
+        url: "https://lol.ddragon.infinity54.fr/latest/data/fr_FR/item.json",
         type: "GET",
         crossDomain: true,
         dataType: "json",
@@ -234,7 +234,7 @@ function retrieveLeagueItemsData() {
 
 function retrieveLeagueSummonersSpellsData() {
     jQuery.ajax({
-        url: "https://ddragon.infinity54.fr/lol/latest/data/fr_FR/summoner.json",
+        url: "https://lol.ddragon.infinity54.fr/latest/data/fr_FR/summoner.json",
         type: "GET",
         crossDomain: true,
         dataType: "json",
@@ -263,7 +263,7 @@ function defineHighlightedChampion() {
     const highlightedChampion = Object.keys(window.leagueData.champions)[Math.floor(Math.random() * Object.keys(window.leagueData.champions).length)];
 
     jQuery("#championhighlight_name").text(window.leagueData.champions[highlightedChampion].name);
-    jQuery("#championhighlight_portrait").css("background-image", `url('https://ddragon.infinity54.fr/lol/img/champion/tiles/${window.leagueData.champions[highlightedChampion].id}_0.jpg')`);
+    jQuery("#championhighlight_portrait").css("background-image", `url('https://lol.ddragon.infinity54.fr/img/champion/tiles/${window.leagueData.champions[highlightedChampion].id}_0.jpg')`);
 
     for (const skinKey in window.leagueData.champions[highlightedChampion].skins) {
         const skinData = window.leagueData.champions[highlightedChampion].skins[skinKey];
@@ -272,7 +272,7 @@ function defineHighlightedChampion() {
             id: 'championhighlight_skin_' + highlightedChampion + "_" + skinData.num,
             class: 'championhighlight_skin'
         }).appendTo('#championhighlight_skins')
-            .css("background-image", `url('https://ddragon.infinity54.fr/lol/img/champion/centered/${window.leagueData.champions[highlightedChampion].id}_${skinData.num}.jpg')`)
+            .css("background-image", `url('https://lol.ddragon.infinity54.fr/img/champion/centered/${window.leagueData.champions[highlightedChampion].id}_${skinData.num}.jpg')`)
             .height((jQuery("#championhighlight_skins").height() / window.leagueData.champions[highlightedChampion].skins.length) + "px")
             .attr("data-tippy-content", (skinData.name !== "default") ? skinData.name : window.leagueData.champions[highlightedChampion].name)
             .attr("data-tippy-placement", "left")
@@ -285,7 +285,7 @@ function defineHighlightedChampion() {
 function populateSoloStuffGeneratorChampSelector() {
     for (const championName in window.leagueData.champions) {
         const soloStuffChampDiv = jQuery("<div>")
-            .css("background-image", `url('https://ddragon.infinity54.fr/lol/img/champion/tiles/${window.leagueData.champions[championName].id}_0.jpg')`)
+            .css("background-image", `url('https://lol.ddragon.infinity54.fr/img/champion/tiles/${window.leagueData.champions[championName].id}_0.jpg')`)
             .attr("data-value", window.leagueData.champions[championName].id)
             .attr("data-tippy-content", window.leagueData.champions[championName].name);
         soloStuffGeneratorChampSelectorList.append(soloStuffChampDiv);
@@ -297,7 +297,7 @@ function populateSoloStuffGeneratorChampSelector() {
 function populateStuffGeneratorChampSelector() {
     for (const championName in window.leagueData.champions) {
         const stuffChampDiv = jQuery("<div>")
-            .css("background-image", `url('https://ddragon.infinity54.fr/lol/img/champion/tiles/${window.leagueData.champions[championName].id}_0.jpg')`)
+            .css("background-image", `url('https://lol.ddragon.infinity54.fr/img/champion/tiles/${window.leagueData.champions[championName].id}_0.jpg')`)
             .attr("data-value", window.leagueData.champions[championName].id)
             .attr("data-tippy-content", window.leagueData.champions[championName].name);
         stuffGeneratorChampSelectorList.append(stuffChampDiv);
