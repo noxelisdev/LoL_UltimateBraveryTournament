@@ -128,7 +128,7 @@ app.on('ready', () => {
     callback({
       responseHeaders: {
         ...details.responseHeaders,
-        'Content-Security-Policy': ["default-src 'self' data: 'unsafe-inline' 'unsafe-eval' https://ddragon.infinity54.fr"]
+        'Content-Security-Policy': ["default-src 'self' data: 'unsafe-inline' 'unsafe-eval' https://lol.ddragon.infinity54.fr"]
       }
     })
   });
