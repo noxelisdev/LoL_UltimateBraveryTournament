@@ -1,107 +1,43 @@
 {
   "name": "fr.infinity54.lol_ultimatebraverytournament",
   "productName": "Gestionnaire de tournoi Ultimate Bravery",
-  "version": "2.5.7",
+  "version": "3.0.0",
   "description": "App used to manage more easily and quickly any Ultimate Bravery Tournament for League of Legends.",
   "license": "CC-BY-SA-4.0",
-  "main": ".webpack/main",
-  "scripts": {
-    "start": "electron-forge start",
-    "package": "electron-forge package",
-    "build": "electron-builder build",
-    "make": "yarn package && yarn build"
-  },
+  "main": "./out/main/index.js",
   "author": {
     "name": "InFinity_54",
     "email": "contact@infinity54.fr"
   },
-  "devDependencies": {
-    "@electron-forge/cli": "^6.4.2",
-    "@electron-forge/maker-deb": "^6.4.2",
-    "@electron-forge/maker-rpm": "^6.4.2",
-    "@electron-forge/maker-squirrel": "^6.4.2",
-    "@electron-forge/maker-zip": "^6.4.2",
-    "@electron-forge/plugin-webpack": "^6.4.2",
-    "@vercel/webpack-asset-relocator-loader": "1.7.3",
-    "css-loader": "^6.0.0",
-    "electron": "27.0.1",
-    "electron-builder": "^24.6.4",
-    "file-loader": "^6.2.0",
-    "node-loader": "^2.0.0",
-    "raw-loader": "^4.0.2",
-    "resolve-url-loader": "^5.0.0",
-    "sass": "^1.69.4",
-    "sass-loader": "^13.2.0",
-    "style-loader": "^3.0.0",
-    "twig-html-loader": "^0.1.9"
+  "scripts": {
+    "format": "prettier --write .",
+    "lint": "eslint --cache .",
+    "start": "electron-vite preview",
+    "dev": "electron-vite dev",
+    "build": "electron-vite build",
+    "postinstall": "electron-builder install-app-deps",
+    "build:unpack": "npm run build && electron-builder --dir",
+    "build:win": "npm run build && electron-builder --win",
+    "build:mac": "npm run build && electron-builder --mac",
+    "build:linux": "npm run build && electron-builder --linux"
   },
   "dependencies": {
-    "@popperjs/core": "^2.11.6",
-    "bootstrap": "^5.3.2",
-    "cross-spawn": "^7.0.5",
-    "electron-updater": "^6.3.0-alpha.6",
-    "jquery": "^3.7.1",
-    "tippy.js": "^6.3.7"
+    "@electron-toolkit/preload": "^3.0.2",
+    "@electron-toolkit/utils": "^4.0.0",
+    "electron-updater": "^6.3.9"
   },
-  "build": {
-    "appId": "fr.infinity54.lol_ultimatebraverytournament",
-    "productName": "Gestionnaire de tournoi Ultimate Bravery",
-    "files": [
-      "./.webpack/**/*"
-    ],
-    "win": {
-      "target": [
-        "nsis"
-      ],
-      "icon": "./icon.ico",
-      "requestedExecutionLevel": "asInvoker",
-      "publish": {
-        "provider": "generic",
-        "url": "http://localhost"
-      }
-    },
-    "nsis": {
-      "artifactName": "LoL_UltimateBraveryTournament_Setup_${version}.${ext}",
-      "installerIcon": "./icon.ico",
-      "uninstallerIcon": "./icon.ico",
-      "uninstallDisplayName": "Gestionnaire de tournoi Ultimate Bravery",
-      "deleteAppDataOnUninstall": true,
-      "installerLanguages": [
-        "fr_FR"
-      ],
-      "createDesktopShortcut": true,
-      "createStartMenuShortcut": true,
-      "shortcutName": "Gestionnaire de tournoi Ultimate Bravery",
-      "oneClick": true,
-      "perMachine": false
-    },
-    "linux": {
-      "artifactName": "LoL_UltimateBraveryTournament_${version}.${ext}",
-      "target": [
-        "AppImage"
-      ],
-      "icon": "./icon.png",
-      "publish": {
-        "provider": "generic",
-        "url": "http://localhost"
-      }
-    },
-    "mac": {
-      "target": [
-        "dmg"
-      ],
-      "icon": "./icon.icns",
-      "darkModeSupport": false,
-      "publish": {
-        "provider": "generic",
-        "url": "http://localhost"
-      }
-    },
-    "dmg": {
-      "backgroundColor": "#161616",
-      "icon": "./icon.icns",
-      "title": "LoL_UltimateBraveryTournament"
-    },
-    "asar": null
+  "devDependencies": {
+    "@electron-toolkit/eslint-config": "^2.0.0",
+    "@electron-toolkit/eslint-config-prettier": "^3.0.0",
+    "@vitejs/plugin-vue": "^6.0.0",
+    "electron": "^37.2.3",
+    "electron-builder": "^25.1.8",
+    "electron-vite": "^4.0.0",
+    "eslint": "^9.31.0",
+    "eslint-plugin-vue": "^10.3.0",
+    "prettier": "^3.6.2",
+    "vite": "^7.0.5",
+    "vue": "^3.5.17",
+    "vue-eslint-parser": "^10.2.0"
   }
 }
