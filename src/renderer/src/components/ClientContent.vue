@@ -1,14 +1,14 @@
 <script setup>
-
+import Homepage from './Homepage.vue'
 </script>
 
 <template>
   <div id="contentarea">
-    <!--{% include "pages/homepage.html.twig" %}
-    {% include "pages/toolselector.html.twig" %}
-    {% include "tools/champlistgenerator.html.twig" %}
-    {% include "tools/solostuffgenerator.html.twig" %}
-    {% include "tools/stuffgenerator.html.twig" %}-->
+    <Homepage />
+    <!--{% include "pages/toolselector.html.twig" %}-->
+    <!--{% include "tools/champlistgenerator.html.twig" %}-->
+    <!--{% include "tools/solostuffgenerator.html.twig" %}-->
+    <!--{% include "tools/stuffgenerator.html.twig" %}-->
   </div>
 </template>
 

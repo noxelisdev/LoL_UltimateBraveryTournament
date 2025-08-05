@@ -60,10 +60,10 @@ function lobbyButtonClick() {
 
   //document.getElementById('toolselector').style.display = 'block'
   //document.getElementById('toolselector').animate([{ opacity: 0 }, { opacity: 1 }], 250)
-  //document.getElementById('homepage').animate([{ opacity: 1 }, { opacity: 0 }], 250)
+  document.getElementById('homepage').animate([{ opacity: 1 }, { opacity: 0 }], 250)
 
   setTimeout(() => {
-    //document.getElementById('homepage').style.display = 'none'
+    document.getElementById('homepage').style.display = 'none'
   }, 250)
 }
 
@@ -75,8 +75,8 @@ function displayHomePage() {
   //todo: stuffGenerator fade out
   //todo: soloStuffGenerator fade out
 
-  //document.getElementById('homepage').style.display = 'block'
-  //document.getElementById('homepage').animate([{ opacity: 0 }, { opacity: 1 }], 250)
+  document.getElementById('homepage').style.display = 'block'
+  document.getElementById('homepage').animate([{ opacity: 0 }, { opacity: 1 }], 250)
   document.getElementById('mainheader_currentpagearrow').style.display = 'block'
   document.getElementById('league_header_lobbybutton').style.pointerEvents = 'auto'
   document
