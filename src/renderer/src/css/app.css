@@ -1,0 +1,11 @@
+/* Dépendences */
+@import "bootstrap";
+@import "tippy.js/dist/tippy.css";
+
+/* Polices */
+@import "fonts/BeaufortForLoL.css";
+@import "fonts/Spiegel.css";
+
+/* CSS global */
+@import "global.css";
+@import "tooltips.css";

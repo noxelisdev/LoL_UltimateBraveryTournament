@@ -1,0 +1,41 @@
+@font-face {
+  font-family: 'Spiegel';
+  font-weight: normal;
+  font-style: normal;
+  src: url('../../assets/fonts/Spiegel/spiegel-regular.otf?main') format('opentype');
+}
+
+@font-face {
+  font-family: 'Spiegel';
+  font-weight: 700;
+  font-style: normal;
+  src: url('../../assets/fonts/Spiegel/spiegel-semibold.otf?main') format('opentype');
+}
+
+@font-face {
+  font-family: 'Spiegel';
+  font-weight: 900;
+  font-style: normal;
+  src: url('../../assets/fonts/Spiegel/spiegel-bold.otf?main') format('opentype');
+}
+
+@font-face {
+  font-family: 'Spiegel';
+  font-weight: normal;
+  font-style: italic;
+  src: url('../../assets/fonts/Spiegel/spiegel-regularitalic.otf?main') format('opentype');
+}
+
+@font-face {
+  font-family: 'Spiegel';
+  font-weight: 700;
+  font-style: italic;
+  src: url('../../assets/fonts/Spiegel/spiegel-semibolditalic.otf?main') format('opentype');
+}
+
+@font-face {
+  font-family: 'Spiegel';
+  font-weight: 900;
+  font-style: italic;
+  src: url('../../assets/fonts/Spiegel/spiegel-bolditalic.otf?main') format('opentype');
+}

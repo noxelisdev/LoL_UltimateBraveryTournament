@@ -1,11 +1,86 @@
 import { app, shell, BrowserWindow, ipcMain } from 'electron'
 import { join } from 'path'
 import { electronApp, optimizer, is } from '@electron-toolkit/utils'
+import { autoUpdater } from 'electron-updater'
+import * as settings from 'electron-settings'
 import icon from '../../resources/icon.png?asset'
+
+let mainWindow
+let leagueData = {
+  champions: {},
+  runes: {
+    main: {},
+    stats: [
+      {
+        runes: [
+          {
+            key: 'AdaptiveForce',
+            name: 'Force adaptative',
+            icon: 'perk-images/StatMods/StatModsAdaptiveForceIcon.png'
+          },
+          {
+            key: 'AttackSpeed',
+            name: "Vitesse d'attaque",
+            icon: 'perk-images/StatMods/StatModsAttackSpeedIcon.png'
+          },
+          {
+            key: 'CDRScaling',
+            name: 'Accélération de compétences',
+            icon: 'perk-images/StatMods/StatModsCDRScalingIcon.png'
+          }
+        ]
+      },
+      {
+        runes: [
+          {
+            key: 'AdaptiveForce',
+            name: 'Force adaptative',
+            icon: 'perk-images/StatMods/StatModsAdaptiveForceIcon.png'
+          },
+          {
+            key: 'MovementSpeed',
+            name: 'Vitesse de déplacement',
+            icon: 'perk-images/StatMods/StatModsMovementSpeedIcon.png'
+          },
+          {
+            key: 'HealthPlus',
+            name: 'PV croissants',
+            icon: 'perk-images/StatMods/StatModsHealthPlusIcon.png'
+          }
+        ]
+      },
+      {
+        runes: [
+          {
+            key: 'HealthScaling',
+            name: 'Points de vie',
+            icon: 'perk-images/StatMods/StatModsHealthScalingIcon.png'
+          },
+          {
+            key: 'Tenacity',
+            name: 'Ténacité et résistance aux ralentissements',
+            icon: 'perk-images/StatMods/StatModsTenacityIcon.png'
+          },
+          {
+            key: 'HealthPlus',
+            name: 'PV croissants',
+            icon: 'perk-images/StatMods/StatModsHealthPlusIcon.png'
+          }
+        ]
+      }
+    ]
+  },
+  items: {},
+  summoners: {}
+}
+
+function initSettings() {
+  if (!settings.has('soundEnabled')) settings.set('soundEnabled', true)
+}
 
 function createWindow() {
   // Create the browser window.
-  const mainWindow = new BrowserWindow({
+  mainWindow = new BrowserWindow({
     width: 1280,
     height: 720,
     minWidth: 1280,
@@ -56,9 +131,97 @@ app.whenReady().then(() => {
     optimizer.watchWindowShortcuts(window)
   })
 
-  // IPC test
-  ipcMain.on('ping', () => console.log('pong'))
+  autoUpdater.setFeedURL({
+    provider: 'github',
+    repo: 'LoL_UltimateBraveryTournament',
+    owner: 'InFinity54',
+    private: false,
+    releaseType: 'release'
+  })
+  autoUpdater.forceDevUpdateConfig = true
+  autoUpdater
+    .on('update-not-available', (m) => {
+      mainWindow.webContents.send('update-not-available', m)
+    })
+    .on('update-available', (m) => {
+      mainWindow.webContents.send('update-available', m)
+    })
+    .on('download-progress', (m) => {
+      mainWindow.webContents.send('update-download-progress', m)
+    })
+    .on('update-downloaded', (m) => {
+      mainWindow.webContents.send('update-downloaded', m)
 
+      setTimeout(() => {
+        autoUpdater.quitAndInstall()
+      }, 3000)
+    })
+
+  ipcMain.on('windowReduce', () => {
+    mainWindow.minimize()
+  })
+
+  ipcMain.on('windowClose', () => {
+    app.exit()
+  })
+
+  ipcMain.handle('settings', async (_, { method, key, value }) => {
+    switch (method) {
+      case 'has':
+        return settings.has(key)
+      case 'get':
+        return settings.get(key)
+      case 'set':
+        settings.set(key, value)
+        return true
+      case 'reset':
+        settings.reset()
+        return true
+      case 'delete':
+        settings.unset(key)
+        return true
+      default:
+        throw new Error('Unknown method: ' + method)
+    }
+  })
+
+  ipcMain.handle('getAppVersion', () => {
+    return app.getVersion()
+  })
+
+  ipcMain.handle('getLeagueData', (type) => {
+    if (type === "champions") {
+      return leagueData.champions
+    } else if (type === "runes") {
+      return leagueData.runes
+    } else if (type === "items") {
+      return leagueData.items
+    } else if (type === "summoners") {
+      return leagueData.summoners
+    } else {
+      return leagueData
+    }
+  })
+
+  ipcMain.handle('storeLeagueData', (event, type, data) => {
+    if (type === "champions") {
+      leagueData.champions = data
+    } else if (type === "runes") {
+      leagueData.runes.main = data
+    } else if (type === "items") {
+      leagueData.items = data
+    } else if (type === "summoners") {
+      leagueData.summoners = data
+    } else {
+      leagueData = data
+    }
+  })
+
+  ipcMain.handle('retrieveData', async (event, url) => {
+    return await fetch(url).then((res) => res.json())
+  })
+
+  initSettings()
   createWindow()
 
   app.on('activate', function () {
@@ -66,6 +229,8 @@ app.whenReady().then(() => {
     // dock icon is clicked and there are no other windows open.
     if (BrowserWindow.getAllWindows().length === 0) createWindow()
   })
+
+  autoUpdater.checkForUpdatesAndNotify()
 })
 
 // Quit when all windows are closed, except on macOS. There, it's common
