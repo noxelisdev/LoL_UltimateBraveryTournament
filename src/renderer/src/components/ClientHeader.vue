@@ -1,5 +1,89 @@
 <script setup>
+import { onMounted } from 'vue'
+import { playSound } from '../common/audio'
+import { playMovie } from '../common/video'
+import sndPlayButtonHover from '../assets/snd/ui/lobby_button/lobbybutton_hover.ogg'
+import sndPlayButtonClick from '../assets/snd/ui/lobby_button/lobbybutton_click.ogg'
+import sndMenuItemClick from '../assets/snd/ui/menuitem_click.ogg'
+import movLeagueLogoLoop from '../assets/mov/league_logo/league-logo-loop-idle.webm'
+import movLeagueLobbyButtonIntro from '../assets/mov/lobby_button/lobby-button-intro.webm'
+import movLeagueLobbyButtonHoverLoop from '../assets/mov/lobby_button/lobby-button-hover-loop.webm'
+import movLeagueLobbyButtonRelease from '../assets/mov/lobby_button/lobby-button-release.webm'
 
+onMounted(() => {
+  playMovie(document.getElementById('league_header_logo'), movLeagueLogoLoop, true)
+  playMovie(document.getElementById('league_header_lobbybuttonvideo'), movLeagueLobbyButtonIntro)
+  playMovie(
+    document.getElementById('league_header_lobbybuttonvideo_updateprogressborderoverlay'),
+    movLeagueLobbyButtonHoverLoop,
+    true
+  )
+
+  document.getElementById(
+    'league_header_lobbybuttonvideo_updateprogressborderoverlay'
+  ).style.display = 'none'
+  document.getElementById('mainheader_currentpagearrow').style.display = 'block'
+  document.getElementById('mainheader_currentpagearrow').style.left =
+    `${document.getElementsByClassName('mainheader_menuitem_currentpage')[0].getAttribute('data-arrow-x')}px`
+})
+
+function lobbyButtonMouseOver() {
+  playSound(sndPlayButtonHover)
+  document.getElementById(
+    'league_header_lobbybuttonvideo_updateprogressborderoverlay'
+  ).style.display = 'block'
+  document
+    .getElementById('league_header_lobbybuttonvideo_updateprogressborderoverlay')
+    .animate([{ opacity: 0 }, { opacity: 1 }], 250)
+}
+
+function lobbyButtonMouseLeave() {
+  document
+    .getElementById('league_header_lobbybuttonvideo_updateprogressborderoverlay')
+    .animate([{ opacity: 1 }, { opacity: 0 }], 250)
+
+  setTimeout(() => {
+    document.getElementById(
+      'league_header_lobbybuttonvideo_updateprogressborderoverlay'
+    ).style.display = 'none'
+  }, 250)
+}
+
+function lobbyButtonClick() {
+  playMovie(document.getElementById('league_header_lobbybuttonvideo'), movLeagueLobbyButtonRelease)
+  playSound(sndPlayButtonClick)
+  document.getElementById('league_header_lobbybutton').style.pointerEvents = 'none'
+  document.getElementById('mainheader_currentpagearrow').style.display = 'none'
+  document
+    .getElementsByClassName('mainheader_menuitem_currentpage')[0]
+    .classList.remove('mainheader_menuitem_currentpage')
+
+  //document.getElementById('toolselector').style.display = 'block'
+  //document.getElementById('toolselector').animate([{ opacity: 0 }, { opacity: 1 }], 250)
+  //document.getElementById('homepage').animate([{ opacity: 1 }, { opacity: 0 }], 250)
+
+  setTimeout(() => {
+    //document.getElementById('homepage').style.display = 'none'
+  }, 250)
+}
+
+function displayHomePage() {
+  playSound(sndMenuItemClick)
+
+  //todo: toolSelectorPage fade out
+  //todo: champListGenerator fade out
+  //todo: stuffGenerator fade out
+  //todo: soloStuffGenerator fade out
+
+  //document.getElementById('homepage').style.display = 'block'
+  //document.getElementById('homepage').animate([{ opacity: 0 }, { opacity: 1 }], 250)
+  document.getElementById('mainheader_currentpagearrow').style.display = 'block'
+  document.getElementById('league_header_lobbybutton').style.pointerEvents = 'auto'
+  document
+    .getElementById('mainheader_menuitem_homepage')
+    .classList.add('mainheader_menuitem_currentpage')
+  playMovie(document.getElementById('league_header_lobbybuttonvideo'), movLeagueLobbyButtonIntro)
+}
 </script>
 
 <template>
@@ -7,7 +91,12 @@
     <div id="mainheader_content">
       <div id="league_header_logo_container">
         <video id="league_header_logo"></video>
-        <div id="league_header_lobbybutton">
+        <div
+          id="league_header_lobbybutton"
+          @mouseover="lobbyButtonMouseOver"
+          @mouseleave="lobbyButtonMouseLeave"
+          @click="lobbyButtonClick"
+        >
           <video id="league_header_lobbybuttonvideo"></video>
           <video id="league_header_lobbybuttonvideo_updateprogressborderoverlay"></video>
           <div id="league_header_lobbybuttontext">OUTILS</div>
@@ -21,7 +110,9 @@
       <div id="mainheader_currentpagearrow"></div>
       <div
         id="mainheader_menuitem_homepage"
+        data-arrow-x="281"
         class="mainheader_menuitem mainheader_menuitem_currentpage"
+        @click="displayHomePage()"
       >
         ACCUEIL
       </div>
