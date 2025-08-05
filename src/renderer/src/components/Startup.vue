@@ -24,29 +24,6 @@ async function appInitialization() {
   let progress = 0.0
   let leagueData = await window.league.getData('all')
 
-  // Récupération de la version installée
-  /*const version = await window.api.getAppVersion()
-  document.getElementById('app_version').innerHTML = document
-    .getElementById('app_version')
-    .innerHTML.replace('Version X.X.X', `Version ${version}`)*/
-  progress += 5
-  document.getElementById('startup_progress').style.width = `${progress}%`
-
-  // Récupération du numéro de la dernière version de LoL
-  /*const manifest = await window.api.retrieveData(
-    'https://lol.ddragon.infinity54.fr/latest/manifest.json'
-  )
-  document.getElementById('app_version').innerHTML = document
-    .getElementById('app_version')
-    .innerHTML.replace('LoL X.X.X', `LoL ${manifest.v}`)*/
-  progress += 5
-  document.getElementById('startup_progress').style.width = `${progress}%`
-
-  // Activation des tooltips
-  tippy('[data-tippy-content]', { theme: 'lol', arrow: true })
-  progress += 5
-  document.getElementById('startup_progress').style.width = `${progress}%`
-
   // Récupération des données des champions
   const champions = await window.api.retrieveData(
     'https://lol.ddragon.infinity54.fr/latest/data/fr_FR/champion.json'
@@ -62,7 +39,7 @@ async function appInitialization() {
       `https://lol.ddragon.infinity54.fr/latest/data/fr_FR/champion/${championId}.json`
     )
     leagueData.champions[championId] = championData.data[championId]
-    progress += 20 / Object.keys(champions.data).length
+    progress += 24 / Object.keys(champions.data).length
     document.getElementById('startup_progress').style.width = `${progress}%`
   }
 
@@ -70,47 +47,49 @@ async function appInitialization() {
   leagueData.runes.main = await window.api.retrieveData(
     'https://lol.ddragon.infinity54.fr/latest/data/fr_FR/runesReforged.json'
   )
-  progress += 20
+  progress += 24
   document.getElementById('startup_progress').style.width = `${progress}%`
 
   // Récupération des données des objets
   leagueData.items = await window.api.retrieveData(
     'https://lol.ddragon.infinity54.fr/latest/data/fr_FR/item.json'
   )
-  progress += 20
+  progress += 24
   document.getElementById('startup_progress').style.width = `${progress}%`
 
   // Récupération des données des sorts d'invocateur
   leagueData.summoners = await window.api.retrieveData(
     'https://lol.ddragon.infinity54.fr/latest/data/fr_FR/summoner.json'
   )
-  progress += 20
+  progress += 24
   document.getElementById('startup_progress').style.width = `${progress}%`
+  window.league.storeData('all', leagueData)
 
   // Tirage au sort du champion mis en avant
   const champIds = Object.keys(leagueData.champions)
   const selectedId = Math.floor(Math.random() * champIds.length)
   const highlightedChampion = leagueData.champions[champIds[selectedId]]
-  /*document.getElementById('championhighlight_name').innerHTML = highlightedChampion.name
+  document.getElementById('championhighlight_name').innerHTML = highlightedChampion.name
   document.getElementById('championhighlight_portrait').style.backgroundImage =
-    `url('https://lol.ddragon.infinity54.fr/img/champion/tiles/${highlightedChampion.id}_0.jpg')`*/
+    `url('https://lol.ddragon.infinity54.fr/img/champion/tiles/${highlightedChampion.id}_0.jpg')`
 
   for (const skinKey in highlightedChampion.skins) {
-    console.log(skinKey)
     const skinData = highlightedChampion.skins[skinKey]
     let skin = document.createElement('div')
     skin.style.backgroundImage = `url('https://lol.ddragon.infinity54.fr/img/champion/centered/${highlightedChampion.id}_${skinData.num}.jpg')`
-    // scrollHeight, clientHeight ou offsetHeight ?
-    //skin.style.height = document.getElementById('championhighlight_skins').scrollHeight / highlightedChampion.skins.length
+    skin.style.height = `calc(100% / ${highlightedChampion.skins.length})`
     skin.setAttribute(
       'data-tippy-content',
       skinData.name !== 'default' ? skinData.name : highlightedChampion.name
     )
     skin.setAttribute('data-tippy-placement', 'left')
     skin.setAttribute('data-skinnumber', skinData.num)
-    //document.getElementById('championhighlight_skins').appendChild(skin)
+    skin.id = `championhighlight_skin_${highlightedChampion.id}_${skinData.num}`
+    skin.classList.add('championhighlight_skin')
+    document.getElementById('championhighlight_skins').appendChild(skin)
+    tippy(skin, { theme: 'lol' })
   }
-  progress += 5
+  progress += 4
   document.getElementById('startup_progress').style.width = `${progress}%`
 
   // Démarrage de l'application
