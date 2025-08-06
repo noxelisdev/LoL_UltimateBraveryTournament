@@ -8,4 +8,5 @@
 
 /* CSS global */
 @import "global.css";
+@import "scrollbar.css";
 @import "tooltips.css";
