@@ -189,28 +189,28 @@ app.whenReady().then(() => {
     return app.getVersion()
   })
 
-  ipcMain.handle('getLeagueData', (type) => {
-    if (type === "champions") {
+  ipcMain.handle('getLeagueData', (event, type) => {
+    if (type === 'champions') {
       return leagueData.champions
-    } else if (type === "runes") {
+    } else if (type === 'runes') {
       return leagueData.runes
-    } else if (type === "items") {
+    } else if (type === 'items') {
       return leagueData.items
-    } else if (type === "summoners") {
+    } else if (type === 'summoners') {
       return leagueData.summoners
-    } else {
-      return leagueData
     }
+
+    return leagueData
   })
 
   ipcMain.handle('storeLeagueData', (event, type, data) => {
-    if (type === "champions") {
+    if (type === 'champions') {
       leagueData.champions = data
-    } else if (type === "runes") {
+    } else if (type === 'runes') {
       leagueData.runes.main = data
-    } else if (type === "items") {
+    } else if (type === 'items') {
       leagueData.items = data
-    } else if (type === "summoners") {
+    } else if (type === 'summoners') {
       leagueData.summoners = data
     } else {
       leagueData = data

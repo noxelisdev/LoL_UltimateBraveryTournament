@@ -1,13 +1,14 @@
 <script setup>
 import Homepage from './Homepage.vue'
 import ToolSelector from './ToolSelector.vue'
+import ChampListGenerator from './ChampListGenerator.vue'
 </script>
 
 <template>
   <div id="contentarea">
     <Homepage />
     <ToolSelector />
-    <!--{% include "tools/champlistgenerator.html.twig" %}-->
+    <ChampListGenerator />
     <!--{% include "tools/solostuffgenerator.html.twig" %}-->
     <!--{% include "tools/stuffgenerator.html.twig" %}-->
   </div>

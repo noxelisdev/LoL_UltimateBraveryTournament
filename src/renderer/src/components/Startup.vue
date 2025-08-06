@@ -31,10 +31,6 @@ async function appInitialization() {
   for (const key of Object.keys(champions.data)) {
     let championId = key
 
-    if (championId === 'Fiddlesticks') {
-      championId = 'FiddleSticks'
-    }
-
     const championData = await window.api.retrieveData(
       `https://lol.ddragon.infinity54.fr/latest/data/fr_FR/champion/${championId}.json`
     )
@@ -95,7 +91,11 @@ async function appInitialization() {
   // Démarrage de l'application
   document.getElementById('startup').animate([{ opacity: 1 }, { opacity: 0 }], 500)
   playSound(sndStartupFinished)
-  //initChampListGenerator()
+
+  // Initialisation de l'outil de génération de liste aléatoire de champions
+  document
+    .getElementById('champlistgenerator_tooloptions_numberofchampions')
+    .setAttribute('max', champIds.length)
   //enableSoloChampSelectorClickEvent()
   //enableChampSelectorClickEvent()
 

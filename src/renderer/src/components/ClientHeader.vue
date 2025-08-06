@@ -87,8 +87,15 @@ function displayHomePage() {
       document.getElementById('toolselector').style.display = 'none'
     }, 250)
   }
-  //todo: toolSelectorPage fade out
-  //todo: champListGenerator fade out
+
+  if (document.getElementById('champlistgenerator').checkVisibility()) {
+    document.getElementById('champlistgenerator').animate([{ opacity: 1 }, { opacity: 0 }], 250)
+
+    setTimeout(() => {
+      document.getElementById('champlistgenerator').style.display = 'none'
+    }, 250)
+  }
+
   //todo: stuffGenerator fade out
   //todo: soloStuffGenerator fade out
 

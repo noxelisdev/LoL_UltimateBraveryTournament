@@ -45,7 +45,10 @@ function tabClick() {
               vulnérabilité
             </li>
             <li>Amélioration des performances globales de l'application</li>
-            <li>Ajout d'une nouvelle apparence pour les barres de défilement, plus cohérente avec celle du client de LoL</li>
+            <li>
+              Ajout d'une nouvelle apparence pour les barres de défilement, plus cohérente avec
+              celle du client de LoL
+            </li>
             <li>
               Suppression de Webpack, ce qui corrige des vulnérabilités de son serveur de
               développement (CVE-2025-30360 & CVE-2025-30359)

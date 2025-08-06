@@ -13,6 +13,7 @@ import movToolSelectorChampListGeneratorButtonActiveLoop from '../assets/mov/too
 import movToolSelectorChampListGeneratorButtonActiveIntro from '../assets/mov/toolselector/buttons/champlistselector/champlistselector_intro.webm'
 import movToolSelectorStuffGeneratorButtonActiveLoop from '../assets/mov/toolselector/buttons/stuffgenerator/stuffgenerator_loop.webm'
 import movToolSelectorStuffGeneratorButtonActiveIntro from '../assets/mov/toolselector/buttons/stuffgenerator/stuffgenerator_intro.webm'
+import movLeagueLobbyButtonIntro from '../assets/mov/lobby_button/lobby-button-intro.webm'
 
 onMounted(() => {
   playMovie(document.getElementById('toolselector_background'), movToolSelectorBackground, true)
@@ -28,6 +29,7 @@ function champListGeneratorButtonMouseEnter() {
 
 function champListGeneratorButtonClick() {
   playSound(sndToolSelectorToolAreaClick)
+
   document.getElementById('toolselector_solostuffgenerator_animatedicon').style.display = 'none'
   document.getElementById('toolselector_stuffgenerator_animatedicon').style.display = 'none'
   document.getElementById('toolselector_champlistgenerator_animatedicon').style.display = 'block'
@@ -148,16 +150,35 @@ function confirmButtonClick() {
 
   if (document.getElementsByClassName('toolselector_currentselectedtool').length > 0) {
     document.getElementById('toolselector').animate([{ opacity: 1 }, { opacity: 0 }], 250)
+    document.getElementById('league_header_lobbybutton').style.pointerEvents = 'auto'
+    playMovie(document.getElementById('league_header_lobbybuttonvideo'), movLeagueLobbyButtonIntro)
+
+    setTimeout(() => {
+      document.getElementById('toolselector').style.display = 'none'
+    }, 250)
 
     switch (document.getElementsByClassName('toolselector_currentselectedtool')[0].id) {
       case 'toolselector_champlistgenerator':
         document.getElementById('champlistgenerator').animate([{ opacity: 0 }, { opacity: 1 }], 250)
+        document.getElementById('champlistgenerator').style.display = 'block'
+
+        document
+          .getElementById('champlistgenerator_tooloptions_numberofchampions').value = 30
+        document
+          .getElementById('champlistgenerator_tooloptions_numberofchampions')
+          .dispatchEvent(new Event('input'))
+
+        if (document.getElementById('champlistgenerator_generatedchamplist').children.length > 0) {
+          document.getElementById('champlistgenerator_generatedchamplist').innerHTML = ''
+        }
         break
       case 'toolselector_solostuffgenerator':
         document.getElementById('solostuffgenerator').animate([{ opacity: 0 }, { opacity: 1 }], 250)
+        document.getElementById('solostuffgenerator').style.display = 'block'
         break
       case 'toolselector_stuffgenerator':
         document.getElementById('stuffgenerator').animate([{ opacity: 0 }, { opacity: 1 }], 250)
+        document.getElementById('stuffgenerator').style.display = 'block'
         break
     }
   }
