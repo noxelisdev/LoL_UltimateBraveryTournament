@@ -58,8 +58,18 @@ function lobbyButtonClick() {
     .getElementsByClassName('mainheader_menuitem_currentpage')[0]
     .classList.remove('mainheader_menuitem_currentpage')
 
-  //document.getElementById('toolselector').style.display = 'block'
-  //document.getElementById('toolselector').animate([{ opacity: 0 }, { opacity: 1 }], 250)
+  document.getElementById('toolselector').style.display = 'block'
+  document.getElementById('toolselector_champlistgenerator_animatedicon').style.display = 'none'
+  document.getElementById('toolselector_solostuffgenerator_animatedicon').style.display = 'none'
+  document.getElementById('toolselector_stuffgenerator_animatedicon').style.display = 'none'
+
+  if (document.getElementsByClassName('toolselector_currentselectedtool').length > 0) {
+    document
+      .getElementsByClassName('toolselector_currentselectedtool')[0]
+      .classList.remove('toolselector_currentselectedtool')
+  }
+
+  document.getElementById('toolselector').animate([{ opacity: 0 }, { opacity: 1 }], 250)
   document.getElementById('homepage').animate([{ opacity: 1 }, { opacity: 0 }], 250)
 
   setTimeout(() => {
@@ -70,6 +80,13 @@ function lobbyButtonClick() {
 function displayHomePage() {
   playSound(sndMenuItemClick)
 
+  if (document.getElementById('toolselector').checkVisibility()) {
+    document.getElementById('toolselector').animate([{ opacity: 1 }, { opacity: 0 }], 250)
+
+    setTimeout(() => {
+      document.getElementById('toolselector').style.display = 'none'
+    }, 250)
+  }
   //todo: toolSelectorPage fade out
   //todo: champListGenerator fade out
   //todo: stuffGenerator fade out

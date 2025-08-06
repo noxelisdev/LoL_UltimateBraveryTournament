@@ -1,11 +1,12 @@
 <script setup>
 import Homepage from './Homepage.vue'
+import ToolSelector from './ToolSelector.vue'
 </script>
 
 <template>
   <div id="contentarea">
     <Homepage />
-    <!--{% include "pages/toolselector.html.twig" %}-->
+    <ToolSelector />
     <!--{% include "tools/champlistgenerator.html.twig" %}-->
     <!--{% include "tools/solostuffgenerator.html.twig" %}-->
     <!--{% include "tools/stuffgenerator.html.twig" %}-->
