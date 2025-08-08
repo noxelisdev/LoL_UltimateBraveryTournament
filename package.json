@@ -1,5 +1,5 @@
 {
-  "name": "fr.infinity54.lol_ultimatebraverytournament",
+  "name": "dev.noxelis.lol_ultimatebraverytournament",
   "productName": "Gestionnaire de tournoi Ultimate Bravery",
   "version": "3.0.0",
   "description": "App used to manage more easily and quickly any Ultimate Bravery Tournament for League of Legends.",
@@ -7,7 +7,7 @@
   "main": "./out/main/index.js",
   "author": {
     "name": "InFinity_54",
-    "email": "contact@infinity54.fr"
+    "email": "contact@noxelis.dev"
   },
   "scripts": {
     "format": "prettier --write .",

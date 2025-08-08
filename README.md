@@ -38,7 +38,7 @@ Lors de la génération, le champion et le poste attribué au joueur (ou à chaq
 * Installer la dernière version LTS de [_Node.JS_](https://nodejs.org/fr)
 * Installer _Yarn_ à l'aide de la commande suivante : `npm install --global yarn`
 * Se placer dans le dossier où l'on souhaite enregistrer le code du programme
-* Récupérer le dépôt Git du projet en local : `git clone https://github.com/InFinity54/LoL_UltimateBraveryTournament.git LoL_UltimateBraveryTournament`
+* Récupérer le dépôt Git du projet en local : `git clone https://github.com/Noxelis/LoL_UltimateBraveryTournament.git LoL_UltimateBraveryTournament`
 * Se placer dans le dossier créé par la commande précédente
 * Installer les dépendances du projet à l'aide de la commande suivante : `yarn install`
 * Ouvrir le dossier du projet à l'aide d'un éditeur de code

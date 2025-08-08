@@ -1,6 +1,6 @@
 provider: 'github'
 repo: 'LoL_UltimateBraveryTournament'
-owner: 'InFinity54'
+owner: 'Noxelis'
 private: false
 releaseType: 'release'
-updaterCacheDirName: fr.infinity54.lol_ultimatebraverytournament-updater
+updaterCacheDirName: dev.noxelis.lol_ultimatebraverytournament-updater

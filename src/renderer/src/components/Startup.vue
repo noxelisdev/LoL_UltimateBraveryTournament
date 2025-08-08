@@ -26,13 +26,13 @@ async function appInitialization() {
 
   // Récupération des données des champions
   const champions = await window.api.retrieveData(
-    'https://lol.ddragon.infinity54.fr/latest/data/fr_FR/champion.json'
+    'https://lol.ddragon.noxelis.dev/latest/data/fr_FR/champion.json'
   )
   for (const key of Object.keys(champions.data)) {
     let championId = key
 
     const championData = await window.api.retrieveData(
-      `https://lol.ddragon.infinity54.fr/latest/data/fr_FR/champion/${championId}.json`
+      `https://lol.ddragon.noxelis.dev/latest/data/fr_FR/champion/${championId}.json`
     )
     leagueData.champions[championId] = championData.data[championId]
     progress += 24 / Object.keys(champions.data).length
@@ -41,21 +41,21 @@ async function appInitialization() {
 
   // Récupération des données des runes
   leagueData.runes.main = await window.api.retrieveData(
-    'https://lol.ddragon.infinity54.fr/latest/data/fr_FR/runesReforged.json'
+    'https://lol.ddragon.noxelis.dev/latest/data/fr_FR/runesReforged.json'
   )
   progress += 24
   document.getElementById('startup_progress').style.width = `${progress}%`
 
   // Récupération des données des objets
   leagueData.items = await window.api.retrieveData(
-    'https://lol.ddragon.infinity54.fr/latest/data/fr_FR/item.json'
+    'https://lol.ddragon.noxelis.dev/latest/data/fr_FR/item.json'
   )
   progress += 24
   document.getElementById('startup_progress').style.width = `${progress}%`
 
   // Récupération des données des sorts d'invocateur
   leagueData.summoners = await window.api.retrieveData(
-    'https://lol.ddragon.infinity54.fr/latest/data/fr_FR/summoner.json'
+    'https://lol.ddragon.noxelis.dev/latest/data/fr_FR/summoner.json'
   )
   progress += 24
   document.getElementById('startup_progress').style.width = `${progress}%`
@@ -67,12 +67,12 @@ async function appInitialization() {
   const highlightedChampion = leagueData.champions[champIds[selectedId]]
   document.getElementById('championhighlight_name').innerHTML = highlightedChampion.name
   document.getElementById('championhighlight_portrait').style.backgroundImage =
-    `url('https://lol.ddragon.infinity54.fr/img/champion/tiles/${highlightedChampion.id}_0.jpg')`
+    `url('https://lol.ddragon.noxelis.dev/img/champion/tiles/${highlightedChampion.id}_0.jpg')`
 
   for (const skinKey in highlightedChampion.skins) {
     const skinData = highlightedChampion.skins[skinKey]
     let skin = document.createElement('div')
-    skin.style.backgroundImage = `url('https://lol.ddragon.infinity54.fr/img/champion/centered/${highlightedChampion.id}_${skinData.num}.jpg')`
+    skin.style.backgroundImage = `url('https://lol.ddragon.noxelis.dev/img/champion/centered/${highlightedChampion.id}_${skinData.num}.jpg')`
     skin.style.height = `calc(100% / ${highlightedChampion.skins.length})`
     skin.setAttribute(
       'data-tippy-content',

@@ -122,7 +122,7 @@ function createWindow() {
 // Some APIs can only be used after this event occurs.
 app.whenReady().then(() => {
   // Set app user model id for windows
-  electronApp.setAppUserModelId('fr.infinity54')
+  electronApp.setAppUserModelId('dev.noxelis')
 
   // Default open or close DevTools by F12 in development
   // and ignore CommandOrControl + R in production.
@@ -134,7 +134,7 @@ app.whenReady().then(() => {
   autoUpdater.setFeedURL({
     provider: 'github',
     repo: 'LoL_UltimateBraveryTournament',
-    owner: 'InFinity54',
+    owner: 'Noxelis',
     private: false,
     releaseType: 'release'
   })
