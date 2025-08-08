@@ -134,7 +134,7 @@ app.whenReady().then(() => {
   autoUpdater.setFeedURL({
     provider: 'github',
     repo: 'LoL_UltimateBraveryTournament',
-    owner: 'Noxelis',
+    owner: 'noxelisdev',
     private: false,
     releaseType: 'release'
   })

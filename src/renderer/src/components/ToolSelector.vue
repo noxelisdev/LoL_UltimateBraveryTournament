@@ -162,8 +162,7 @@ function confirmButtonClick() {
         document.getElementById('champlistgenerator').animate([{ opacity: 0 }, { opacity: 1 }], 250)
         document.getElementById('champlistgenerator').style.display = 'block'
 
-        document
-          .getElementById('champlistgenerator_tooloptions_numberofchampions').value = 30
+        document.getElementById('champlistgenerator_tooloptions_numberofchampions').value = 30
         document
           .getElementById('champlistgenerator_tooloptions_numberofchampions')
           .dispatchEvent(new Event('input'))

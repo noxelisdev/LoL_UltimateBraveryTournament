@@ -3,7 +3,7 @@ function playSound(soundFile) {
     const audioElement = new Audio(soundFile)
     audioElement.play()
 
-    audioElement.addEventListener('ended', function() {
+    audioElement.addEventListener('ended', function () {
       audioElement.remove()
     })
   }

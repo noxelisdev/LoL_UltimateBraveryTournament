@@ -1,7 +1,7 @@
 <script setup>
 import { onMounted } from 'vue'
-import { playSound } from "../common/audio"
-import { playMovie } from "../common/video"
+import { playSound } from '../common/audio'
+import { playMovie } from '../common/video'
 import sndMenuItemClick from '../assets/snd/ui/menuitem_click.ogg'
 import movHomepageBackground from '../assets/mov/homepage_background.webm'
 
