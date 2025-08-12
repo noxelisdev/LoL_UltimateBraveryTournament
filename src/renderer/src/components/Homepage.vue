@@ -30,7 +30,7 @@ function tabClick() {
 
       <div id="patchnotes">
         <div id="patchnotes_title">NOTES DE PATCH 3.0.0</div>
-        <div id="patchnotes_postdata">INFINITY_54 - <strong>TBA</strong></div>
+        <div id="patchnotes_postdata">INFINITY_54 - <strong>12/08/2025</strong></div>
         <div id="patchnotes_content">
           <p>
             <i class="patchnotes_quotestart"></i> La manière dont j'ai codé le programme était loin
