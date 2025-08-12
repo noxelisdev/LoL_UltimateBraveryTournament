@@ -11,63 +11,57 @@ let leagueData = {
   runes: {
     main: {},
     stats: [
-      {
-        runes: [
-          {
-            key: 'AdaptiveForce',
-            name: 'Force adaptative',
-            icon: 'perk-images/StatMods/StatModsAdaptiveForceIcon.png'
-          },
-          {
-            key: 'AttackSpeed',
-            name: "Vitesse d'attaque",
-            icon: 'perk-images/StatMods/StatModsAttackSpeedIcon.png'
-          },
-          {
-            key: 'CDRScaling',
-            name: 'Accélération de compétences',
-            icon: 'perk-images/StatMods/StatModsCDRScalingIcon.png'
-          }
-        ]
-      },
-      {
-        runes: [
-          {
-            key: 'AdaptiveForce',
-            name: 'Force adaptative',
-            icon: 'perk-images/StatMods/StatModsAdaptiveForceIcon.png'
-          },
-          {
-            key: 'MovementSpeed',
-            name: 'Vitesse de déplacement',
-            icon: 'perk-images/StatMods/StatModsMovementSpeedIcon.png'
-          },
-          {
-            key: 'HealthPlus',
-            name: 'PV croissants',
-            icon: 'perk-images/StatMods/StatModsHealthPlusIcon.png'
-          }
-        ]
-      },
-      {
-        runes: [
-          {
-            key: 'HealthScaling',
-            name: 'Points de vie',
-            icon: 'perk-images/StatMods/StatModsHealthScalingIcon.png'
-          },
-          {
-            key: 'Tenacity',
-            name: 'Ténacité et résistance aux ralentissements',
-            icon: 'perk-images/StatMods/StatModsTenacityIcon.png'
-          },
-          {
-            key: 'HealthPlus',
-            name: 'PV croissants',
-            icon: 'perk-images/StatMods/StatModsHealthPlusIcon.png'
-          }
-        ]
-      }
+      [
+        {
+          key: 'AdaptiveForce',
+          name: 'Force adaptative',
+          icon: 'perk-images/StatMods/StatModsAdaptiveForceIcon.png'
+        },
+        {
+          key: 'AttackSpeed',
+          name: "Vitesse d'attaque",
+          icon: 'perk-images/StatMods/StatModsAttackSpeedIcon.png'
+        },
+        {
+          key: 'CDRScaling',
+          name: 'Accélération de compétences',
+          icon: 'perk-images/StatMods/StatModsCDRScalingIcon.png'
+        }
+      ],
+      [
+        {
+          key: 'AdaptiveForce',
+          name: 'Force adaptative',
+          icon: 'perk-images/StatMods/StatModsAdaptiveForceIcon.png'
+        },
+        {
+          key: 'MovementSpeed',
+          name: 'Vitesse de déplacement',
+          icon: 'perk-images/StatMods/StatModsMovementSpeedIcon.png'
+        },
+        {
+          key: 'HealthPlus',
+          name: 'PV croissants',
+          icon: 'perk-images/StatMods/StatModsHealthPlusIcon.png'
+        }
+      ],
+      [
+        {
+          key: 'HealthScaling',
+          name: 'Points de vie',
+          icon: 'perk-images/StatMods/StatModsHealthScalingIcon.png'
+        },
+        {
+          key: 'Tenacity',
+          name: 'Ténacité et résistance aux ralentissements',
+          icon: 'perk-images/StatMods/StatModsTenacityIcon.png'
+        },
+        {
+          key: 'HealthPlus',
+          name: 'PV croissants',
+          icon: 'perk-images/StatMods/StatModsHealthPlusIcon.png'
+        }
+      ]
     ]
   },
   items: {},

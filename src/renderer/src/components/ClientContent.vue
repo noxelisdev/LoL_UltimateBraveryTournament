@@ -2,6 +2,7 @@
 import Homepage from './Homepage.vue'
 import ToolSelector from './ToolSelector.vue'
 import ChampListGenerator from './ChampListGenerator.vue'
+import SoloStuffGenerator from './SoloStuffGenerator.vue'
 </script>
 
 <template>
@@ -9,7 +10,7 @@ import ChampListGenerator from './ChampListGenerator.vue'
     <Homepage />
     <ToolSelector />
     <ChampListGenerator />
-    <!--{% include "tools/solostuffgenerator.html.twig" %}-->
+    <SoloStuffGenerator />
     <!--{% include "tools/stuffgenerator.html.twig" %}-->
   </div>
 </template>

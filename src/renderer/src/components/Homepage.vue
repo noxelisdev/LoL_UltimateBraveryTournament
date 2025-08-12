@@ -50,6 +50,10 @@ function tabClick() {
               celle du client de LoL
             </li>
             <li>
+              Amélioration des listes déroulantes, qui sont désormais animées à l'ouverture et à la
+              fermeture
+            </li>
+            <li>
               Suppression de Webpack, ce qui corrige des vulnérabilités de son serveur de
               développement (CVE-2025-30360 & CVE-2025-30359)
             </li>

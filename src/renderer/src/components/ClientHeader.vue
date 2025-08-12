@@ -54,9 +54,12 @@ function lobbyButtonClick() {
   playSound(sndPlayButtonClick)
   document.getElementById('league_header_lobbybutton').style.pointerEvents = 'none'
   document.getElementById('mainheader_currentpagearrow').style.display = 'none'
-  document
-    .getElementsByClassName('mainheader_menuitem_currentpage')[0]
-    .classList.remove('mainheader_menuitem_currentpage')
+
+  if (document.getElementsByClassName('mainheader_menuitem_currentpage').length > 0) {
+    document
+      .getElementsByClassName('mainheader_menuitem_currentpage')[0]
+      .classList.remove('mainheader_menuitem_currentpage')
+  }
 
   document.getElementById('toolselector').style.display = 'block'
   document.getElementById('toolselector_champlistgenerator_animatedicon').style.display = 'none'
@@ -97,7 +100,14 @@ function displayHomePage() {
   }
 
   //todo: stuffGenerator fade out
-  //todo: soloStuffGenerator fade out
+
+  if (document.getElementById('solostuffgenerator').checkVisibility()) {
+    document.getElementById('solostuffgenerator').animate([{ opacity: 1 }, { opacity: 0 }], 250)
+
+    setTimeout(() => {
+      document.getElementById('solostuffgenerator').style.display = 'none'
+    }, 250)
+  }
 
   document.getElementById('homepage').style.display = 'block'
   document.getElementById('homepage').animate([{ opacity: 0 }, { opacity: 1 }], 250)

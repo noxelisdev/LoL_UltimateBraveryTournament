@@ -47,16 +47,85 @@ async function appInitialization() {
   document.getElementById('startup_progress').style.width = `${progress}%`
 
   // Récupération des données des objets
-  leagueData.items = await window.api.retrieveData(
+  const itemsData = await window.api.retrieveData(
     'https://lol.ddragon.noxelis.dev/latest/data/fr_FR/item.json'
   )
+  let supportItems = []
+  let jungleItems = []
+  let bootsItems = []
+  let legendaryItems = []
+  let items = {
+    boots: [],
+    jungle: [],
+    legendary: [],
+    support: []
+  }
+
+  for (const item in itemsData.data) {
+    const itemData = itemsData.data[item]
+
+    // Check if item is usable
+    if (
+      itemData.maps[11] &&
+      itemData.gold.purchasable &&
+      !itemData.requiredAlly &&
+      itemData.tags.indexOf('Consumable') === -1 &&
+      itemData.tags.indexOf('Trinket') === -1 &&
+      !itemData.requiredChampion
+    ) {
+      // Boots items
+      if (itemData.tags.indexOf('Boots') > -1 && itemData.depth) {
+        bootsItems.push(itemData)
+      }
+
+      // Jungle items
+      if (itemData.tags.indexOf('Jungle') > -1 && itemData.name.startsWith('Bébé')) {
+        jungleItems.push(itemData)
+      }
+
+      // Support items
+      if (itemData.tags.indexOf('GoldPer') > -1 && !itemData.specialRecipe) {
+        supportItems.push(itemData)
+      }
+
+      // Legendary items
+      if (
+        itemData.tags.indexOf('Boots') === -1 &&
+        itemData.tags.indexOf('Jungle') === -1 &&
+        itemData.tags.indexOf('Lane') === -1 &&
+        itemData.description.indexOf('Propriété passive mythique') === -1 &&
+        !itemData.specialRecipe &&
+        !itemData.info &&
+        !itemData.into
+      ) {
+        legendaryItems.push(itemData)
+      }
+    }
+  }
+  items.boots = bootsItems
+  items.jungle = jungleItems
+  items.support = supportItems
+  items.legendary = legendaryItems
+  leagueData.items = items
   progress += 24
   document.getElementById('startup_progress').style.width = `${progress}%`
 
   // Récupération des données des sorts d'invocateur
-  leagueData.summoners = await window.api.retrieveData(
+  const summonersData = await window.api.retrieveData(
     'https://lol.ddragon.noxelis.dev/latest/data/fr_FR/summoner.json'
   )
+  let summoners = []
+  for (const summonerData in summonersData.data) {
+    if (
+      summonerData.includes('Cherry') === false &&
+      summonerData.includes('Poro') === false &&
+      summonerData.includes('Snowball') === false &&
+      summonerData.includes('UltBook') === false
+    ) {
+      summoners.push(summonersData.data[summonerData])
+    }
+  }
+  leagueData.summoners = summoners
   progress += 24
   document.getElementById('startup_progress').style.width = `${progress}%`
   window.league.storeData('all', leagueData)
@@ -87,17 +156,49 @@ async function appInitialization() {
   }
   progress += 4
   document.getElementById('startup_progress').style.width = `${progress}%`
-
-  // Démarrage de l'application
-  document.getElementById('startup').animate([{ opacity: 1 }, { opacity: 0 }], 500)
-  playSound(sndStartupFinished)
+  document.getElementById('startup_progresstext').innerHTML = 'INITIALISATION...'
 
   // Initialisation de l'outil de génération de liste aléatoire de champions
   document
     .getElementById('champlistgenerator_tooloptions_numberofchampions')
     .setAttribute('max', champIds.length)
-  //enableSoloChampSelectorClickEvent()
+
+  // Initialisation du sélecteur de champions de l'outil de génération de stuff solo aléatoire
+  for (const championId in leagueData.champions) {
+    const champion = document.createElement('div')
+    champion.style.backgroundImage = `url('https://lol.ddragon.noxelis.dev/img/champion/tiles/${leagueData.champions[championId].id}_0.jpg')`
+    champion.setAttribute('data-value', leagueData.champions[championId].id)
+    champion.setAttribute('data-tippy-content', leagueData.champions[championId].name)
+    champion.addEventListener('click', (event) => {
+      document.getElementById('solostuffgenerator_player_champ').style.backgroundImage =
+        event.target.style.backgroundImage
+      document
+        .getElementById('solostuffgenerator_player_champ')
+        .setAttribute('data-value', event.target.getAttribute('data-value'))
+      document
+        .getElementById('solostuffgenerator_player_champ')
+        .setAttribute('data-tippy-content', event.target.getAttribute('data-tippy-content'))
+      document
+        .getElementById('solostuffgenerator_player_champ')
+        ._tippy.setContent(event.target.getAttribute('data-tippy-content'))
+      document.getElementById('solostuffgenerator_champselectorcontainer').style.display = 'none'
+      document.getElementById('solostuffgenerator_champselector_search').value = ''
+      document
+        .getElementById('solostuffgenerator_champselector_search')
+        .dispatchEvent(new Event('input'))
+      document.getElementById('solostuffgenerator_player_champ').dispatchEvent(new Event('change'))
+    })
+    document.getElementById('solostuffgenerator_champselector_content').appendChild(champion)
+    tippy(champion, { theme: 'lol' })
+  }
+
+  //todo: même chose qu'au dessus, mais avec le stuff d'équipe
   //enableChampSelectorClickEvent()
+  //document.getElementById('stuffgenerator_champselector_content').appendChild(champion)
+
+  // Démarrage de l'application
+  document.getElementById('startup').animate([{ opacity: 1 }, { opacity: 0 }], 500)
+  playSound(sndStartupFinished)
 
   setTimeout(() => {
     document.getElementById('startup').style.display = 'none'
