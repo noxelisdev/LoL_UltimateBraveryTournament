@@ -176,10 +176,6 @@ function displayHomePage() {
         </div>
       </div>
 
-      <div id="league_status_button_container">
-        <div id="league_status_button" class="warning"></div>
-      </div>
-
       <div id="mainheader_currentpagearrow"></div>
       <div
         id="mainheader_menuitem_homepage"
@@ -281,65 +277,6 @@ function displayHomePage() {
 
     #league_header_lobbybutton:hover {
       cursor: pointer;
-    }
-
-    #league_status_button_container {
-      display: inline-flex;
-      margin-right: 16px;
-      width: 30.5px;
-      height: 76px;
-      app-region: no-drag;
-
-      #league_status_button {
-        width: 30.5px;
-        height: 30.5px;
-        margin-top: 24px;
-      }
-
-      #league_status_button.danger {
-        background-image: url('../assets/img/popups/status/status_button/button-ticker-red.png');
-        background-position: center center;
-        background-size: 100% 100%;
-        background-repeat: no-repeat;
-      }
-
-      #league_status_button.danger:hover {
-        background-image: url('../assets/img/popups/status/status_button/button-ticker-red-hover.png');
-      }
-
-      #league_status_button.danger:active {
-        background-image: url('../assets/img/popups/status/status_button/button-ticker-red-active.png');
-      }
-
-      #league_status_button.warning {
-        background-image: url('../assets/img/popups/status/status_button/button-ticker-yellow.png');
-        background-position: center center;
-        background-size: 100% 100%;
-        background-repeat: no-repeat;
-      }
-
-      #league_status_button.warning:hover {
-        background-image: url('../assets/img/popups/status/status_button/button-ticker-yellow-hover.png');
-      }
-
-      #league_status_button.warning:active {
-        background-image: url('../assets/img/popups/status/status_button/button-ticker-yellow-active.png');
-      }
-
-      #league_status_button.info {
-        background-image: url('../assets/img/popups/status/status_button/button-ticker-blue.png');
-        background-position: center center;
-        background-size: 100% 100%;
-        background-repeat: no-repeat;
-      }
-
-      #league_status_button.info:hover {
-        background-image: url('../assets/img/popups/status/status_button/button-ticker-blue-hover.png');
-      }
-
-      #league_status_button.info:active {
-        background-image: url('../assets/img/popups/status/status_button/button-ticker-blue-active.png');
-      }
     }
 
     #mainheader_currentpagearrow {

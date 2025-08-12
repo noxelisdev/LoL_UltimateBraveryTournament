@@ -65,6 +65,7 @@ function tabClick() {
             <li>
               Correction des vidéos de fond, qui ne redémarraient pas après être revenu sur la page
             </li>
+            <li>Suppression du statut du client, inutilisé dans l'application</li>
           </ul>
           <br />
           <p>
