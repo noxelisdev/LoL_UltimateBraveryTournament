@@ -33,11 +33,16 @@ function tabClick() {
         <div id="patchnotes_postdata">INFINITY_54 - <strong>TBA</strong></div>
         <div id="patchnotes_content">
           <p>
-            <i class="patchnotes_quotestart"></i> Depuis la sortie de la version 2.5.7, de
-            nombreuses failles de sécurité ont été détectés dans l'application. Le problème était
-            qu'il n'était pas possible de les réparer, en raison de contraintes techniques. Une
-            refonte de l'application a donc eu lieu pour régler ses différentes contraintes, et pour
-            donner lui donner un coup de neuf en passant. <i class="patchnotes_quoteend"></i>
+            <i class="patchnotes_quotestart"></i> La manière dont j'ai codé le programme était loin
+            d'être la meilleure solution : beaucoup d'éléments liés aux outils étaient dupliqués,
+            parfois triplés, dans le code du programme. Ça impliquait de devoir mettre à jour 2 ou 3
+            fois la même chose pour appliquer une mise à jour : peu productif. Étant bloqué dans la
+            réparation des failles de sécurité de l'application, en raison de problèmes techniques,
+            une refonte intégrale de l'application a donc dû être réalisée. Visuellement, rien ne
+            change, même s'il sera possible de voir de meilleures performances dans la totalité de
+            l'application. Techniquement parlant, il ne reste plus grand chose des précédentes
+            versions de l'application (et des failles de sécurité détectées).
+            <i class="patchnotes_quoteend"></i>
           </p>
           <ul>
             <li>
@@ -54,11 +59,31 @@ function tabClick() {
               fermeture
             </li>
             <li>
-              Suppression de Webpack, ce qui corrige des vulnérabilités de son serveur de
-              développement (CVE-2025-30360 & CVE-2025-30359)
+              Amélioration des générations de stuff, dont la logique est désormais commune aux deux
+              outils
             </li>
+          </ul>
+          <br />
+          <p>
+            <i class="patchnotes_quotestart"></i> Comme expliqué plus tôt, depuis la sortie de la
+            version 2.5.7, de nombreuses failles de sécurité ont été détectés dans l'application.
+            Mon problème était qu'il n'était pas possible de les réparer sans réaliser une refonte,
+            puisque l'application dépendait de certains outils qui n'étaient plus mis à jour. La
+            refonte a donc eu lieu pour pouvoir retirer ses différents outils. L'application dépend
+            désormais de moins d'outils, ce qui rend les mises à jour techniques plus faciles. Pour
+            les outils qui sont restés, ils ont pu être mis à jour à la toute dernière version
+            disponible (ce qui n'avait jamais été possible jusqu'à maintenant), ce qui a donc permis
+            de corriger toutes les failles de sécurité qui avaient pu être détectées ces derniers
+            mois.
+            <i class="patchnotes_quoteend"></i>
+          </p>
+          <ul>
+            <li>
+              Suppression de Webpack afin de corriger des vulnérabilités (CVE-2025-30360 &
+              CVE-2025-30359)
+            </li>
+            <li>Suppression de on-headers afin de corriger une vulnérabilité (CVE-2025-7339)</li>
             <li>Correction d'une vulnérabilité dans le package form-data (CVE-2025-7783)</li>
-            <li>Correction d'une vulnérabilité dans le package on-headers (CVE-2025-7339)</li>
             <li>Correction de vulnérabilités d'Electron (CVE-2024-46993)</li>
             <li>Correction d'une vulnérabilité dans le package brace-expansion (CVE-2025-5889)</li>
           </ul>
