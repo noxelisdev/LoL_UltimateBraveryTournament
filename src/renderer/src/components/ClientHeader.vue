@@ -62,6 +62,7 @@ function lobbyButtonClick() {
   }
 
   document.getElementById('toolselector').style.display = 'block'
+  document.getElementById('toolselector_background').play()
   document.getElementById('toolselector_champlistgenerator_animatedicon').style.display = 'none'
   document.getElementById('toolselector_solostuffgenerator_animatedicon').style.display = 'none'
   document.getElementById('toolselector_stuffgenerator_animatedicon').style.display = 'none'
@@ -111,6 +112,7 @@ function displayHomePage() {
 
   document.getElementById('homepage').style.display = 'block'
   document.getElementById('homepage').animate([{ opacity: 0 }, { opacity: 1 }], 250)
+  document.getElementById('homepage_background').play()
   document.getElementById('mainheader_currentpagearrow').style.display = 'block'
   document.getElementById('league_header_lobbybutton').style.pointerEvents = 'auto'
   document

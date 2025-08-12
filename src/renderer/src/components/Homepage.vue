@@ -46,7 +46,7 @@ function tabClick() {
           </p>
           <ul>
             <li>
-              Refonte de l'application sous Electron-Vite pour faciliter les corrections de
+              Refonte de l'application pour faciliter les corrections de
               vulnérabilité
             </li>
             <li>Amélioration des performances globales de l'application</li>
@@ -59,8 +59,11 @@ function tabClick() {
               fermeture
             </li>
             <li>
-              Amélioration des générations de stuff, dont la logique est désormais commune aux deux
-              outils
+              Amélioration des générations de stuff, dont la logique est désormais séparée et
+              commune aux deux outils
+            </li>
+            <li>
+              Correction des vidéos de fond, qui ne redémarraient pas après être revenu sur la page
             </li>
           </ul>
           <br />
@@ -69,12 +72,12 @@ function tabClick() {
             version 2.5.7, de nombreuses failles de sécurité ont été détectés dans l'application.
             Mon problème était qu'il n'était pas possible de les réparer sans réaliser une refonte,
             puisque l'application dépendait de certains outils qui n'étaient plus mis à jour. La
-            refonte a donc eu lieu pour pouvoir retirer ses différents outils. L'application dépend
-            désormais de moins d'outils, ce qui rend les mises à jour techniques plus faciles. Pour
-            les outils qui sont restés, ils ont pu être mis à jour à la toute dernière version
-            disponible (ce qui n'avait jamais été possible jusqu'à maintenant), ce qui a donc permis
-            de corriger toutes les failles de sécurité qui avaient pu être détectées ces derniers
-            mois.
+            refonte a donc eu lieu, en plus de vouloir améliorer le fonctionnement de l'application,
+            pour pouvoir retirer ses différents outils. L'application dépend désormais de moins
+            d'outils, ce qui rend les mises à jour techniques plus faciles. Pour les outils qui sont
+            restés, ils ont pu être mis à jour à la toute dernière version disponible (ce qui
+            n'avait jamais été possible jusqu'à maintenant), ce qui a donc permis de corriger toutes
+            les failles de sécurité qui avaient pu être détectées ces derniers mois.
             <i class="patchnotes_quoteend"></i>
           </p>
           <ul>

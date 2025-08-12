@@ -64,6 +64,7 @@ function exitButtonClick() {
   playSound(sndToolSelectorExitButtonClick)
   document.getElementById('homepage').style.display = 'block'
   document.getElementById('homepage').animate([{ opacity: 0 }, { opacity: 1 }], 250)
+  document.getElementById('homepage_background').play()
   document.getElementById('champlistgenerator').animate([{ opacity: 1 }, { opacity: 0 }], 250)
 
   setTimeout(() => {

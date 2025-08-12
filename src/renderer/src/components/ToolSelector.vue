@@ -161,6 +161,7 @@ function confirmButtonClick() {
       case 'toolselector_champlistgenerator':
         document.getElementById('champlistgenerator').animate([{ opacity: 0 }, { opacity: 1 }], 250)
         document.getElementById('champlistgenerator').style.display = 'block'
+        document.getElementById('champlistgenerator_background').play()
 
         document.getElementById('champlistgenerator_tooloptions_numberofchampions').value = 30
         document
@@ -170,14 +171,17 @@ function confirmButtonClick() {
         if (document.getElementById('champlistgenerator_generatedchamplist').children.length > 0) {
           document.getElementById('champlistgenerator_generatedchamplist').innerHTML = ''
         }
+
         break
       case 'toolselector_solostuffgenerator':
         document.getElementById('solostuffgenerator').animate([{ opacity: 0 }, { opacity: 1 }], 250)
         document.getElementById('solostuffgenerator').style.display = 'block'
+        document.getElementById('solostuffgenerator_background').play()
         break
       case 'toolselector_stuffgenerator':
         document.getElementById('stuffgenerator').animate([{ opacity: 0 }, { opacity: 1 }], 250)
         document.getElementById('stuffgenerator').style.display = 'block'
+        document.getElementById('stuffgenerator_background').play()
         break
     }
   }
