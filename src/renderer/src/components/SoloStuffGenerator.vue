@@ -13,10 +13,8 @@ import sndToolCommonReturnButtonHover from '../assets/snd/tools/common/returnbut
 import sndToolCommonReturnButtonClick from '../assets/snd/tools/common/returnbutton/returnbutton_click.ogg'
 import sndToolCommonStartToolButtonClick from '../assets/snd/tools/common/actions/starttoolbutton/starttoolbutton_click.ogg'
 import sndToolCommonStartToolButtonHover from '../assets/snd/tools/common/actions/starttoolbutton/starttoolbutton_hover.ogg'
-import sndToolSelectorExitButtonHover from '../assets/snd/pages/toolselector/exitbutton/exitbutton_hover.ogg'
-import sndToolSelectorExitButtonClick from '../assets/snd/pages/toolselector/exitbutton/exitbutton_click.ogg'
-
-let generationInProgress = false
+import sndToolCommonExitButtonHover from '../assets/snd/pages/toolselector/exitbutton/exitbutton_hover.ogg'
+import sndToolCommonExitButtonClick from '../assets/snd/pages/toolselector/exitbutton/exitbutton_click.ogg'
 
 onMounted(() => {
   tippy('[data-tippy-content]', { theme: 'lol', arrow: true })
@@ -39,12 +37,16 @@ function returnButtonClick() {
 }
 
 function exitButtonMouseEnter() {
-  playSound(sndToolSelectorExitButtonHover)
+  playSound(sndToolCommonExitButtonHover)
 }
 
 function exitButtonClick() {
-  playSound(sndToolSelectorExitButtonClick)
+  playSound(sndToolCommonExitButtonClick)
   document.getElementById('mainheader_menuitem_homepage').click()
+
+  setTimeout(() => {
+    resetSoloStuffGenerator()
+  }, 250)
 }
 
 function startToolButtonMouseEnter() {
@@ -145,8 +147,7 @@ function enableStartToolButton() {
       .getElementById('solostuffgenerator_player_champ')
       .getAttribute('data-tippy-content') !== 'Indéterminé' &&
     document.getElementById('solostuffgenerator_player_lane').getAttribute('data-tippy-content') !==
-      'Indéterminé' &&
-    generationInProgress === false
+      'Indéterminé'
   ) {
     if (
       document
@@ -309,12 +310,6 @@ function resetSoloStuffGenerator(stuffOnly = false) {
     .getElementById('solostuffgenerator_player_mainspell')
     .setAttribute('data-tippy-content', 'Indéterminé')
   document.getElementById('solostuffgenerator_player_mainspell_letter').innerHTML = '?'
-
-  // Global
-  document.getElementById('solostuffgenerator_starttoolbuttontext').innerHTML = 'GÉNÉRER LE STUFF'
-  document
-    .getElementById('solostuffgenerator_starttoolbuttoncontainer')
-    .classList.add('solostuffgenerator_starttoolbuttondisabled')
 
   if (
     document

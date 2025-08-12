@@ -192,9 +192,16 @@ async function appInitialization() {
     tippy(champion, { theme: 'lol' })
   }
 
-  //todo: même chose qu'au dessus, mais avec le stuff d'équipe
-  //enableChampSelectorClickEvent()
-  //document.getElementById('stuffgenerator_champselector_content').appendChild(champion)
+  // Initialisation du sélecteur de champions de l'outil de génération de stuff d'équipe aléatoire
+  for (const championId in leagueData.champions) {
+    const champion = document.createElement('div')
+    champion.style.backgroundImage = `url('https://lol.ddragon.noxelis.dev/img/champion/tiles/${leagueData.champions[championId].id}_0.jpg')`
+    champion.setAttribute('data-value', leagueData.champions[championId].id)
+    champion.setAttribute('data-tippy-content', leagueData.champions[championId].name)
+    champion.classList.add('stuffgenerator_champselector_notclickablechampion')
+    document.getElementById('stuffgenerator_champselector_content').appendChild(champion)
+    tippy(champion, { theme: 'lol' })
+  }
 
   // Démarrage de l'application
   document.getElementById('startup').animate([{ opacity: 1 }, { opacity: 0 }], 500)

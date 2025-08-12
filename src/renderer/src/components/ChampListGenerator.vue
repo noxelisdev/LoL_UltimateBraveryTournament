@@ -5,8 +5,8 @@ import sndToolCommonReturnButtonHover from '../assets/snd/tools/common/returnbut
 import sndToolCommonReturnButtonClick from '../assets/snd/tools/common/returnbutton/returnbutton_click.ogg'
 import sndToolCommonStartToolButtonClick from '../assets/snd/tools/common/actions/starttoolbutton/starttoolbutton_click.ogg'
 import sndToolCommonStartToolButtonHover from '../assets/snd/tools/common/actions/starttoolbutton/starttoolbutton_hover.ogg'
-import sndToolSelectorExitButtonHover from '../assets/snd/pages/toolselector/exitbutton/exitbutton_hover.ogg'
-import sndToolSelectorExitButtonClick from '../assets/snd/pages/toolselector/exitbutton/exitbutton_click.ogg'
+import sndToolCommonExitButtonHover from '../assets/snd/pages/toolselector/exitbutton/exitbutton_hover.ogg'
+import sndToolCommonExitButtonClick from '../assets/snd/pages/toolselector/exitbutton/exitbutton_click.ogg'
 
 function returnButtonMouseEnter() {
   playSound(sndToolCommonReturnButtonHover)
@@ -57,11 +57,11 @@ function enableStartToolButton(selectedNumberOfChampions) {
 }
 
 function exitButtonMouseEnter() {
-  playSound(sndToolSelectorExitButtonHover)
+  playSound(sndToolCommonExitButtonHover)
 }
 
 function exitButtonClick() {
-  playSound(sndToolSelectorExitButtonClick)
+  playSound(sndToolCommonExitButtonClick)
   document.getElementById('homepage').style.display = 'block'
   document.getElementById('homepage').animate([{ opacity: 0 }, { opacity: 1 }], 250)
   document.getElementById('homepage_background').play()

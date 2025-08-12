@@ -5,8 +5,8 @@ import { playMovie } from '../common/video'
 import sndMenuItemClick from '../assets/snd/ui/menuitem_click.ogg'
 import sndToolSelectorConfirmButtonClick from '../assets/snd/pages/toolselector/confirmbutton/confirmbutton_click.ogg'
 import sndToolSelectorConfirmButtonHover from '../assets/snd/pages/toolselector/confirmbutton/confirmbutton_hover.ogg'
-import sndToolSelectorExitButtonClick from '../assets/snd/pages/toolselector/exitbutton/exitbutton_click.ogg'
-import sndToolSelectorExitButtonHover from '../assets/snd/pages/toolselector/exitbutton/exitbutton_hover.ogg'
+import sndToolCommonExitButtonClick from '../assets/snd/pages/toolselector/exitbutton/exitbutton_click.ogg'
+import sndToolCommonExitButtonHover from '../assets/snd/pages/toolselector/exitbutton/exitbutton_hover.ogg'
 import sndToolSelectorToolAreaClick from '../assets/snd/pages/toolselector/tool_click.ogg'
 import movToolSelectorBackground from '../assets/mov/toolselector/toolselector_background.webm'
 import movToolSelectorChampListGeneratorButtonActiveLoop from '../assets/mov/toolselector/buttons/champlistselector/champlistselector_loop.webm'
@@ -133,11 +133,11 @@ function stuffGeneratorButtonClick() {
 }
 
 function exitButtonMouseEnter() {
-  playSound(sndToolSelectorExitButtonHover)
+  playSound(sndToolCommonExitButtonHover)
 }
 
 function exitButtonClick() {
-  playSound(sndToolSelectorExitButtonClick)
+  playSound(sndToolCommonExitButtonClick)
   document.getElementById('mainheader_menuitem_homepage').click()
 }
 

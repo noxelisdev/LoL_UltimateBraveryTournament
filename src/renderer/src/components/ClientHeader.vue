@@ -73,8 +73,39 @@ function lobbyButtonClick() {
       .classList.remove('toolselector_currentselectedtool')
   }
 
+  if (document.getElementById('champlistgenerator').checkVisibility()) {
+    document.getElementById('champlistgenerator').animate([{ opacity: 1 }, { opacity: 0 }], 250)
+
+    setTimeout(() => {
+      document.getElementById('champlistgenerator').style.display = 'none'
+    }, 250)
+  }
+
+  if (document.getElementById('stuffgenerator').checkVisibility()) {
+    document.getElementById('stuffgenerator').animate([{ opacity: 1 }, { opacity: 0 }], 250)
+
+    setTimeout(() => {
+      document.getElementById('stuffgenerator').style.display = 'none'
+    }, 250)
+  }
+
+  if (document.getElementById('solostuffgenerator').checkVisibility()) {
+    document.getElementById('solostuffgenerator').animate([{ opacity: 1 }, { opacity: 0 }], 250)
+
+    setTimeout(() => {
+      document.getElementById('solostuffgenerator').style.display = 'none'
+    }, 250)
+  }
+
+  if (document.getElementById('homepage').checkVisibility()) {
+    document.getElementById('homepage').animate([{ opacity: 1 }, { opacity: 0 }], 250)
+
+    setTimeout(() => {
+      document.getElementById('homepage').style.display = 'none'
+    }, 250)
+  }
+
   document.getElementById('toolselector').animate([{ opacity: 0 }, { opacity: 1 }], 250)
-  document.getElementById('homepage').animate([{ opacity: 1 }, { opacity: 0 }], 250)
 
   setTimeout(() => {
     document.getElementById('homepage').style.display = 'none'
@@ -100,7 +131,13 @@ function displayHomePage() {
     }, 250)
   }
 
-  //todo: stuffGenerator fade out
+  if (document.getElementById('stuffgenerator').checkVisibility()) {
+    document.getElementById('stuffgenerator').animate([{ opacity: 1 }, { opacity: 0 }], 250)
+
+    setTimeout(() => {
+      document.getElementById('stuffgenerator').style.display = 'none'
+    }, 250)
+  }
 
   if (document.getElementById('solostuffgenerator').checkVisibility()) {
     document.getElementById('solostuffgenerator').animate([{ opacity: 1 }, { opacity: 0 }], 250)
