@@ -56,4 +56,4 @@ Il est également possible de configurer l'IDE [_WebStorm_](https://www.jetbrain
 
 ## Compilation et publication
 
-La commande `yarn make` permet de compiler l'application. Le résultat de cette compilation devra être envoyée manuellement sur GitHub et le FTP du serveur de téléchargement.
+La commande `yarn build:platform` permet de compiler l'application. `platform` doit être remplacé par `win`, `mac` ou `linux`, suivant la plateforme visée, ou par `unpack`. Le résultat de cette compilation devra être envoyée manuellement sur GitHub et le FTP du serveur de téléchargement.
