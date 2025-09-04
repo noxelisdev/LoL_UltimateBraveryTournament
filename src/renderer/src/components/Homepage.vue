@@ -33,6 +33,12 @@ function tabClick() {
         <div id="patchnotes_postdata">INFINITY_54 - <strong>12/08/2025</strong></div>
         <div id="patchnotes_content">
           <p>
+            <i class="patchnotes_quotestart"></i> Depuis la sortie de la version 3.0.0, quelques corrections ont été apportées au programme. <i class="patchnotes_quoteend"></i>
+          </p>
+          <ul>
+            <li>04/09/2025 : Correction d'une vulnérabilité dans l'une des dépendances principales (Electron)</li>
+          </ul>
+          <p>
             <i class="patchnotes_quotestart"></i> La manière dont j'ai codé le programme était loin
             d'être la meilleure solution : beaucoup d'éléments liés aux outils étaient dupliqués,
             parfois triplés, dans le code du programme. Ça impliquait de devoir mettre à jour 2 ou 3
