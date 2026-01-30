@@ -33,13 +33,24 @@ function tabClick() {
         <div id="patchnotes_postdata">INFINITY_54 - <strong>12/08/2025</strong></div>
         <div id="patchnotes_content">
           <p>
-            <i class="patchnotes_quotestart"></i> Depuis la sortie de la version 3.0.0, quelques corrections ont été apportées au programme. <i class="patchnotes_quoteend"></i>
+            <i class="patchnotes_quotestart"></i> Depuis la sortie de la version 3.0.0, quelques
+            corrections ont été apportées au programme. <i class="patchnotes_quoteend"></i>
           </p>
           <ul>
+            <li>30/01/2026 : Correction de vulnérabilités dans certaines dépendances</li>
             <li>22/11/2025 : Correction de vulnérabilités dans certaines dépendances</li>
-            <li>01/11/2025 : Correction d'une vulnérabilité dans l'une des dépendances principales (Vite)</li>
-            <li>22/09/2025 : Correction de vulnérabilités dans l'une des dépendances principales (Vite)</li>
-            <li>04/09/2025 : Correction d'une vulnérabilité dans l'une des dépendances principales (Electron)</li>
+            <li>
+              01/11/2025 : Correction d'une vulnérabilité dans l'une des dépendances principales
+              (Vite)
+            </li>
+            <li>
+              22/09/2025 : Correction de vulnérabilités dans l'une des dépendances principales
+              (Vite)
+            </li>
+            <li>
+              04/09/2025 : Correction d'une vulnérabilité dans l'une des dépendances principales
+              (Electron)
+            </li>
           </ul>
           <p>
             <i class="patchnotes_quotestart"></i> La manière dont j'ai codé le programme était loin
@@ -54,10 +65,7 @@ function tabClick() {
             <i class="patchnotes_quoteend"></i>
           </p>
           <ul>
-            <li>
-              Refonte de l'application pour faciliter les corrections de
-              vulnérabilité
-            </li>
+            <li>Refonte de l'application pour faciliter les corrections de vulnérabilité</li>
             <li>Amélioration des performances globales de l'application</li>
             <li>
               Ajout d'une nouvelle apparence pour les barres de défilement, plus cohérente avec
