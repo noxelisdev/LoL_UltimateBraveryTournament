@@ -10,7 +10,7 @@ onMounted(async () => {
 
   // Récupération du numéro de la dernière version de LoL
   const manifest = await window.api.retrieveData(
-    'https://lol.ddragon.noxelis.dev/latest/manifest.json'
+    'https://ddragon.noxelis.dev/lol/latest/manifest.json'
   )
   document.getElementById('app_version').innerHTML = document
     .getElementById('app_version')

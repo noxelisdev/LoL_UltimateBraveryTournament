@@ -73,7 +73,7 @@ async function startToolButtonClick() {
       for (let i = 0; i < runes.length; i++) {
         document.getElementById(
           `stuffgenerator_player_${lane}_rune${i + 1}`
-        ).style.backgroundImage = `url('https://lol.ddragon.noxelis.dev/img/${runes[i].icon}')`
+        ).style.backgroundImage = `url('https://ddragon.noxelis.dev/lol/img/${runes[i].icon}')`
         document
           .getElementById(`stuffgenerator_player_${lane}_rune${i + 1}`)
           .setAttribute('data-tippy-content', runes[i].name)
@@ -90,7 +90,7 @@ async function startToolButtonClick() {
         document.getElementById(
           `stuffgenerator_player_${lane}_item${i + 1}`
         ).style.backgroundImage =
-          `url('https://lol.ddragon.noxelis.dev/latest/img/item/${items[i].data.image.full}')`
+          `url('https://ddragon.noxelis.dev/lol/latest/img/item/${items[i].data.image.full}')`
         document
           .getElementById(`stuffgenerator_player_${lane}_item${i + 1}`)
           .setAttribute('data-item-name', items[i].data.name)
@@ -110,7 +110,7 @@ async function startToolButtonClick() {
         document.getElementById(
           `stuffgenerator_player_${lane}_summoner${i + 1}`
         ).style.backgroundImage =
-          `url('https://lol.ddragon.noxelis.dev/latest/img/spell/${summoners[i].image.full}')`
+          `url('https://ddragon.noxelis.dev/lol/latest/img/spell/${summoners[i].image.full}')`
         document
           .getElementById(`stuffgenerator_player_${lane}_summoner${i + 1}`)
           .setAttribute('data-tippy-content', summoners[i].name)
@@ -123,7 +123,7 @@ async function startToolButtonClick() {
         document.getElementById(`stuffgenerator_player_${lane}_champ`).getAttribute('data-value')
       )
       document.getElementById(`stuffgenerator_player_${lane}_mainspell`).style.backgroundImage =
-        `url('https://lol.ddragon.noxelis.dev/latest/img/spell/${mainSpell.image.full}')`
+        `url('https://ddragon.noxelis.dev/lol/latest/img/spell/${mainSpell.image.full}')`
       document
         .getElementById(`stuffgenerator_player_${lane}_mainspell`)
         .setAttribute('data-tippy-content', mainSpell.name)
@@ -321,7 +321,7 @@ async function replaceItem(event) {
     while (currentItems.includes(newItem.name)) {
       newItem = await generatePlayerItem(event.target.getAttribute('data-type'))
     }
-    event.target.style.backgroundImage = `url('https://lol.ddragon.noxelis.dev/latest/img/item/${newItem.image.full}')`
+    event.target.style.backgroundImage = `url('https://ddragon.noxelis.dev/lol/latest/img/item/${newItem.image.full}')`
     event.target.setAttribute('data-item-name', newItem.name)
     event.target.setAttribute('data-tippy-content', newItem.name)
     event.target._tippy.setContent(newItem.name)

@@ -26,13 +26,13 @@ async function appInitialization() {
 
   // Récupération des données des champions
   const champions = await window.api.retrieveData(
-    'https://lol.ddragon.noxelis.dev/latest/data/fr_FR/champion.json'
+    'https://ddragon.noxelis.dev/lol/latest/data/fr_FR/champion.json'
   )
   for (const key of Object.keys(champions.data)) {
     let championId = key
 
     const championData = await window.api.retrieveData(
-      `https://lol.ddragon.noxelis.dev/latest/data/fr_FR/champion/${championId}.json`
+      `https://ddragon.noxelis.dev/lol/latest/data/fr_FR/champion/${championId}.json`
     )
     leagueData.champions[championId] = championData.data[championId]
     progress += 24 / Object.keys(champions.data).length
@@ -41,14 +41,14 @@ async function appInitialization() {
 
   // Récupération des données des runes
   leagueData.runes.main = await window.api.retrieveData(
-    'https://lol.ddragon.noxelis.dev/latest/data/fr_FR/runesReforged.json'
+    'https://ddragon.noxelis.dev/lol/latest/data/fr_FR/runesReforged.json'
   )
   progress += 24
   document.getElementById('startup_progress').style.width = `${progress}%`
 
   // Récupération des données des objets
   const itemsData = await window.api.retrieveData(
-    'https://lol.ddragon.noxelis.dev/latest/data/fr_FR/item.json'
+    'https://ddragon.noxelis.dev/lol/latest/data/fr_FR/item.json'
   )
   let supportItems = []
   let jungleItems = []
@@ -112,7 +112,7 @@ async function appInitialization() {
 
   // Récupération des données des sorts d'invocateur
   const summonersData = await window.api.retrieveData(
-    'https://lol.ddragon.noxelis.dev/latest/data/fr_FR/summoner.json'
+    'https://ddragon.noxelis.dev/lol/latest/data/fr_FR/summoner.json'
   )
   let summoners = []
   for (const summonerData in summonersData.data) {
@@ -136,12 +136,12 @@ async function appInitialization() {
   const highlightedChampion = leagueData.champions[champIds[selectedId]]
   document.getElementById('championhighlight_name').innerHTML = highlightedChampion.name
   document.getElementById('championhighlight_portrait').style.backgroundImage =
-    `url('https://lol.ddragon.noxelis.dev/img/champion/tiles/${highlightedChampion.id}_0.jpg')`
+    `url('https://ddragon.noxelis.dev/lol/img/champion/tiles/${highlightedChampion.id}_0.jpg')`
 
   for (const skinKey in highlightedChampion.skins) {
     const skinData = highlightedChampion.skins[skinKey]
     let skin = document.createElement('div')
-    skin.style.backgroundImage = `url('https://lol.ddragon.noxelis.dev/img/champion/centered/${highlightedChampion.id}_${skinData.num}.jpg')`
+    skin.style.backgroundImage = `url('https://ddragon.noxelis.dev/lol/img/champion/centered/${highlightedChampion.id}_${skinData.num}.jpg')`
     skin.style.height = `calc(100% / ${highlightedChampion.skins.length})`
     skin.setAttribute(
       'data-tippy-content',
@@ -166,7 +166,7 @@ async function appInitialization() {
   // Initialisation du sélecteur de champions de l'outil de génération de stuff solo aléatoire
   for (const championId in leagueData.champions) {
     const champion = document.createElement('div')
-    champion.style.backgroundImage = `url('https://lol.ddragon.noxelis.dev/img/champion/tiles/${leagueData.champions[championId].id}_0.jpg')`
+    champion.style.backgroundImage = `url('https://ddragon.noxelis.dev/lol/img/champion/tiles/${leagueData.champions[championId].id}_0.jpg')`
     champion.setAttribute('data-value', leagueData.champions[championId].id)
     champion.setAttribute('data-tippy-content', leagueData.champions[championId].name)
     champion.addEventListener('click', (event) => {
@@ -195,7 +195,7 @@ async function appInitialization() {
   // Initialisation du sélecteur de champions de l'outil de génération de stuff d'équipe aléatoire
   for (const championId in leagueData.champions) {
     const champion = document.createElement('div')
-    champion.style.backgroundImage = `url('https://lol.ddragon.noxelis.dev/img/champion/tiles/${leagueData.champions[championId].id}_0.jpg')`
+    champion.style.backgroundImage = `url('https://ddragon.noxelis.dev/lol/img/champion/tiles/${leagueData.champions[championId].id}_0.jpg')`
     champion.setAttribute('data-value', leagueData.champions[championId].id)
     champion.setAttribute('data-tippy-content', leagueData.champions[championId].name)
     champion.classList.add('stuffgenerator_champselector_notclickablechampion')

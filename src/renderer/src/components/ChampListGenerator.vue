@@ -113,7 +113,7 @@ async function startToolButtonClick() {
         let selectedChampion = document.createElement('div')
         selectedChampion.id = `champlistgenerator_generatedchamp_${champions[newSelectedChampion].id.toLowerCase()}`
         selectedChampion.setAttribute('data-tippy-content', champions[newSelectedChampion].name)
-        selectedChampion.style.backgroundImage = `url('https://lol.ddragon.noxelis.dev/img/champion/tiles/${champions[newSelectedChampion].id}_0.jpg')`
+        selectedChampion.style.backgroundImage = `url('https://ddragon.noxelis.dev/lol/img/champion/tiles/${champions[newSelectedChampion].id}_0.jpg')`
         document
           .getElementById('champlistgenerator_generatedchamplist')
           .appendChild(selectedChampion)
