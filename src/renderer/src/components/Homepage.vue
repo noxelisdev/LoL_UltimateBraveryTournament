@@ -37,6 +37,7 @@ function tabClick() {
             corrections ont été apportées au programme. <i class="patchnotes_quoteend"></i>
           </p>
           <ul>
+            <li>03/03/2026 : Correction d'une vulnérabilité dans une dépendance</li>
             <li>27/02/2026 : Correction d'une vulnérabilité dans une dépendance</li>
             <li>
               18/02/2026 : Correction d'une vulnérabilité dans l'une des dépendances principales
