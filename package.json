@@ -1,7 +1,7 @@
 {
   "name": "dev.noxelis.lol_ultimatebraverytournament",
   "productName": "Gestionnaire de tournoi Ultimate Bravery",
-  "version": "3.0.15",
+  "version": "3.0.16",
   "description": "App used to manage more easily and quickly any Ultimate Bravery Tournament for League of Legends.",
   "license": "CC-BY-SA-4.0",
   "main": "./out/main/index.js",
@@ -35,7 +35,7 @@
     "@electron-toolkit/eslint-config": "^2.0.0",
     "@electron-toolkit/eslint-config-prettier": "^3.0.0",
     "@vitejs/plugin-vue": "^6.0.0",
-    "electron": "^40.1.0",
+    "electron": "^41.10.3",
     "electron-builder": "^26.6.0",
     "electron-vite": "^4.0.0",
     "eslint": "^9.31.0",
